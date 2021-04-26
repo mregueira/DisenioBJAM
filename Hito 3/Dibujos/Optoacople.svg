@@ -11,8 +11,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="194.85626mm"
-   height="91.645378mm"
-   viewBox="0 0 194.85626 91.645378"
+   height="92.645309mm"
+   viewBox="0 0 194.85626 92.645309"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -74,10 +74,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="428.23199"
-     inkscape:cy="95.789025"
+     inkscape:cx="230.23223"
+     inkscape:cy="155.59225"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1979"
+     inkscape:current-layer="svg8"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
@@ -89,10 +89,10 @@
      fit-margin-right="0"
      fit-margin-bottom="0">
     <inkscape:grid
-       type="xygrid"
+       originy="-201.72921"
+       originx="-26.683559"
        id="grid10"
-       originx="-26.683554"
-       originy="-202.72913" />
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -110,11 +110,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-26.683553,-2.6254968)" />
+     transform="translate(-26.683557,-2.6254966)" />
   <g
      id="g99"
      inkscape:label="BJT"
-     transform="translate(-13.516886,2.1453281)">
+     transform="translate(-13.51689,2.1453283)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g97"
        inkscape:label="BJT">
@@ -186,7 +188,9 @@
   <g
      id="g148"
      inkscape:label="diode"
-     transform="rotate(90,108.64806,25.793387)">
+     transform="rotate(90,108.64806,25.793385)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g146">
       <path
@@ -218,7 +222,9 @@
   <g
      id="g193"
      inkscape:label="Resistor"
-     transform="translate(-55.558551,-2.8546748)">
+     transform="translate(-55.558555,-2.8546746)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g186">
       <path
@@ -257,7 +263,9 @@
   <g
      id="g245"
      inkscape:label="Resistor"
-     transform="translate(31.483114,-2.8546719)">
+     transform="translate(31.48311,-2.8546717)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g237">
       <path
@@ -296,7 +304,9 @@
   <g
      id="g303"
      inkscape:label="GND"
-     transform="translate(-28.516886,57.145328)">
+     transform="translate(-28.51689,57.145328)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g301"
        inkscape:label="GND">
@@ -327,42 +337,11 @@
     </g>
   </g>
   <g
-     id="g367"
-     inkscape:label="GND"
-     transform="translate(-65.558551,57.145325)">
-    <g
-       id="g365"
-       inkscape:label="GND">
-      <path
-         id="path357"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="M 150,20 V 30"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path359"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="M 157,30 H 143"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path361"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="m 153.5,32 h -7"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path363"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="m 151,34 h -2"
-         inkscape:connector-curvature="0" />
-    </g>
-  </g>
-  <g
      id="g523"
      inkscape:label="GND"
-     transform="translate(31.973171,-17.685258)">
+     transform="translate(31.973167,-17.685258)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g509"
        inkscape:label="GND"
@@ -419,7 +398,9 @@
   <g
      id="g618"
      inkscape:label="GND"
-     transform="translate(-18.452735,-31.326435)">
+     transform="translate(-18.452739,-31.326435)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g604"
        inkscape:label="GND">
@@ -459,7 +440,7 @@
 <polygon
    id="polygon610"
    style="fill:#000000;stroke-width:0"
-   points="236.27,479.09 238.91,479.09 238.91,479.67 236.27,479.67 " />
+   points="238.91,479.67 236.27,479.67 236.27,479.09 238.91,479.09 " />
 <path
    id="path612"
    style="fill:#000000;stroke-width:0"
@@ -474,7 +455,9 @@
   <g
      id="g726"
      inkscape:label="GND"
-     transform="translate(-111.91718,-16.421628)">
+     transform="translate(-111.91718,-16.421628)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g708"
        inkscape:label="GND"
@@ -520,7 +503,7 @@
 <polygon
    id="polygon716"
    style="fill:#000000;stroke-width:0"
-   points="243.62,479.09 243.62,479.67 240.98,479.67 240.98,479.09 " />
+   points="240.98,479.67 240.98,479.09 243.62,479.09 243.62,479.67 " />
 <path
    id="path718"
    style="fill:#000000;stroke-width:0"
@@ -539,18 +522,24 @@
 </g>  </g>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotS)"
-     d="M 121.48311,27.145327 V 8.6244942"
+     d="M 121.48311,27.145327 V 8.6244944"
      id="path741"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 71.212279,35.082827 h 63.500001 v 37.041668 h -63.5 z"
+     d="M 71.212275,35.082827 H 134.71228 V 72.124495 H 71.212276 Z"
      id="path1874"
-     inkscape:connector-curvature="0" />
+     inkscape:connector-curvature="0"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600" />
   <g
      id="g1979"
      inkscape:label="GND"
-     transform="translate(-5.7855635,42.857477)">
+     transform="translate(-5.785568,42.857477)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        transform="matrix(0.739645,0,0,-0.739645,-68.091723,389.49213)"
        ns0:preamble="C:\\Users\\Marcelo\\AppData\\Roaming\\inkscape\\extensions/textextLib/CircuitSymbolsLatexPreamble.tex"
@@ -597,4 +586,27 @@
    d="m 256.53,483.59 v 0.01 0.01 0.02 0.01 0 0.01 0.01 0.01 0.01 0.01 0.01 0.01 0 0.01 0.01 h -0.01 v 0.01 0.01 0.01 0.01 0.01 l -0.01,0.01 v 0.01 h -0.01 v 0.01 l -0.01,0.01 v 0 l -0.01,0.01 h -0.01 l -0.01,0.01 v 0 h -0.01 v 0 h -0.01 v 0 h -0.01 v 0.01 h -0.01 -0.01 v 0 h -0.01 -0.01 -0.01 -0.01 v 0 h -0.01 -0.01 -0.01 -0.01 -0.01 -0.01 -0.01 c -0.62,-0.64 -1.5,-0.64 -1.82,-0.64 v -0.3 c 0.2,0 0.79,0 1.31,0.26 v -5.15 c 0,-0.36 -0.03,-0.48 -0.93,-0.48 h -0.32 v -0.31 c 0.35,0.04 1.22,0.04 1.62,0.04 0.4,0 1.27,0 1.61,-0.04 v 0.31 h -0.31 c -0.9,0 -0.93,0.11 -0.93,0.48 z"
    inkscape:connector-curvature="0" />
 </g>  </g>
+  <g
+     id="g1391"
+     inkscape:label="Common"
+     transform="translate(-5.5585575,-2.8546728)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
+    <g
+       id="g1389"
+       inkscape:label="Common">
+      <path
+         id="path1385"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 90,80 V 90"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path1387"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 95,90 H 85 l 5,5 5,-5"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
 </svg>

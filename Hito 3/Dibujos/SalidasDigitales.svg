@@ -11,8 +11,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="168.7429mm"
-   height="158.79803mm"
-   viewBox="0 0 168.7429 158.79803"
+   height="159.79796mm"
+   viewBox="0 0 168.7429 159.79795"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -104,10 +104,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="255.97052"
-     inkscape:cy="209.98581"
+     inkscape:cx="30.79112"
+     inkscape:cy="286.27558"
      inkscape:document-units="mm"
-     inkscape:current-layer="g2581"
+     inkscape:current-layer="svg8"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
@@ -119,10 +119,10 @@
      fit-margin-right="0"
      fit-margin-bottom="0">
     <inkscape:grid
-       type="xygrid"
+       originy="-201.72918"
+       originx="-46.922184"
        id="grid10"
-       originx="-46.922183"
-       originy="-202.72913" />
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -367,41 +367,6 @@
     </g>
   </g>
   <g
-     id="g367"
-     inkscape:label="GND"
-     transform="translate(-85.797179,124.29798)"
-     inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
-    <g
-       id="g365"
-       inkscape:label="GND">
-      <path
-         id="path357"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="M 150,20 V 30"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path359"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="M 157,30 H 143"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path361"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="m 153.5,32 h -7"
-         inkscape:connector-curvature="0" />
-      <path
-         id="path363"
-         inkscape:label="none"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         d="m 151,34 h -2"
-         inkscape:connector-curvature="0" />
-    </g>
-  </g>
-  <g
      id="g523"
      inkscape:label="GND"
      transform="translate(11.734543,49.467399)"
@@ -572,7 +537,7 @@
 <polygon
    id="polygon1229"
    style="fill:#000000;stroke-width:0"
-   points="236.27,479.67 236.27,479.09 238.91,479.09 238.91,479.67 " />
+   points="238.91,479.09 238.91,479.67 236.27,479.67 236.27,479.09 " />
 <path
    id="path1231"
    style="fill:#000000;stroke-width:0"
@@ -768,7 +733,7 @@
 </g>  </g>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 101.24448,44.297988 V 8.7414843"
+     d="M 101.24448,44.297988 V 8.7414846"
      id="path2002"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="600"
@@ -835,7 +800,9 @@
   <g
      id="g2581"
      inkscape:label="GND"
-     transform="translate(10.495562,49.293282)">
+     transform="translate(10.495562,49.293282)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
     <g
        id="g2571"
        inkscape:label="GND"
@@ -882,4 +849,27 @@
    d="m 245.29,483.96 h -6.09 l -0.19,-2.23 h 0.25 c 0.14,1.59 0.29,1.92 1.8,1.92 0.18,0 0.43,0 0.54,-0.02 0.2,-0.04 0.2,-0.15 0.2,-0.37 v -5.24 c 0,-0.34 0,-0.48 -1.04,-0.48 h -0.4 v -0.31 c 0.41,0.04 1.42,0.04 1.88,0.04 0.46,0 1.49,0 1.9,-0.04 v 0.31 h -0.4 c -1.05,0 -1.05,0.14 -1.05,0.48 v 5.24 c 0,0.19 0,0.33 0.18,0.37 0.11,0.02 0.38,0.02 0.57,0.02 1.51,0 1.66,-0.33 1.79,-1.92 h 0.25 z"
    inkscape:connector-curvature="0" />
 </g>  </g>
+  <g
+     id="g2400"
+     inkscape:label="Common"
+     transform="translate(14.202818,14.297984)"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
+    <g
+       id="g2398"
+       inkscape:label="Common">
+      <path
+         id="path2394"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 50,130 v 10"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path2396"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 55,140 H 45 l 5,5 5,-5"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
 </svg>
