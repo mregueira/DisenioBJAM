@@ -10,13 +10,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="194.85626mm"
+   width="230.58458mm"
    height="92.645309mm"
-   viewBox="0 0 194.85626 92.645309"
+   viewBox="0 0 230.58458 92.645309"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="Optoacople.svg"
+   sodipodi:docname="OptoacoplePedal.svg"
    inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\PLC_AcopleEntrada.png"
    inkscape:export-xdpi="600"
    inkscape:export-ydpi="600">
@@ -65,6 +65,34 @@
          d="m 0,0 -3,1.25 v -2.5 z"
          inkscape:connector-curvature="0" />
     </marker>
+    <marker
+       inkscape:stockid="arrowSwitchStart"
+       style="overflow:visible"
+       refY="0"
+       refX="0"
+       orient="auto"
+       id="arrowSwitchStart">
+      <path
+         id="path7106"
+         transform="matrix(0.25,0,0,0.25,1.823125,0)"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#ff0000;stroke-width:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="arrowSwitchEnd"
+       style="overflow:visible"
+       refY="0"
+       refX="0"
+       orient="auto"
+       id="arrowSwitchEnd">
+      <path
+         id="path7109"
+         transform="matrix(-0.25,0,0,-0.25,-1.823125,0)"
+         style="fill:#ff0000;fill-rule:evenodd;stroke:#ff0000;stroke-width:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -73,11 +101,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="270.8469"
-     inkscape:cy="168.39265"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="263.34693"
+     inkscape:cy="509.79668"
      inkscape:document-units="mm"
-     inkscape:current-layer="g7067"
+     inkscape:current-layer="g7349"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
@@ -89,10 +117,10 @@
      fit-margin-right="0"
      fit-margin-bottom="0">
     <inkscape:grid
-       type="xygrid"
+       originy="-201.72922"
+       originx="9.0447556"
        id="grid10"
-       originx="-26.683559"
-       originy="-201.72921" />
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -102,7 +130,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -110,13 +138,14 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-26.683557,-2.6254966)" />
+     transform="translate(9.0447578,-2.6254964)" />
   <g
      id="g99"
      inkscape:label="BJT"
-     transform="translate(-13.51689,2.1453283)"
+     transform="translate(22.211425,2.1453285)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g97"
        inkscape:label="BJT">
@@ -188,9 +217,10 @@
   <g
      id="g148"
      inkscape:label="diode"
-     transform="rotate(90,108.64806,25.793385)"
+     transform="rotate(90,126.51222,43.657542)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g146">
       <path
@@ -222,9 +252,10 @@
   <g
      id="g193"
      inkscape:label="Resistor"
-     transform="translate(-55.558555,-2.8546746)"
+     transform="translate(-19.83024,-2.8546744)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g186">
       <path
@@ -263,9 +294,10 @@
   <g
      id="g245"
      inkscape:label="Resistor"
-     transform="translate(31.48311,-2.8546717)"
+     transform="translate(67.211425,-2.8546715)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g237">
       <path
@@ -304,9 +336,10 @@
   <g
      id="g303"
      inkscape:label="GND"
-     transform="translate(-28.51689,57.145328)"
+     transform="translate(7.2114248,57.145328)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g301"
        inkscape:label="GND">
@@ -339,9 +372,10 @@
   <g
      id="g523"
      inkscape:label="GND"
-     transform="translate(31.973167,-17.685258)"
+     transform="translate(67.701482,-17.685258)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g509"
        inkscape:label="GND"
@@ -398,9 +432,10 @@
   <g
      id="g618"
      inkscape:label="GND"
-     transform="translate(-18.452739,-31.326435)"
+     transform="translate(17.275576,-31.326435)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g604"
        inkscape:label="GND">
@@ -440,7 +475,7 @@
 <polygon
    id="polygon610"
    style="fill:#000000;stroke-width:0"
-   points="238.91,479.67 236.27,479.67 236.27,479.09 238.91,479.09 " />
+   points="236.27,479.09 238.91,479.09 238.91,479.67 236.27,479.67 " />
 <path
    id="path612"
    style="fill:#000000;stroke-width:0"
@@ -454,24 +489,27 @@
 </g>  </g>
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotS)"
-     d="M 121.48311,27.145327 V 8.6244944"
+     d="M 157.21142,27.145327 V 8.6244946"
      id="path741"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600" />
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 71.212275,35.082827 H 134.71228 V 72.124495 H 71.212276 Z"
+     d="m 106.94059,35.082827 h 63.5 v 37.041668 h -63.5 z"
      id="path1874"
      inkscape:connector-curvature="0"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600" />
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png" />
   <g
      id="g1979"
      inkscape:label="GND"
-     transform="translate(-5.785568,42.857477)"
+     transform="translate(29.942747,42.857477)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        transform="matrix(0.739645,0,0,-0.739645,-68.091723,389.49213)"
        ns0:preamble="C:\\Users\\Marcelo\\AppData\\Roaming\\inkscape\\extensions/textextLib/CircuitSymbolsLatexPreamble.tex"
@@ -521,9 +559,10 @@
   <g
      id="g1391"
      inkscape:label="Common"
-     transform="translate(-5.5585575,-2.8546728)"
+     transform="translate(30.169757,-2.8546726)"
      inkscape:export-xdpi="600"
-     inkscape:export-ydpi="600">
+     inkscape:export-ydpi="600"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png">
     <g
        id="g1389"
        inkscape:label="Common">
@@ -544,23 +583,29 @@
   <g
      id="g7067"
      inkscape:label="GND"
-     transform="translate(-54.12208,-16.704346)">
+     transform="translate(-18.393765,-16.704346)" />
+  <g
+     id="g7349"
+     inkscape:label="GND"
+     transform="translate(19.859187,7.1160516)">
     <g
-       id="g7049"
+       id="g7337"
        inkscape:label="GND"
-       transform="translate(18.174328,-6.2140165)">
+       inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600">
       <circle
-         id="path7047"
+         id="path7335"
          inkscape:label="circle"
          style="fill:#000000;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-         cx="70"
-         cy="50"
+         cx="0"
+         cy="20"
          r="1" />
     </g>
     <g
-       transform="matrix(0.739645,0,0,-0.739645,-110.38462,399.49213)"
+       transform="matrix(0.739645,0,0,-0.739645,-185.53227,375.422)"
        ns0:preamble="C:\\Users\\Marcelo\\AppData\\Roaming\\inkscape\\extensions/textextLib/CircuitSymbolsLatexPreamble.tex"
-       ns0:text=" $\\textrm{24V-PLC}$"
+       ns0:text=" $\\textrm{+24V}$"
        word-spacing="normal"
        letter-spacing="normal"
        font-size-adjust="none"
@@ -570,41 +615,114 @@
        font-style="normal"
        stroke-miterlimit="10.433"
        xml:space="preserve"
-       id="g7065"
+       id="g7347"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600">
+<path
+   id="path7339"
+   style="fill:#000000;stroke-width:0"
+   d="m 227.51,479.52 h 2.78 c 0.14,0 0.33,0 0.33,0.2 0,0.2 -0.19,0.2 -0.33,0.2 h -2.78 v 2.78 c 0,0.14 0,0.33 -0.2,0.33 -0.2,0 -0.2,-0.19 -0.2,-0.33 v -2.78 h -2.79 c -0.14,0 -0.33,0 -0.33,-0.2 0,-0.2 0.19,-0.2 0.33,-0.2 h 2.79 v -2.78 c 0,-0.14 0,-0.33 0.2,-0.33 0.2,0 0.2,0.19 0.2,0.33 z"
+   inkscape:connector-curvature="0" />
+<path
+   id="path7341"
+   style="fill:#000000;stroke-width:0"
+   d="m 232.45,478 1.05,1.02 c 1.56,1.37 2.16,1.91 2.16,2.9 0,1.14 -0.9,1.93 -2.12,1.93 -1.12,0 -1.86,-0.91 -1.86,-1.8 0,-0.55 0.5,-0.55 0.53,-0.55 0.17,0 0.52,0.12 0.52,0.52 0,0.26 -0.18,0.52 -0.53,0.52 -0.08,0 -0.1,0 -0.13,-0.01 0.23,0.64 0.77,1.01 1.34,1.01 0.91,0 1.34,-0.8 1.34,-1.62 0,-0.79 -0.5,-1.58 -1.05,-2.19 l -1.91,-2.13 c -0.11,-0.11 -0.11,-0.13 -0.11,-0.37 h 3.7 l 0.28,1.73 h -0.25 c -0.05,-0.29 -0.12,-0.73 -0.22,-0.88 C 235.12,478 234.46,478 234.24,478 Z"
+   inkscape:connector-curvature="0" />
+<path
+   id="path7343"
+   style="fill:#000000;stroke-width:0"
+   d="m 239.09,478.87 v -0.86 c 0,-0.36 -0.02,-0.47 -0.75,-0.47 h -0.21 v -0.31 c 0.41,0.04 0.92,0.04 1.34,0.04 0.42,0 0.95,0 1.36,-0.04 v 0.31 h -0.21 c -0.74,0 -0.76,0.11 -0.76,0.47 v 0.86 h 1 v 0.31 h -1 v 4.52 c 0,0.2 0,0.26 -0.16,0.26 -0.09,0 -0.12,0 -0.2,-0.12 l -3.06,-4.66 h 0.28 l 2.43,3.71 v -3.71 h -2.43 -0.28 v -0.31 z"
+   inkscape:connector-curvature="0" />
+<path
+   id="path7345"
+   style="fill:#000000;stroke-width:0"
+   d="m 247.34,483.05 0.01,0.03 0.01,0.03 0.02,0.04 0.02,0.03 0.01,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.03,0.03 0.02,0.03 0.03,0.02 0.03,0.03 0.03,0.02 0.03,0.02 0.03,0.03 0.03,0.02 0.04,0.02 0.04,0.01 0.04,0.02 0.04,0.02 0.04,0.01 0.05,0.02 0.04,0.01 0.05,0.01 0.05,0.01 0.06,0.01 h 0.05 l 0.06,0.01 h 0.06 0.06 v 0.31 c -0.31,-0.02 -0.71,-0.03 -0.96,-0.03 -0.3,0 -0.88,0.02 -1.14,0.03 v -0.31 c 0.52,-0.01 0.73,-0.27 0.73,-0.5 0,-0.07 -0.03,-0.13 -0.05,-0.19 l -1.83,-4.79 -1.9,5.01 c -0.06,0.14 -0.06,0.16 -0.06,0.18 0,0.29 0.57,0.29 0.81,0.29 v 0.31 c -0.35,-0.03 -1.04,-0.03 -1.42,-0.03 -0.48,0 -0.91,0.02 -1.27,0.03 v -0.31 c 0.65,0 0.84,0 0.98,-0.38 l 2.31,-6.1 c 0.07,-0.18 0.12,-0.21 0.25,-0.21 0.17,0 0.19,0.05 0.24,0.18 z"
+   inkscape:connector-curvature="0" />
+</g>  </g>
+  <g
+     id="g7478"
+     inkscape:label="Switch"
+     transform="translate(20.16976,7.1453256)"
+     inkscape:export-filename="C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 3\Leandro\Pedal_AcopleEntrada.png"
+     inkscape:export-xdpi="600"
+     inkscape:export-ydpi="600">
+    <g
+       id="g7464"
+       inkscape:label="Switch">
+      <path
+         id="path7454"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 0,20 H 15"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path7456"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 50,20 H 35"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path7458"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="M 15,20 35,12"
+         inkscape:connector-curvature="0" />
+      <circle
+         id="path7460"
+         inkscape:label="circle"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         cx="35"
+         cy="20"
+         r="1.2" />
+      <circle
+         id="path7462"
+         inkscape:label="circle"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.69999999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         cx="15"
+         cy="20"
+         r="1.2" />
+    </g>
+    <g
+       transform="matrix(0.739645,0,0,-0.739645,-153.04358,363.64745)"
+       ns0:preamble="C:\\Users\\Marcelo\\AppData\\Roaming\\inkscape\\extensions/textextLib/CircuitSymbolsLatexPreamble.tex"
+       ns0:text=" $PEDAL$"
+       word-spacing="normal"
+       letter-spacing="normal"
+       font-size-adjust="none"
+       font-stretch="normal"
+       font-weight="normal"
+       font-variant="normal"
+       font-style="normal"
+       stroke-miterlimit="10.433"
+       xml:space="preserve"
+       id="g7476"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
 <path
-   id="path7051"
+   id="path7466"
    style="fill:#000000;stroke-width:0"
-   d="m 224.7,478 1.06,1.02 c 1.55,1.37 2.15,1.91 2.15,2.9 0,1.14 -0.9,1.93 -2.12,1.93 -1.12,0 -1.86,-0.91 -1.86,-1.8 0,-0.55 0.5,-0.55 0.53,-0.55 0.17,0 0.52,0.12 0.52,0.52 0,0.26 -0.18,0.52 -0.53,0.52 -0.08,0 -0.1,0 -0.13,-0.01 0.23,0.64 0.77,1.01 1.35,1.01 0.9,0 1.33,-0.8 1.33,-1.62 0,-0.79 -0.5,-1.58 -1.04,-2.19 l -1.92,-2.13 c -0.11,-0.11 -0.11,-0.13 -0.11,-0.37 h 3.7 l 0.28,1.73 h -0.25 c -0.05,-0.29 -0.12,-0.73 -0.22,-0.88 C 227.37,478 226.71,478 226.49,478 Z"
+   d="m 226.45,480.37 0.04,0.26 0.68,2.7 c 0.09,0.35 0.11,0.38 0.54,0.38 h 0.96 c 0.82,0 1.35,-0.27 1.35,-0.95 0,-0.39 -0.2,-1.24 -0.59,-1.6 -0.49,-0.45 -1.09,-0.53 -1.53,-0.53 h -1.41 l -0.04,-0.26 h 1.7 c 1.42,0 2.8,1.04 2.8,2.15 0,0.77 -0.66,1.5 -1.96,1.5 h -3.23 c -0.19,0 -0.3,0 -0.3,-0.19 0,-0.12 0.09,-0.12 0.29,-0.12 0.13,0 0.3,-0.01 0.42,-0.02 0.16,-0.02 0.22,-0.05 0.22,-0.16 0,-0.04 -0.01,-0.07 -0.04,-0.19 l -1.33,-5.33 c -0.1,-0.39 -0.12,-0.47 -0.91,-0.47 -0.17,0 -0.28,0 -0.28,-0.19 0,-0.12 0.12,-0.12 0.15,-0.12 0.28,0 0.99,0.04 1.27,0.04 0.21,0 0.43,-0.01 0.63,-0.01 0.22,0 0.44,-0.03 0.65,-0.03 0.07,0 0.2,0 0.2,0.2 0,0.11 -0.09,0.11 -0.28,0.11 -0.36,0 -0.65,0 -0.65,0.18 0,0.06 0.02,0.11 0.04,0.17 z"
    inkscape:connector-curvature="0" />
 <path
-   id="path7053"
+   id="path7468"
    style="fill:#000000;stroke-width:0"
-   d="m 231.35,478.87 v -0.86 c 0,-0.36 -0.03,-0.47 -0.76,-0.47 h -0.21 v -0.31 c 0.41,0.04 0.92,0.04 1.34,0.04 0.42,0 0.95,0 1.36,-0.04 v 0.31 h -0.21 c -0.74,0 -0.76,0.11 -0.76,0.47 v 0.86 h 1 v 0.31 h -1 v 4.52 c 0,0.2 0,0.26 -0.16,0.26 -0.09,0 -0.12,0 -0.2,-0.12 l -3.06,-4.66 h 0.28 l 2.43,3.71 v -3.71 h -2.43 -0.28 v -0.31 z"
+   d="m 238.27,479.55 v 0 l 0.01,0.01 v 0.01 l 0.01,0.01 v 0.01 0.01 l 0.01,0.01 v 0.01 l 0.01,0.01 v 0.01 0 0 0.01 0 l 0.01,0.01 v 0 0.01 0 0 0.01 0 0 0 0.01 0 c 0,0.01 0,0.11 -0.12,0.11 -0.09,0 -0.11,-0.06 -0.13,-0.12 -0.64,-1.47 -1.01,-2.14 -2.72,-2.14 h -1.45 c -0.14,0 -0.16,0 -0.22,0.01 -0.1,0.01 -0.13,0.02 -0.13,0.1 0,0.03 0,0.05 0.05,0.23 l 0.67,2.71 h 0.99 c 0.85,0 0.85,-0.21 0.85,-0.45 0,-0.07 0,-0.19 -0.07,-0.49 -0.02,-0.05 -0.03,-0.08 -0.03,-0.11 0,-0.05 0.04,-0.11 0.13,-0.11 0.08,0 0.11,0.05 0.15,0.2 l 0.57,2.32 c 0,0.06 -0.05,0.11 -0.12,0.11 -0.09,0 -0.11,-0.06 -0.14,-0.18 -0.21,-0.75 -0.39,-0.98 -1.31,-0.98 h -0.94 l 0.6,2.4 c 0.09,0.34 0.1,0.38 0.54,0.38 h 1.41 c 1.21,0 1.51,-0.29 1.51,-1.1 0,-0.24 0,-0.26 -0.04,-0.53 0,-0.06 -0.01,-0.13 -0.01,-0.18 0,-0.05 0.03,-0.11 0.12,-0.11 0.11,0 0.12,0.06 0.14,0.24 l 0.2,1.72 c 0.03,0.27 -0.02,0.27 -0.27,0.27 h -5.03 c -0.2,0 -0.3,0 -0.3,-0.2 0,-0.11 0.09,-0.11 0.28,-0.11 0.37,0 0.65,0 0.65,-0.18 0,-0.04 0,-0.06 -0.05,-0.23 l -1.32,-5.26 c -0.1,-0.39 -0.12,-0.47 -0.91,-0.47 -0.17,0 -0.28,0 -0.28,-0.19 0,-0.12 0.09,-0.12 0.28,-0.12 h 5.18 c 0.23,0 0.24,0.01 0.31,0.17 z"
    inkscape:connector-curvature="0" />
 <path
-   id="path7055"
+   id="path7470"
    style="fill:#000000;stroke-width:0"
-   d="m 239.59,483.05 0.01,0.03 0.01,0.03 0.02,0.04 0.02,0.03 0.01,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.02,0.03 0.03,0.03 0.02,0.03 0.03,0.02 0.03,0.03 0.03,0.02 0.03,0.02 0.03,0.03 0.04,0.02 0.03,0.02 0.04,0.01 0.04,0.02 0.04,0.02 0.04,0.01 0.05,0.02 0.04,0.01 0.05,0.01 0.06,0.01 0.05,0.01 h 0.05 l 0.06,0.01 h 0.06 0.06 v 0.31 c -0.3,-0.02 -0.7,-0.03 -0.96,-0.03 -0.3,0 -0.88,0.02 -1.14,0.03 v -0.31 c 0.52,-0.01 0.73,-0.27 0.73,-0.5 0,-0.07 -0.03,-0.13 -0.05,-0.19 l -1.83,-4.79 -1.9,5.01 c -0.06,0.14 -0.06,0.16 -0.06,0.18 0,0.29 0.57,0.29 0.82,0.29 v 0.31 c -0.36,-0.03 -1.05,-0.03 -1.43,-0.03 -0.48,0 -0.91,0.02 -1.27,0.03 v -0.31 c 0.65,0 0.84,0 0.98,-0.38 l 2.32,-6.1 c 0.07,-0.18 0.11,-0.21 0.24,-0.21 0.17,0 0.19,0.05 0.24,0.18 z"
-   inkscape:connector-curvature="0" />
-<polygon
-   id="polygon7057"
-   style="fill:#000000;stroke-width:0"
-   points="243.62,479.67 240.98,479.67 240.98,479.09 243.62,479.09 " />
-<path
-   id="path7059"
-   style="fill:#000000;stroke-width:0"
-   d="m 246.45,480.37 -0.03,0.26 v 2.69 c 0,0.32 0.02,0.39 0.49,0.39 h 0.89 c 1.58,0 1.58,-1.05 1.58,-1.54 0,-0.47 0,-1.54 -1.58,-1.54 h -1.38 l 0.03,-0.26 h 1.69 c 1.19,0 2.27,0.81 2.27,1.8 0,0.98 -0.99,1.85 -2.35,1.85 h -3.52 v -0.31 h 0.23 c 0.77,0 0.79,-0.11 0.79,-0.47 v -5.23 c 0,-0.36 -0.02,-0.47 -0.79,-0.47 h -0.23 v -0.31 c 0.34,0.04 1.08,0.04 1.46,0.04 0.38,0 1.13,0 1.48,-0.04 v 0.31 h -0.24 c -0.77,0 -0.79,0.11 -0.79,0.47 z"
+   d="m 240.73,478.01 -0.01,-0.04 -0.01,-0.03 -0.01,-0.03 v -0.03 l -0.01,-0.03 -0.01,-0.03 -0.01,-0.02 -0.01,-0.03 -0.01,-0.02 -0.02,-0.02 -0.01,-0.02 -0.01,-0.02 -0.02,-0.02 -0.02,-0.01 -0.01,-0.02 -0.03,-0.01 -0.02,-0.01 -0.02,-0.01 -0.03,-0.01 -0.03,-0.01 -0.03,-0.01 h -0.02 l -0.02,-0.01 h -0.02 -0.02 l -0.02,-0.01 h -0.02 -0.02 -0.02 l -0.02,-0.01 h -0.03 -0.02 -0.03 -0.03 -0.03 -0.02 -0.03 l -0.04,-0.01 h -0.03 -0.03 -0.04 -0.03 -0.04 c -0.17,0 -0.28,0 -0.28,-0.19 0,-0.12 0.09,-0.12 0.28,-0.12 h 3.3 l -0.18,0.31 h -1.12 c -0.14,0 -0.16,0 -0.22,0.01 -0.1,0.01 -0.13,0.02 -0.13,0.1 0,0.03 0,0.05 0.05,0.23 l 1.36,5.45 c 0.09,0.35 0.11,0.38 0.54,0.38 h 1.07 c 0.98,0 1.8,-0.53 1.8,-1.84 0,-0.48 -0.19,-2.11 -1.04,-3.2 -0.29,-0.37 -1.08,-1.13 -2.31,-1.13 l 0.18,-0.31 c 2.08,0 4.04,2.1 4.04,4.28 0,1.4 -0.84,2.51 -2.34,2.51 h -3.35 c -0.19,0 -0.3,0 -0.3,-0.19 0,-0.12 0.09,-0.12 0.29,-0.12 0.13,0 0.31,-0.01 0.43,-0.02 0.16,-0.02 0.22,-0.05 0.22,-0.16 0,-0.04 -0.01,-0.07 -0.04,-0.19 z"
    inkscape:connector-curvature="0" />
 <path
-   id="path7061"
+   id="path7472"
    style="fill:#000000;stroke-width:0"
-   d="m 256.77,479.8 h -0.25 c -0.11,-1.01 -0.25,-2.26 -2,-2.26 h -0.82 c -0.47,0 -0.49,0.07 -0.49,0.4 v 5.29 c 0,0.34 0,0.48 0.95,0.48 h 0.33 v 0.31 c -0.36,-0.03 -1.27,-0.03 -1.68,-0.03 -0.39,0 -1.16,0 -1.51,0.03 v -0.31 h 0.24 c 0.76,0 0.78,-0.11 0.78,-0.47 v -5.23 c 0,-0.36 -0.02,-0.47 -0.78,-0.47 h -0.24 v -0.31 h 5.19 z"
+   d="m 249.45,478.38 -0.04,-0.06 -0.04,-0.06 -0.03,-0.06 -0.04,-0.05 -0.04,-0.05 -0.04,-0.04 -0.03,-0.05 -0.04,-0.04 -0.04,-0.04 -0.04,-0.04 -0.03,-0.03 -0.04,-0.03 -0.04,-0.03 -0.04,-0.03 -0.03,-0.02 -0.04,-0.03 -0.04,-0.02 -0.04,-0.02 -0.04,-0.02 -0.03,-0.02 -0.04,-0.01 -0.04,-0.01 -0.04,-0.02 -0.04,-0.01 -0.04,-0.01 -0.04,-0.01 h -0.04 l -0.04,-0.01 -0.08,-0.01 -0.08,-0.01 c -0.12,-0.01 -0.21,-0.01 -0.21,-0.2 0,-0.05 0.05,-0.11 0.13,-0.11 0.27,0 0.58,0.04 0.86,0.04 0.33,0 0.68,-0.04 0.99,-0.04 0.06,0 0.19,0 0.19,0.19 0,0.11 -0.08,0.12 -0.16,0.12 -0.22,0.02 -0.46,0.1 -0.46,0.35 0,0.12 0.06,0.23 0.14,0.37 l 0.75,1.27 h 2.51 l -0.03,0.31 h -2.29 l 1.97,3.28 0.32,-3.28 0.03,-0.31 c 0.02,-0.21 0.16,-1.56 0.16,-1.66 0,-0.3 -0.52,-0.33 -0.72,-0.33 -0.14,0 -0.24,0 -0.24,-0.2 0,-0.11 0.12,-0.11 0.14,-0.11 0.41,0 0.84,0.04 1.25,0.04 0.24,0 0.87,-0.04 1.12,-0.04 0.06,0 0.18,0 0.18,0.2 0,0.11 -0.1,0.11 -0.23,0.11 -0.62,0 -0.62,0.07 -0.65,0.36 l -0.6,6.21 c -0.02,0.2 -0.02,0.24 -0.19,0.24 -0.16,0 -0.2,-0.07 -0.26,-0.17 z"
    inkscape:connector-curvature="0" />
 <path
-   id="path7063"
+   id="path7474"
    style="fill:#000000;stroke-width:0"
-   d="m 257.75,480.63 0.01,-0.19 0.01,-0.19 0.02,-0.18 0.04,-0.18 0.04,-0.18 0.04,-0.18 0.06,-0.16 0.06,-0.17 0.08,-0.16 0.07,-0.16 0.09,-0.15 0.09,-0.15 0.1,-0.14 0.11,-0.13 0.11,-0.13 0.11,-0.13 0.12,-0.12 0.13,-0.11 0.13,-0.1 0.14,-0.1 0.14,-0.09 0.15,-0.09 0.15,-0.08 0.15,-0.07 0.15,-0.06 0.16,-0.06 0.17,-0.04 0.16,-0.04 0.17,-0.03 0.17,-0.03 0.17,-0.01 h 0.17 c 1.63,0 2.61,1.38 2.61,2.53 0,0.1 0,0.17 -0.13,0.17 -0.11,0 -0.11,-0.06 -0.12,-0.16 -0.08,-1.42 -1.15,-2.24 -2.24,-2.24 -0.61,0 -2.56,0.34 -2.56,3.3 0,2.97 1.94,3.31 2.55,3.31 1.09,0 1.98,-0.9 2.18,-2.35 0.02,-0.14 0.02,-0.17 0.16,-0.17 0.16,0 0.16,0.03 0.16,0.24 V 484 c 0,0.17 0,0.24 -0.11,0.24 -0.04,0 -0.08,0 -0.16,-0.12 l -0.5,-0.74 c -0.37,0.36 -0.88,0.86 -1.84,0.86 -1.86,0 -3.47,-1.58 -3.47,-3.61 z"
+   d="m 258.86,483.24 0.01,0.04 0.01,0.03 0.01,0.03 0.01,0.03 0.01,0.03 v 0.02 l 0.01,0.03 0.01,0.02 0.02,0.02 0.01,0.02 0.01,0.02 0.02,0.02 0.02,0.02 0.02,0.01 0.02,0.02 0.02,0.01 0.03,0.02 0.03,0.01 0.03,0.01 0.04,0.01 h 0.02 l 0.02,0.01 h 0.02 l 0.02,0.01 h 0.02 0.02 l 0.03,0.01 h 0.02 0.03 0.03 l 0.02,0.01 h 0.03 0.03 0.03 l 0.04,0.01 h 0.03 0.03 0.04 0.04 0.04 0.03 0.05 0.04 0.04 c 0.3,0 0.38,0 0.38,0.19 0,0.12 -0.11,0.12 -0.16,0.12 -0.33,0 -1.15,-0.03 -1.48,-0.03 -0.3,0 -1.02,0.03 -1.32,0.03 -0.07,0 -0.19,0 -0.19,-0.2 0,-0.11 0.09,-0.11 0.28,-0.11 0.02,0 0.21,0 0.38,-0.02 0.18,-0.02 0.27,-0.03 0.27,-0.16 0,-0.04 -0.01,-0.07 -0.04,-0.19 l -1.34,-5.33 c -0.1,-0.39 -0.12,-0.47 -0.91,-0.47 -0.17,0 -0.27,0 -0.27,-0.2 0,-0.11 0.09,-0.11 0.27,-0.11 h 4.62 c 0.24,0 0.25,0 0.31,0.17 l 0.79,2.15 c 0.04,0.11 0.04,0.13 0.04,0.14 0,0.04 -0.03,0.11 -0.12,0.11 -0.09,0 -0.1,-0.05 -0.17,-0.21 -0.34,-0.92 -0.78,-2.05 -2.51,-2.05 h -0.93 c -0.14,0 -0.16,0 -0.22,0.01 -0.1,0.01 -0.13,0.02 -0.13,0.1 0,0.03 0,0.05 0.05,0.23 z"
    inkscape:connector-curvature="0" />
 </g>  </g>
 </svg>
