@@ -58,6 +58,23 @@ GenerateClassCluster=0
 DocumentUniqueId=MTDNUUGZ
 
 [Document2]
+DocumentPath=Fuente5VDC.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FPLEQXBN
+
+[Document3]
 DocumentPath=Fuente3.3VDC.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -74,7 +91,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GKSHOATM
 
-[Document3]
+[Document4]
 DocumentPath=ComandosExt.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -91,7 +108,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OFMKKZJV
 
-[Document4]
+[Document5]
 DocumentPath=EntradasAnalogicas.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -107,6 +124,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AKEZQQWA
+
+[Document6]
+DocumentPath=SalidasDigitales.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BMFQJHPN
 
 [Configuration1]
 Name=Sources

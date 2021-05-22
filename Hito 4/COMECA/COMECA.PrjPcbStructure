@@ -1,4 +1,6 @@
-Record=TopLevelDocument|FileName=ComandosExt.SchDoc|SheetNumber=3
-Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=EntradasAnalogicas.SchDoc|SheetNumber=4
-Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=Fuente3.3VDC.SchDoc|SheetNumber=2
+Record=TopLevelDocument|FileName=ComandosExt.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=EntradasAnalogicas.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=Fuente3.3VDC.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=Fuente5VDC.SchDoc|SheetNumber=2
 Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=Fuente24VDC.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=ComandosExt.SchDoc|FileName=SalidasDigitales.SchDoc|SheetNumber=6
