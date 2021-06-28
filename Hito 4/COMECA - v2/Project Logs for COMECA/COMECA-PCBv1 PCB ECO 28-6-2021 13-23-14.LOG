@@ -1,0 +1,16 @@
+Added Component: Designator=RA1(RES400)
+Added Component: Designator=RA2(RES400)
+Added Component: Designator=RA3(RES400)
+Added Component: Designator=RA4(RES400)
+Added Pin To Net: NetName=ANALOG_GND_A Pin=RA1-1
+Added Pin To Net: NetName=NetDA1_2 Pin=RA1-2
+Added Pin To Net: NetName=ANALOG_GND_A Pin=RA2-1
+Added Pin To Net: NetName=NetDA2_2 Pin=RA2-2
+Added Pin To Net: NetName=ANALOG_GND_A Pin=RA3-1
+Added Pin To Net: NetName=NetDA3_2 Pin=RA3-2
+Added Pin To Net: NetName=ANALOG_GND_A Pin=RA4-1
+Added Pin To Net: NetName=NetDA4_2 Pin=RA4-2
+Added Member To Class: ClassName=U_EntradasAnalogicas Member=Component RA1 150
+Added Member To Class: ClassName=U_EntradasAnalogicas Member=Component RA2 150
+Added Member To Class: ClassName=U_EntradasAnalogicas Member=Component RA3 150
+Added Member To Class: ClassName=U_EntradasAnalogicas Member=Component RA4 150
