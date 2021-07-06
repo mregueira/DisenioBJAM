@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=DOUT_B Pin=JE2-23
-Removed Pin From Net: NetName=DIN_B Pin=JE3-3
-Removed Pin From Net: NetName=CS_B Pin=JE3-4
-Removed Pin From Net: NetName=DCLK_B Pin=JE3-15
-Added Pin To Net: NetName=DIN_B Pin=JE2-23
-Added Pin To Net: NetName=DOUT_B Pin=JE3-3
-Added Pin To Net: NetName=DCLK_B Pin=JE3-4
-Added Pin To Net: NetName=CS_B Pin=JE3-15
