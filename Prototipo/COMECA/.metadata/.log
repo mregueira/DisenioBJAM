@@ -1,0 +1,21 @@
+!SESSION 2021-07-21 16:53:17.082 -----------------------------------------------
+eclipse.buildId=Version 1.6.0
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-07-21 16:53:28.245
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-07-21 16:53:28.287
+!MESSAGE Log4j initialized with config file C:\DisenioBJAM\Prototipo\COMECA\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-07-21 16:53:35.298
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-07-21 16:53:44.593
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-21 16:54:35.814
+!MESSAGE Indexed 'COMECA' (21 sources, 81 headers) in 2.14 sec: 4,391 declarations; 17,544 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
