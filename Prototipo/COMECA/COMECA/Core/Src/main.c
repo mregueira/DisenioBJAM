@@ -22,16 +22,40 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+typedef enum {
+    READ_ANALOG_INPUT,
+    SET_DIGITAL_OUTPUT
+} received_frame_t;
+
+typedef enum {
+    CALIPER_MEASURE,
+    ANALOG_IN_MEASURE,
+    INCREMENT_COUNTER,
+    WARNING_NOT_VALID_CALIPER_MEASURE,
+    RETRY_ANALOG_IN_MEASURE
+} send_frame_t;
 
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define DIG_OUT_1_PORT_AND_PIN GPIOC,GPIO_PIN_9
+#define DIG_OUT_1(x) DIG_OUT_1_PORT_AND_PIN,x
+
+#define DIG_OUT_2_PORT_AND_PIN GPIOC,GPIO_PIN_7
+#define DIG_OUT_2(x) DIG_OUT_2_PORT_AND_PIN,x
+
+#define DIG_OUT_3_PORT_AND_PIN GPIOD,GPIO_PIN_15
+#define DIG_OUT_3(x) DIG_OUT_3_PORT_AND_PIN,x
+
+#define DIG_OUT_4_PORT_AND_PIN GPIOD,GPIO_PIN_13
+#define DIG_OUT_4(x) DIG_OUT_4_PORT_AND_PIN,x
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +73,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
+void testGpioPin(GPIO_TypeDef* GPIO_PORT, uint16_t GPIO_PIN);
 
 /* USER CODE END PFP */
 
@@ -86,18 +111,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-  HAL_Delay(1000);
+//  testGpioPin(DIG_OUT_1_PORT_AND_PIN);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,7 +144,12 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -139,12 +158,12 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
   {
     Error_Handler();
   }
@@ -160,21 +179,77 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PB3 */
-  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  /*Configure GPIO pin : PC9 */
+  GPIO_InitStruct.Pin = GPIO_PIN_9;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
 }
 
 /* USER CODE BEGIN 4 */
+
+
+void testGpioPin(GPIO_TypeDef* GPIO_PORT, uint16_t GPIO_PIN){
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_SET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_RESET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_SET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_RESET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_SET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(GPIO_PORT, GPIO_PIN, GPIO_PIN_RESET);
+	HAL_Delay(1000);
+}
+
+bool analogValidate(uint32_t analogData){
+	return false;
+}
+
+void AnalogInDigitalOutManager(void){
+//    uint16_t receivedFrame = HAL_ETH_GetReceivedFrame(...); // not sure, maybe read a register instead
+//    received_frame_t received_state = ETHReceiveFrameHandler(receivedFrame, &receivedData);
+    uint16_t receivedData = GPIO_PIN_SET;
+	received_frame_t received_state = SET_DIGITAL_OUTPUT;
+
+    if(received_state == READ_ANALOG_INPUT){
+        if(analogValidate(receivedData)){ // si es valido
+//            ETHSendFrameHandler(ANALOG_IN_MEASURE, &receivedData);
+        }else{
+//            ETHSendFrameHandler(RETRY_ANALOG_IN_MEASURE, NULL);
+        }
+
+    }else if(received_state == SET_DIGITAL_OUTPUT){
+    	switch()
+        HAL_GPIO_WritePin(DIG_OUT_1(boolean(receivedData)));
+    }
+}
+
+
+//void irqHandler(){
+//	// cuando llega una interrupcion
+//	AnalogInDigitalOutManager(void);
+//}
 
 /* USER CODE END 4 */
 
