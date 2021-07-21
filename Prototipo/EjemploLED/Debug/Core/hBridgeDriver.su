@@ -1,3 +1,0 @@
-hBridgeDriver.c:10:7:hBridge_Turning	16	static
-hBridgeDriver.c:30:6:hBridge_Stop	8	static
-hBridgeDriver.c:36:7:hBridge_Duty	24	static
