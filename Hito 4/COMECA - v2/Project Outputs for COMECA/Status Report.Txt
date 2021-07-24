@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [COMECA.PrjPcb]
+   Generated File[COMECA-PCBv1.TXT]
+   Generated File[COMECA-PCBv1.LDP]
+   Generated File[COMECA-PCBv1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 19:26:38 On 22/7/2021
