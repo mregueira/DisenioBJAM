@@ -71,6 +71,8 @@ typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define CAL_1_DATA GPIOE,GPIO_PIN_11
+
 #define DIG_OUT_1_PORT_AND_PIN GPIOC,GPIO_PIN_9
 #define DIG_OUT_1(x) DIG_OUT_1_PORT_AND_PIN,x
 
@@ -214,11 +216,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : CAL1_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL1_DATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(CAL1_DATA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : CAL1_REQ_Pin CAL1_CLK_Pin */
+  GPIO_InitStruct.Pin = CAL1_REQ_Pin|CAL1_CLK_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PC9 */
   GPIO_InitStruct.Pin = GPIO_PIN_9;
@@ -237,9 +252,25 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	switch(GPIO_Pin){
+	case CAL1_CLK_Pin:
+		onRisingEdgeOfClockSignal();
+		break;
+	case CAL1_REQ_Pin:
+		onRisingEdgeOfReqSignal();
+		break;
+	default:
+		break;
+	}
+}
 
 
 void testGpioPin(GPIO_TypeDef* GPIO_PORT, uint16_t GPIO_PIN){
@@ -261,11 +292,11 @@ void testGpioPin(GPIO_TypeDef* GPIO_PORT, uint16_t GPIO_PIN){
 void processBit(void){
 	if(digimatic.bit.index == 0){digimatic.frame.data = 0;}
 
-	uint8_t read_bit = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1); // TODO: CHANGE THIS PIN
+	uint8_t read_bit = HAL_GPIO_ReadPin(CAL_1_DATA);
 
 	digimatic.frame.data |= read_bit << digimatic.bit.index;
 
-	digimatic.frame.index++;
+	digimatic.bit.index++;
 }
 
 
@@ -284,7 +315,7 @@ void onRisingEdgeOfClockSignal(void){
 
 		processBit();
 
-		if(digimatic.bit.index == BITS_PER_FRAME - 1){ // tengo un frame guardado en digimatic.frame.data
+		if(digimatic.bit.index == BITS_PER_FRAME){ // tengo un frame guardado en digimatic.frame.data
 			digimatic_frames[digimatic.frame.index] = digimatic.frame.data; // lo guardo en el array
 			digimatic.frame.index++; // avanzo en array
 			digimatic.bit.index = 0; // reinicio el index de bit

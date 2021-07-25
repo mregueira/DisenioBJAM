@@ -21,6 +21,8 @@ if __name__ == '__main__':
         digits_in_binary = [bin(digit)[2:].zfill(4) for _, digit in sorted_digits]
         print(digits_in_binary)
         # todo: aca los digitos  en realidad hay que flipearlos (ej: el 5 en decimal point)
+        # edit: en realidad no, por como se envian por el analog, se flipean solos, con lo cual llega lo que
+        # mandaria el calibre
         bitstream = np.array([0]+[int(el) for el in "".join(digits_in_binary)])
         print(bitstream)
         pd.DataFrame(bitstream).to_csv("csv/"+file_name+".csv", header=False, index=False)
