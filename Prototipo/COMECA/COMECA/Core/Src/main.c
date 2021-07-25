@@ -320,6 +320,7 @@ void onRisingEdgeOfReqSignal(caliper_number curr_caliper){
 
 
 void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
+	static int test_it= 0;
 	if(digimatic[curr_caliper].caliper_state != IDLE && digimatic[curr_caliper].caliper_state != FINISHED){
 		digimatic[curr_caliper].caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
 		if(digimatic[curr_caliper].frame.index == 0){
@@ -337,6 +338,10 @@ void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
 		if(digimatic[curr_caliper].frame.index == NUMBER_OF_FRAMES){
 			digimatic[curr_caliper].frame.index = 0;
 			digimatic[curr_caliper].caliper_state = FINISHED;
+			if(test_it == 1){
+				int a = 5;
+			}
+			test_it++;
 		}
 	}
 }
