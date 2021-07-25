@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdbool.h"
+#include <string.h> // for memset
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,6 +41,32 @@ typedef enum {
     RETRY_ANALOG_IN_MEASURE
 } send_frame_t;
 
+typedef enum{
+	START, // SEND REQUEST --> SET THIS STATE; WHEN ENTERING THE CLOCK INTERRUPT FUNCTION, WE GET THE FIRST FRAME, WE SET THE STATE TO GETTING FRAMES;
+	GETTING_FRAMES, // IF I'M ON THE 1-12 FRAME THIS SHOULD BE THE STATE. WHEN ENTERING WITH FRAME NUMBER 13, AT THE END WE CHANGE THE STATE TO FINISHED; WE ALSO TRY TO SEND ALL THE DATA VIA ETHERNET
+	FINISHED, // READY TO BE READ
+	IDLE // ONCE IT'S READ --> IDLE
+} caliper_state_t;
+
+
+typedef struct {
+	uint8_t index;
+	uint8_t data;
+}bit_context_t;
+
+typedef struct {
+	uint8_t index;
+	uint8_t data;
+}frame_context_t;
+
+typedef struct{
+	bit_context_t bit;
+	frame_context_t frame;
+} digimatic_processing_t;
+
+
+typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -56,6 +83,9 @@ typedef enum {
 #define DIG_OUT_4_PORT_AND_PIN GPIOD,GPIO_PIN_13
 #define DIG_OUT_4(x) DIG_OUT_4_PORT_AND_PIN,x
 
+#define NUMBER_OF_FRAMES 13
+#define BITS_PER_FRAME 4
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -66,6 +96,11 @@ typedef enum {
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+caliper_state_t caliper_state = FINISHED;
+
+digimatic_frame_t digimatic_frames[NUMBER_OF_FRAMES];
+
+digimatic_processing_t digimatic = {.bit={.index=0, .data=0},.frame={.index=0,.data=0}};
 
 /* USER CODE END PV */
 
@@ -222,6 +257,56 @@ void testGpioPin(GPIO_TypeDef* GPIO_PORT, uint16_t GPIO_PIN){
 	HAL_Delay(1000);
 }
 
+
+void processBit(void){
+	if(digimatic.bit.index == 0){digimatic.frame.data = 0;}
+
+	uint8_t read_bit = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1); // TODO: CHANGE THIS PIN
+
+	digimatic.frame.data |= read_bit << digimatic.bit.index;
+
+	digimatic.frame.index++;
+}
+
+
+void onRisingEdgeOfReqSignal(void){
+	// esta funcion tiene sentido cuando probamos el calibre con analog
+	caliper_state = START;
+}
+
+
+void onRisingEdgeOfClockSignal(void){
+	if(caliper_state != IDLE && caliper_state != FINISHED){
+		caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
+		if(digimatic.frame.index == 0){
+			memset(&digimatic_frames, 0, NUMBER_OF_FRAMES*sizeof(digimatic_frames[0]));
+		}
+
+		processBit();
+
+		if(digimatic.bit.index == BITS_PER_FRAME - 1){ // tengo un frame guardado en digimatic.frame.data
+			digimatic_frames[digimatic.frame.index] = digimatic.frame.data; // lo guardo en el array
+			digimatic.frame.index++; // avanzo en array
+			digimatic.bit.index = 0; // reinicio el index de bit
+		}
+
+		if(digimatic.frame.index == NUMBER_OF_FRAMES){
+			digimatic.frame.index = 0;
+			caliper_state = FINISHED;
+		}
+	}
+}
+
+digimatic_frame_t* digimaticGetMeasure(void){
+	if(caliper_state == FINISHED){
+		caliper_state = IDLE;
+		return &digimatic_frames[0];
+	}else{
+		return NULL;
+	}
+}
+
+
 bool analogValidate(uint32_t analogData){
 	return false;
 }
@@ -240,8 +325,7 @@ void AnalogInDigitalOutManager(void){
         }
 
     }else if(received_state == SET_DIGITAL_OUTPUT){
-    	switch()
-        HAL_GPIO_WritePin(DIG_OUT_1(boolean(receivedData)));
+        HAL_GPIO_WritePin(DIG_OUT_1((bool)receivedData));
     }
 }
 
