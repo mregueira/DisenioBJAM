@@ -1,12 +1,12 @@
 Board Information Report
 Filename     : C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 4\COMECA - v2\COMECA-PCBv1.PcbDoc
-Date         : 22/7/2021
-Time         : 19:19:59
+Date         : 28/7/2021
+Time         : 17:28:17
 Time Elapsed : 00:00:00
 
 Routing Information
-    Routing completion, 99.54%
+    Routing completion, 100.00%
     Connections, 217
-    Connections routed, 216
-    Connections remaining, 1
+    Connections routed, 217
+    Connections remaining, 0
 count : 4
