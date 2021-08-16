@@ -1,0 +1,20 @@
+Added Component: Designator=J6A(CUI_CRJ032-1-TH)
+Add component (AddParameter): Name = "Availability"; Value = "In Stock"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/CRJ032-1-TH/CUI%20Devices/view-part/6363031/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CUI_purchase_URL"; Value = "https://www.cuidevices.com/product/interconnect/connectors/modular-connectors/rj45-connectors/crj032-1-th?utm_source=snapeda.com&utm_medium=referral&utm_campaign=snapedaBOM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "CUI Devices"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CRJ032-1-TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/CRJ032-1-TH/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CRJ032-1-TH/CUI%20Devices/view-part/6363031/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=TX+ POE Pin=J6A-1
+Added Pin To Net: NetName=TX- POE Pin=J6A-2
+Added Pin To Net: NetName=RX+ POE Pin=J6A-3
+Added Pin To Net: NetName=NetDP1_2 Pin=J6A-4
+Added Pin To Net: NetName=NetDP1_2 Pin=J6A-5
+Added Pin To Net: NetName=RX- POE Pin=J6A-6
+Added Pin To Net: NetName=NetDP1_4 Pin=J6A-7
+Added Pin To Net: NetName=NetDP1_4 Pin=J6A-8
+Added Member To Class: ClassName=U_ControladorPOE Member=Component J6A RJ45
