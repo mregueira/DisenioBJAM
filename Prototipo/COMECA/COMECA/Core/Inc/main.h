@@ -70,7 +70,6 @@ void onRisingEdgeOfClockSignal(caliper_number curr_caliper);
 #define CAL1_DATA_GPIO_Port GPIOE
 #define CAL1_REQ_Pin GPIO_PIN_13
 #define CAL1_REQ_GPIO_Port GPIOE
-#define CAL1_REQ_EXTI_IRQn EXTI15_10_IRQn
 #define CAL1_CLK_Pin GPIO_PIN_15
 #define CAL1_CLK_GPIO_Port GPIOE
 #define CAL1_CLK_EXTI_IRQn EXTI15_10_IRQn
