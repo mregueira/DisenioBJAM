@@ -1,7 +1,7 @@
 Board Information Report
 Filename     : C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Hito 4\COMECA - v2\COMECA-PCBv1.PcbDoc
 Date         : 28/7/2021
-Time         : 17:28:17
+Time         : 21:17:40
 Time Elapsed : 00:00:00
 
 Routing Information

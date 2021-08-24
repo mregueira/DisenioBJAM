@@ -1,4 +1,0 @@
-Added Component: Designator=C15(CAP300)
-Added Pin To Net: NetName=NetC1_1 Pin=C15-1
-Added Pin To Net: NetName=NetC15_2 Pin=C15-2
-Added Member To Class: ClassName=U_ControladorPOE Member=Component C15 0.1uFx100V

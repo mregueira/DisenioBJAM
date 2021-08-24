@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=GND_EXT Pin=J3B-1
-Removed Pin From Net: NetName=VCC_EXT Pin=J3B-2
-Added Pin To Net: NetName=GND_EXT Pin=J3B-25
-Added Pin To Net: NetName=VCC_EXT Pin=J3B-26
