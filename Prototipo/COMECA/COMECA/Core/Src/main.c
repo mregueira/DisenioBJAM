@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "lwip.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -107,6 +108,8 @@ typedef struct{
 
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim14;
+extern struct netif gnetif;
+
 
 /* USER CODE BEGIN PV */
 
@@ -128,6 +131,24 @@ static void MX_TIM14_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void ethernetif_notify_conn_changed(struct netif *netif)
+{
+	/* NOTE : This is function could be implemented in user file
+	 when the callback is needed,
+	 */
+	if (netif_is_link_up(netif))
+	{
+//		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
+//		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
+	}
+	else
+	{
+//		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
+//		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
+	}
+}
+
 
 /* USER CODE END 0 */
 
@@ -155,13 +176,18 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM14_Init();
+  MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim14);
+
+  ethernetif_notify_conn_changed(&gnetif);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -171,6 +197,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  MX_LWIP_Process();
   }
   /* USER CODE END 3 */
 }
@@ -260,7 +287,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET);
@@ -291,6 +321,8 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
