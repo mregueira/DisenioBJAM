@@ -1,12 +1,12 @@
 Board Information Report
 Filename     : C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Prototipo\COMECA-TestBoard\COMECA-TestBoard\COMECA-TestPCB.PcbDoc
-Date         : 29/7/2021
-Time         : 16:15:09
+Date         : 8/9/2021
+Time         : 10:46:26
 Time Elapsed : 00:00:00
 
 Routing Information
     Routing completion, 100.00%
-    Connections, 15
-    Connections routed, 15
+    Connections, 45
+    Connections routed, 45
     Connections remaining, 0
 count : 4
