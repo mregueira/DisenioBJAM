@@ -37,12 +37,7 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-typedef enum {
-	CALIPER_1,
-	CALIPER_2,
-	CALIPER_3,
-	CALIPER_4
-} caliper_number;
+
 
 /* USER CODE END ET */
 
@@ -60,9 +55,7 @@ typedef enum {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-void AnalogInDigitalOutManager(void);
-void onRisingEdgeOfReqSignal(caliper_number curr_caliper);
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper);
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

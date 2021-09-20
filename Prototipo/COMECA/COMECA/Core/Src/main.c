@@ -22,15 +22,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdbool.h"
-#include <string.h> // for memset
+
+#include "digimatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define NUMBER_OF_FRAMES 13
-
-typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
 
 typedef enum {
     READ_ANALOG_INPUT,
@@ -46,57 +43,10 @@ typedef enum {
 } send_frame_t;
 
 
-typedef enum{ // (!) don't change the order
-	IDLE,	 // ONCE IT'S READ --> IDLE
-	START, // SEND REQUEST --> SET THIS STATE; WHEN ENTERING THE CLOCK INTERRUPT FUNCTION, WE GET THE FIRST FRAME, WE SET THE STATE TO GETTING FRAMES;
-	GETTING_FRAMES, // IF I'M ON THE 1-12 FRAME THIS SHOULD BE THE STATE. WHEN ENTERING WITH FRAME NUMBER 13, AT THE END WE CHANGE THE STATE TO FINISHED; WE ALSO TRY TO SEND ALL THE DATA VIA ETHERNET
-	FINISHED // READY TO BE READ
-} caliper_state_t;
-
-
-typedef struct {
-	uint8_t index;
-	uint8_t data;
-}bit_context_t;
-
-typedef struct {
-	uint8_t index;
-	uint8_t data;
-}frame_context_t;
-
-typedef struct{
-	caliper_state_t caliper_state;
-	digimatic_frame_t frames[NUMBER_OF_FRAMES];
-	bit_context_t bit;
-	frame_context_t frame;
-} digimatic_processing_t;
-
-
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
-#define CAL_1_DATA GPIOE,GPIO_PIN_11
-#define CAL_2_DATA GPIOB,GPIO_PIN_1
-#define CAL_3_DATA GPIOA,GPIO_PIN_0
-#define CAL_4_DATA GPIOE,GPIO_PIN_4
-
-#define DIG_OUT_1_PORT_AND_PIN GPIOC,GPIO_PIN_9
-#define DIG_OUT_1(x) DIG_OUT_1_PORT_AND_PIN,x
-
-#define DIG_OUT_2_PORT_AND_PIN GPIOC,GPIO_PIN_7
-#define DIG_OUT_2(x) DIG_OUT_2_PORT_AND_PIN,x
-
-#define DIG_OUT_3_PORT_AND_PIN GPIOD,GPIO_PIN_15
-#define DIG_OUT_3(x) DIG_OUT_3_PORT_AND_PIN,x
-
-#define DIG_OUT_4_PORT_AND_PIN GPIOD,GPIO_PIN_13
-#define DIG_OUT_4(x) DIG_OUT_4_PORT_AND_PIN,x
-
-#define BITS_PER_FRAME 4
-#define NUMBER_OF_CALIPERS 4
 
 /* USER CODE END PD */
 
@@ -109,12 +59,6 @@ typedef struct{
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
-
-//digimatic_frame_t digimatic_frames[NUMBER_OF_FRAMES];
-
-//digimatic_processing_t digimatic; // = {.bit={.index=0, .data=0},.frame={.index=0,.data=0}};
-
-digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
 
 /* USER CODE END PV */
 
@@ -300,87 +244,18 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
-		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin);
-		onRisingEdgeOfReqSignal(CALIPER_1);
+		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	switch(GPIO_Pin){
 	case CAL1_CLK_Pin:
-		onRisingEdgeOfClockSignal(CALIPER_1);
+		onRisingEdgeOfClockSignal(CALIPER_1); // aca se realiza la lectura de los bits y se va guardando en el buffer
 		break;
 	default:
 		break;
-	}
-}
-
-bool getCaliperData(caliper_number curr_caliper){
-	switch(curr_caliper){
-	case CALIPER_1:
-		return HAL_GPIO_ReadPin(CAL_1_DATA);
-		break;
-	case CALIPER_2:
-		return HAL_GPIO_ReadPin(CAL_2_DATA);
-		break;
-	case CALIPER_3:
-		return HAL_GPIO_ReadPin(CAL_3_DATA);
-		break;
-	case CALIPER_4:
-		return HAL_GPIO_ReadPin(CAL_4_DATA);
-		break;
-	default:
-		return 0;
-		break;
-	}
-}
-
-
-void processBit(caliper_number curr_caliper){
-	if(digimatic[curr_caliper].bit.index == 0){digimatic[curr_caliper].frame.data = 0;}
-
-	uint8_t read_bit = getCaliperData(curr_caliper);
-
-	digimatic[curr_caliper].frame.data |= read_bit << digimatic[curr_caliper].bit.index;
-
-	digimatic[curr_caliper].bit.index++;
-}
-
-
-void onRisingEdgeOfReqSignal(caliper_number curr_caliper){
-	// esta funcion tiene sentido cuando probamos el calibre con analog
-	digimatic[curr_caliper].caliper_state = START;
-}
-
-
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
-	if(digimatic[curr_caliper].caliper_state != IDLE && digimatic[curr_caliper].caliper_state != FINISHED){
-		digimatic[curr_caliper].caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
-		if(digimatic[curr_caliper].frame.index == 0){
-			memset(&digimatic[curr_caliper].frames, 0, NUMBER_OF_FRAMES*sizeof(digimatic[curr_caliper].frames[0]));
-		}
-
-		processBit(curr_caliper);
-
-		if(digimatic[curr_caliper].bit.index == BITS_PER_FRAME){ // tengo un frame guardado en digimatic.frame.data
-			digimatic[curr_caliper].frames[digimatic[curr_caliper].frame.index] = digimatic[curr_caliper].frame.data; // lo guardo en el array
-			digimatic[curr_caliper].frame.index++; // avanzo en array
-			digimatic[curr_caliper].bit.index = 0; // reinicio el index de bit
-		}
-
-		if(digimatic[curr_caliper].frame.index == NUMBER_OF_FRAMES){
-			digimatic[curr_caliper].frame.index = 0;
-			digimatic[curr_caliper].caliper_state = FINISHED;
-		}
-	}
-}
-
-digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper){
-	if(digimatic[curr_caliper].caliper_state == FINISHED){
-		digimatic[curr_caliper].caliper_state = IDLE;
-		return &digimatic[curr_caliper].frames[0];
-	}else{
-		return NULL;
 	}
 }
 
