@@ -9,25 +9,19 @@
 
 static digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
 
+static GPIO_TypeDef * CAL_DATA_PORT_MAPPING[NUMBER_OF_CALIPERS] = {GPIOE, GPIOB, GPIOA, GPIOE};
+static uint16_t CAL_DATA_PIN_MAPPING[NUMBER_OF_CALIPERS] = {GPIO_PIN_11, GPIO_PIN_1, GPIO_PIN_0, GPIO_PIN_4};
+
+static uint16_t CAL_CLK_MAPPING[NUMBER_OF_CALIPERS] = {CAL1_CLK_Pin, CAL2_CLK_Pin, CAL3_CLK_Pin, CAL4_CLK_Pin};
+
+int getCaliperNumberGivenClockPin(uint16_t CLK_Pin){
+	int i;
+	for(i=0; i<NUMBER_OF_CALIPERS; i++) { if(CAL_CLK_MAPPING[i] == CLK_Pin){ break; } }
+	return i;
+}
 
 bool getCaliperData(caliper_number curr_caliper){
-	switch(curr_caliper){
-	case CALIPER_1:
-		return HAL_GPIO_ReadPin(CAL_1_DATA);
-		break;
-	case CALIPER_2:
-		return HAL_GPIO_ReadPin(CAL_2_DATA);
-		break;
-	case CALIPER_3:
-		return HAL_GPIO_ReadPin(CAL_3_DATA);
-		break;
-	case CALIPER_4:
-		return HAL_GPIO_ReadPin(CAL_4_DATA);
-		break;
-	default:
-		return 0;
-		break;
-	}
+	return HAL_GPIO_ReadPin(CAL_DATA_PORT_MAPPING[curr_caliper],CAL_DATA_PIN_MAPPING[curr_caliper]);
 }
 
 void processBit(caliper_number curr_caliper){

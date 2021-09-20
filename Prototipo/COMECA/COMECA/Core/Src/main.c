@@ -207,30 +207,49 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : CAL1_DATA_Pin */
-  GPIO_InitStruct.Pin = CAL1_DATA_Pin;
+  /*Configure GPIO pins : CAL4_CLK_Pin CAL2_CLK_Pin CAL1_CLK_Pin */
+  GPIO_InitStruct.Pin = CAL4_CLK_Pin|CAL2_CLK_Pin|CAL1_CLK_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : CAL4_DATA_Pin CAL1_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL4_DATA_Pin|CAL1_DATA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(CAL1_DATA_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : CAL1_REQ_Pin */
-  GPIO_InitStruct.Pin = CAL1_REQ_Pin;
+  /*Configure GPIO pins : CAL3_REQ_Pin CAL2_REQ_Pin CAL1_REQ_Pin CAL4_REQ_Pin */
+  GPIO_InitStruct.Pin = CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(CAL1_REQ_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : CAL1_CLK_Pin */
-  GPIO_InitStruct.Pin = CAL1_CLK_Pin;
+  /*Configure GPIO pin : CAL3_CLK_Pin */
+  GPIO_InitStruct.Pin = CAL3_CLK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(CAL1_CLK_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(CAL3_CLK_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CAL3_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL3_DATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CAL3_DATA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CAL2_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL2_DATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CAL2_DATA_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
@@ -244,19 +263,14 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
+		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
 		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	switch(GPIO_Pin){
-	case CAL1_CLK_Pin:
-		onRisingEdgeOfClockSignal(CALIPER_1); // aca se realiza la lectura de los bits y se va guardando en el buffer
-		break;
-	default:
-		break;
-	}
+	onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
 }
 
 

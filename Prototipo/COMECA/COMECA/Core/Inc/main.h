@@ -59,6 +59,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define CAL4_CLK_Pin GPIO_PIN_2
+#define CAL4_CLK_GPIO_Port GPIOE
+#define CAL4_DATA_Pin GPIO_PIN_4
+#define CAL4_DATA_GPIO_Port GPIOE
+#define CAL3_REQ_Pin GPIO_PIN_6
+#define CAL3_REQ_GPIO_Port GPIOE
+#define CAL3_CLK_Pin GPIO_PIN_3
+#define CAL3_CLK_GPIO_Port GPIOC
+#define CAL3_DATA_Pin GPIO_PIN_0
+#define CAL3_DATA_GPIO_Port GPIOA
+#define CAL2_DATA_Pin GPIO_PIN_1
+#define CAL2_DATA_GPIO_Port GPIOB
+#define CAL2_REQ_Pin GPIO_PIN_7
+#define CAL2_REQ_GPIO_Port GPIOE
+#define CAL2_CLK_Pin GPIO_PIN_9
+#define CAL2_CLK_GPIO_Port GPIOE
 #define CAL1_DATA_Pin GPIO_PIN_11
 #define CAL1_DATA_GPIO_Port GPIOE
 #define CAL1_REQ_Pin GPIO_PIN_13
@@ -66,6 +82,8 @@ void Error_Handler(void);
 #define CAL1_CLK_Pin GPIO_PIN_15
 #define CAL1_CLK_GPIO_Port GPIOE
 #define CAL1_CLK_EXTI_IRQn EXTI15_10_IRQn
+#define CAL4_REQ_Pin GPIO_PIN_0
+#define CAL4_REQ_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

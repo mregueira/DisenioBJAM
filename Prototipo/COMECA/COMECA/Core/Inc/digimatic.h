@@ -15,11 +15,7 @@
 
 #define BITS_PER_FRAME 4
 #define NUMBER_OF_CALIPERS 4
-//
-#define CAL_1_DATA GPIOE,GPIO_PIN_11
-#define CAL_2_DATA GPIOB,GPIO_PIN_1
-#define CAL_3_DATA GPIOA,GPIO_PIN_0
-#define CAL_4_DATA GPIOE,GPIO_PIN_4
+
 
 #define DIG_OUT_1_PORT_AND_PIN GPIOC,GPIO_PIN_9
 #define DIG_OUT_1(x) DIG_OUT_1_PORT_AND_PIN,x
@@ -76,5 +72,6 @@ void onRisingEdgeOfReqSignal(caliper_number curr_caliper);
 
 void onRisingEdgeOfClockSignal(caliper_number curr_caliper);
 
+int getCaliperNumberGivenClockPin(uint16_t CLK_Pin);
 
 #endif /* INC_DIGIMATIC_H_ */

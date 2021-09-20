@@ -1,5 +1,6 @@
-digimatic.c:13:6:getCaliperData	16	static
-digimatic.c:33:6:processBit	32	static
-digimatic.c:44:6:onRisingEdgeOfReqSignal	16	static
-digimatic.c:49:6:onRisingEdgeOfClockSignal	24	static
-digimatic.c:71:20:digimaticGetMeasure	16	static
+digimatic.c:17:5:getInverseClockMapping	24	static
+digimatic.c:23:6:getCaliperData	16	static
+digimatic.c:27:6:processBit	32	static
+digimatic.c:38:6:onRisingEdgeOfReqSignal	16	static
+digimatic.c:43:6:onRisingEdgeOfClockSignal	24	static
+digimatic.c:65:20:digimaticGetMeasure	16	static
