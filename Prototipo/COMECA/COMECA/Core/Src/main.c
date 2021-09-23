@@ -23,15 +23,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdbool.h"
-#include <string.h> // for memset
+
+#include "digimatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define NUMBER_OF_FRAMES 13
-
-typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
 
 typedef enum {
     READ_ANALOG_INPUT,
@@ -47,57 +44,10 @@ typedef enum {
 } send_frame_t;
 
 
-typedef enum{ // (!) don't change the order
-	IDLE,	 // ONCE IT'S READ --> IDLE
-	START, // SEND REQUEST --> SET THIS STATE; WHEN ENTERING THE CLOCK INTERRUPT FUNCTION, WE GET THE FIRST FRAME, WE SET THE STATE TO GETTING FRAMES;
-	GETTING_FRAMES, // IF I'M ON THE 1-12 FRAME THIS SHOULD BE THE STATE. WHEN ENTERING WITH FRAME NUMBER 13, AT THE END WE CHANGE THE STATE TO FINISHED; WE ALSO TRY TO SEND ALL THE DATA VIA ETHERNET
-	FINISHED // READY TO BE READ
-} caliper_state_t;
-
-
-typedef struct {
-	uint8_t index;
-	uint8_t data;
-}bit_context_t;
-
-typedef struct {
-	uint8_t index;
-	uint8_t data;
-}frame_context_t;
-
-typedef struct{
-	caliper_state_t caliper_state;
-	digimatic_frame_t frames[NUMBER_OF_FRAMES];
-	bit_context_t bit;
-	frame_context_t frame;
-} digimatic_processing_t;
-
-
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
-#define CAL_1_DATA GPIOE,GPIO_PIN_11
-#define CAL_2_DATA GPIOB,GPIO_PIN_1
-#define CAL_3_DATA GPIOA,GPIO_PIN_0
-#define CAL_4_DATA GPIOE,GPIO_PIN_4
-
-#define DIG_OUT_1_PORT_AND_PIN GPIOC,GPIO_PIN_9
-#define DIG_OUT_1(x) DIG_OUT_1_PORT_AND_PIN,x
-
-#define DIG_OUT_2_PORT_AND_PIN GPIOC,GPIO_PIN_7
-#define DIG_OUT_2(x) DIG_OUT_2_PORT_AND_PIN,x
-
-#define DIG_OUT_3_PORT_AND_PIN GPIOD,GPIO_PIN_15
-#define DIG_OUT_3(x) DIG_OUT_3_PORT_AND_PIN,x
-
-#define DIG_OUT_4_PORT_AND_PIN GPIOD,GPIO_PIN_13
-#define DIG_OUT_4(x) DIG_OUT_4_PORT_AND_PIN,x
-
-#define BITS_PER_FRAME 4
-#define NUMBER_OF_CALIPERS 4
 
 /* USER CODE END PD */
 
@@ -108,16 +58,8 @@ typedef struct{
 
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim14;
-extern struct netif gnetif;
-
 
 /* USER CODE BEGIN PV */
-
-//digimatic_frame_t digimatic_frames[NUMBER_OF_FRAMES];
-
-//digimatic_processing_t digimatic; // = {.bit={.index=0, .data=0},.frame={.index=0,.data=0}};
-
-digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
 
 /* USER CODE END PV */
 
@@ -131,24 +73,6 @@ static void MX_TIM14_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-void ethernetif_notify_conn_changed(struct netif *netif)
-{
-	/* NOTE : This is function could be implemented in user file
-	 when the callback is needed,
-	 */
-	if (netif_is_link_up(netif))
-	{
-//		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_SET);
-//		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
-	}
-	else
-	{
-//		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, GPIO_PIN_RESET);
-//		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_SET);
-	}
-}
-
 
 /* USER CODE END 0 */
 
@@ -186,8 +110,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim14);
 
-  ethernetif_notify_conn_changed(&gnetif);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -198,6 +120,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  MX_LWIP_Process();
+
   }
   /* USER CODE END 3 */
 }
@@ -218,14 +141,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 168;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 12;
+  RCC_OscInitStruct.PLL.PLLN = 96;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
@@ -237,13 +159,14 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
+  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
 }
 
 /**
@@ -287,32 +210,59 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
+  __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : CAL1_DATA_Pin */
-  GPIO_InitStruct.Pin = CAL1_DATA_Pin;
+  /*Configure GPIO pins : CAL4_CLK_Pin CAL2_CLK_Pin CAL1_CLK_Pin */
+  GPIO_InitStruct.Pin = CAL4_CLK_Pin|CAL2_CLK_Pin|CAL1_CLK_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : CAL4_DATA_Pin CAL1_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL4_DATA_Pin|CAL1_DATA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(CAL1_DATA_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : CAL1_REQ_Pin */
-  GPIO_InitStruct.Pin = CAL1_REQ_Pin;
+  /*Configure GPIO pins : CAL3_REQ_Pin CAL2_REQ_Pin CAL1_REQ_Pin CAL4_REQ_Pin */
+  GPIO_InitStruct.Pin = CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(CAL1_REQ_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : CAL1_CLK_Pin */
-  GPIO_InitStruct.Pin = CAL1_CLK_Pin;
+  /*Configure GPIO pin : CAL3_CLK_Pin */
+  GPIO_InitStruct.Pin = CAL3_CLK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(CAL1_CLK_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(CAL3_CLK_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CAL3_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL3_DATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CAL3_DATA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CAL2_DATA_Pin */
+  GPIO_InitStruct.Pin = CAL2_DATA_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CAL2_DATA_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
@@ -326,93 +276,14 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
-		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin);
-		onRisingEdgeOfReqSignal(CALIPER_1);
+		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
+		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	switch(GPIO_Pin){
-	case CAL1_CLK_Pin:
-		onRisingEdgeOfClockSignal(CALIPER_1);
-		break;
-	default:
-		break;
-	}
-}
-
-bool getCaliperData(caliper_number curr_caliper){
-	switch(curr_caliper){
-	case CALIPER_1:
-		return HAL_GPIO_ReadPin(CAL_1_DATA);
-		break;
-	case CALIPER_2:
-		return HAL_GPIO_ReadPin(CAL_2_DATA);
-		break;
-	case CALIPER_3:
-		return HAL_GPIO_ReadPin(CAL_3_DATA);
-		break;
-	case CALIPER_4:
-		return HAL_GPIO_ReadPin(CAL_4_DATA);
-		break;
-	default:
-		return 0;
-		break;
-	}
-}
-
-
-void processBit(caliper_number curr_caliper){
-	if(digimatic[curr_caliper].bit.index == 0){digimatic[curr_caliper].frame.data = 0;}
-
-	uint8_t read_bit = getCaliperData(curr_caliper);
-
-	digimatic[curr_caliper].frame.data |= read_bit << digimatic[curr_caliper].bit.index;
-
-	digimatic[curr_caliper].bit.index++;
-}
-
-
-void onRisingEdgeOfReqSignal(caliper_number curr_caliper){
-	// esta funcion tiene sentido cuando probamos el calibre con analog
-	digimatic[curr_caliper].caliper_state = START;
-}
-
-
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
-	static int test_it= 0;
-	if(digimatic[curr_caliper].caliper_state != IDLE && digimatic[curr_caliper].caliper_state != FINISHED){
-		digimatic[curr_caliper].caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
-		if(digimatic[curr_caliper].frame.index == 0){
-			memset(&digimatic[curr_caliper].frames, 0, NUMBER_OF_FRAMES*sizeof(digimatic[curr_caliper].frames[0]));
-		}
-
-		processBit(curr_caliper);
-
-		if(digimatic[curr_caliper].bit.index == BITS_PER_FRAME){ // tengo un frame guardado en digimatic.frame.data
-			digimatic[curr_caliper].frames[digimatic[curr_caliper].frame.index] = digimatic[curr_caliper].frame.data; // lo guardo en el array
-			digimatic[curr_caliper].frame.index++; // avanzo en array
-			digimatic[curr_caliper].bit.index = 0; // reinicio el index de bit
-		}
-
-		if(digimatic[curr_caliper].frame.index == NUMBER_OF_FRAMES){
-			digimatic[curr_caliper].frame.index = 0;
-			digimatic[curr_caliper].caliper_state = FINISHED;
-			if(test_it == 1){
-				int a = 5;
-			}
-			test_it++;
-		}
-	}
-}
-
-digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper){
-	if(digimatic[curr_caliper].caliper_state == FINISHED){
-		digimatic[curr_caliper].caliper_state = IDLE;
-		return &digimatic[curr_caliper].frames[0];
-	}else{
-		return NULL;
-	}
+	onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
 }
 
 
