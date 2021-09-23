@@ -1,4 +1,4 @@
-digimatic.c:17:5:getInverseClockMapping	24	static
+digimatic.c:17:5:getCaliperNumberGivenClockPin	24	static
 digimatic.c:23:6:getCaliperData	16	static
 digimatic.c:27:6:processBit	32	static
 digimatic.c:38:6:onRisingEdgeOfReqSignal	16	static

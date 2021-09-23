@@ -9,6 +9,15 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Middlewares/Third_Party/LwIP/src/netif/ppp/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/netif/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/core/ipv6/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/core/ipv4/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/core/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/apps/mqtt/subdir.mk
+-include Middlewares/Third_Party/LwIP/src/api/subdir.mk
+-include LWIP/Target/subdir.mk
+-include LWIP/App/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -37,8 +46,8 @@ $(wildcard ../makefile.targets) \
 
 BUILD_ARTIFACT_NAME := COMECA
 BUILD_ARTIFACT_EXTENSION := elf
-BUILD_ARTIFACT_PREFIX := 
-BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
+BUILD_ARTIFACT_PREFIX :=
+BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
@@ -83,7 +92,7 @@ COMECA.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) *
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) COMECA.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
@@ -96,6 +105,5 @@ warn-no-linker-script-specified:
 	@echo 'Warning: No linker script specified. Check the linker settings in the build configuration.'
 
 .PHONY: all clean dependents fail-specified-linker-script-missing warn-no-linker-script-specified
-.SECONDARY:
 
 -include ../makefile.targets
