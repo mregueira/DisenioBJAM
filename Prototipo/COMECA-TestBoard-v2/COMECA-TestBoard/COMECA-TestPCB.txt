@@ -1,7 +1,7 @@
 Board Information Report
 Filename     : C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Prototipo\COMECA-TestBoard-v2\COMECA-TestBoard\COMECA-TestPCB.PcbDoc
-Date         : 15/9/2021
-Time         : 18:06:10
+Date         : 16/9/2021
+Time         : 12:21:42
 Time Elapsed : 00:00:00
 
 Routing Information
