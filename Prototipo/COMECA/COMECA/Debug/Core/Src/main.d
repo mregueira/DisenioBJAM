@@ -59,7 +59,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h ../Core/Inc/udpClientRAW.h \
- ../Core/Inc/digimatic.h ../Core/Inc/main.h
+ ../Core/Inc/message.h ../Core/Inc/digimatic.h ../Core/Inc/main.h
 
 ../Core/Inc/main.h:
 
@@ -184,6 +184,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../LWIP/Target/ethernetif.h:
 
 ../Core/Inc/udpClientRAW.h:
+
+../Core/Inc/message.h:
 
 ../Core/Inc/digimatic.h:
 

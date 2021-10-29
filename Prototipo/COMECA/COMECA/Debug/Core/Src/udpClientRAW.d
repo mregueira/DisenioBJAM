@@ -58,7 +58,7 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
- ../Core/Inc/udpClientRAW.h
+ ../Core/Inc/ethernet.h ../Core/Inc/message.h ../Core/Inc/udpClientRAW.h
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
 
@@ -179,5 +179,9 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
+
+../Core/Inc/ethernet.h:
+
+../Core/Inc/message.h:
 
 ../Core/Inc/udpClientRAW.h:

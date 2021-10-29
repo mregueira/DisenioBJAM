@@ -25,34 +25,38 @@
 
 #include "stdio.h"
 #include "string.h"
-
+#include "ethernet.h"
 #include "udpClientRAW.h"
 
 
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
-static void udpClient_send(void);
 
 struct udp_pcb *upcb;
 char buffer[100];
-int counter = 0;
+message_t message;
 
-extern TIM_HandleTypeDef htim2;
-
-
-void PseudoHAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+static void udpClient_send_first_message(void)
 {
-	udpClient_send();
+  struct pbuf *txBuf;
+  char data[100];
+
+  int len = sprintf(data, "Success on Initializing UDP Client");
+
+  /* allocate pbuf from pool*/
+  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+
+  if (txBuf != NULL)
+  {
+    /* copy data to pbuf */
+    pbuf_take(txBuf, data, len);
+
+    /* send udp data */
+    udp_send(upcb, txBuf);
+
+    /* free pbuf */
+    pbuf_free(txBuf);
+  }
 }
-
-
-/* IMPLEMENTATION FOR UDP CLIENT :   source:https://www.geeksforgeeks.org/udp-server-client-implementation-c/
-
-1. Create UDP socket.
-2. Send message to server.
-3. Wait until response from server is received.
-4. Process reply and go back to step 2, if necessary.
-5. Close socket descriptor and exit.
-*/
 
 
 void udpClient_connect(void)
@@ -75,20 +79,23 @@ void udpClient_connect(void)
 
 	if (err == ERR_OK)
 	{
-		/* 2. Send message to server */
-		udpClient_send ();
+//		/* 2. Send message to server */
+		udpClient_send_first_message ();
 
 		/* 3. Set a receive callback for the upcb */
 		udp_recv(upcb, udp_receive_callback, NULL);
 	}
 }
 
-static void udpClient_send(void)
+
+void udpClient_custom_string(message_t message)
 {
   struct pbuf *txBuf;
   char data[100];
 
-  int len = sprintf(data, "sending UDP client message %d", counter);
+	/* Copy the message data to the txBuf */
+  strncpy (data, message.msg, message.len);
+  int len = message.len;
 
   /* allocate pbuf from pool*/
   txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
@@ -112,11 +119,18 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 	/* Copy the data from the pbuf */
 	strncpy (buffer, (char *)p->payload, p->len);
 
-	/*increment message count */
-	counter++;
+	// store the Ethernet Message
+	message.msg = buffer;
+	message.len = p-> len;
+
+	// process the received message
+	ETHonMessageReceived(message);
 
 	/* Free receive pbuf */
 	pbuf_free(p);
 }
+
+
+
 
 

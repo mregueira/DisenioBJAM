@@ -32,7 +32,8 @@
 
 typedef enum {
     READ_ANALOG_INPUT,
-    SET_DIGITAL_OUTPUT
+    SET_DIGITAL_OUTPUT,
+	INVALID_RX_FRAME
 } received_frame_t;
 
 typedef enum {
@@ -57,7 +58,6 @@ typedef enum {
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
@@ -68,7 +68,6 @@ TIM_HandleTypeDef htim14;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM14_Init(void);
-static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -109,11 +108,9 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM14_Init();
   MX_LWIP_Init();
-  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
   HAL_TIM_Base_Start_IT(&htim14);
-  HAL_TIM_Base_Start_IT(&htim2);
 
   /* USER CODE END 2 */
 
@@ -172,51 +169,6 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
-}
-
-/**
-  * @brief TIM2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM2_Init(void)
-{
-
-  /* USER CODE BEGIN TIM2_Init 0 */
-
-  /* USER CODE END TIM2_Init 0 */
-
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM2_Init 1 */
-
-  /* USER CODE END TIM2_Init 1 */
-  htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 5000-1;
-  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10000-1;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM2_Init 2 */
-
-  /* USER CODE END TIM2_Init 2 */
-
 }
 
 /**
@@ -325,9 +277,6 @@ static void MX_GPIO_Init(void)
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	if(htim == &htim2){
-		PseudoHAL_TIM_PeriodElapsedCallback(htim);
-	}
 	if(htim  == &htim14){
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
@@ -340,27 +289,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 }
 
 
-bool analogValidate(uint32_t analogData){
-	return false;
-}
 
-void AnalogInDigitalOutManager(void){
-//    uint16_t receivedFrame = HAL_ETH_GetReceivedFrame(...); // not sure, maybe read a register instead
-//    received_frame_t received_state = ETHReceiveFrameHandler(receivedFrame, &receivedData);
-    uint16_t receivedData = GPIO_PIN_SET;
-	received_frame_t received_state = SET_DIGITAL_OUTPUT;
 
-    if(received_state == READ_ANALOG_INPUT){
-        if(analogValidate(receivedData)){ // si es valido
-//            ETHSendFrameHandler(ANALOG_IN_MEASURE, &receivedData);
-        }else{
-//            ETHSendFrameHandler(RETRY_ANALOG_IN_MEASURE, NULL);
-        }
 
-    }else if(received_state == SET_DIGITAL_OUTPUT){
-        HAL_GPIO_WritePin(DIG_OUT_1((bool)receivedData));
-    }
-}
+
 
 
 //void irqHandler(){

@@ -1,0 +1,9 @@
+ethernet.c:12:6:caliperManager	16	static
+ethernet.c:22:6:destructureFrame	16	static
+ethernet.c:33:6:ETHonMessageReceived	16	static
+ethernet.c:46:6:ETHsendMessage	16	static
+ethernet.c:51:11:buildFrame	32	static
+ethernet.c:66:5:readAdc	4	static
+ethernet.c:70:6:analogValidate	16	static
+ethernet.c:74:6:AnalogInManager	40	static
+ethernet.c:86:6:DigitalOutManager	8	static
