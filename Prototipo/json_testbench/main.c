@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "ethernet.h"
 #include <assert.h>
+#include <string.h>
+#include "managers/Inc/caliperManager.h"
+#include "managers/Inc/pieceCountManager.h"
+#include "stdlib.h"
 
 message_t json_to_msg(char * filename){
     FILE *f = fopen(filename, "rb");

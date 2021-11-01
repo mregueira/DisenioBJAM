@@ -24,4 +24,6 @@ digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper);
 #include "digimatic.h"
 #endif
 
+void caliperManager(caliper_number caliperNumber);
+
 #endif //JSON_TESTBENCH_CALIPERMANAGER_H

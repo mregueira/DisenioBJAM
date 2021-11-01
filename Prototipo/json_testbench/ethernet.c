@@ -5,13 +5,10 @@
 #include "managers/Inc/analogInDigitalOutManager.h"
 
 #ifdef TESTING
-    char testBench[1000];
-
     // this should come from udpClientRAW.h
     void udpClient_custom_string(message_t msg){
-        strcpy(testBench, msg.msg);
+        strcpy(getTestBench(), msg.msg);
     }
-
 #endif
 
 void ETHsendMessage(message_t message){

@@ -3,7 +3,7 @@
 //
 #include "../Inc/pieceCountManager.h"
 
-void pieceCountManager(){
+void pieceCountManager(void){
     char str2send[100];
     message_t msg;
     msg = sendIncrementPieceCount(str2send);

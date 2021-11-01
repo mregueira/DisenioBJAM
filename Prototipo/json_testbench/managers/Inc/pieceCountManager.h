@@ -9,4 +9,6 @@
 #include "../../messageLayer.h"
 #include "../../ethernet.h"
 
+void pieceCountManager(void);
+
 #endif //JSON_TESTBENCH_PIECECOUNTMANAGER_H

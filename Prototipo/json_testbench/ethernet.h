@@ -11,17 +11,13 @@
 #define TESTING
 
 #include "message.h"
-#include "jsonGetter.h"
-#include "string.h"
-#include "caliper_number.h"
 
-#include "managers/Inc/analogInManager.h"
-#include "managers/Inc/digitalOutManager.h"
+#ifdef TESTING
+#include "testBenchVars.h"
+#endif
 
-void caliperManager(caliper_number caliperNumber);
-void pieceCountManager(void);
-void ETHonMessageReceived(message_t json);
 void ETHsendMessage(message_t message);
+void ETHonMessageReceived(message_t json);
 
 
 #endif /* SRC_ETHERNET_H_ */
