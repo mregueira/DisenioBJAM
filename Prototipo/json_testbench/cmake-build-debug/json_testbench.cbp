@@ -76,22 +76,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/caliper_number.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/CODE_TESTING.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Src/main.c">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h">
@@ -124,16 +112,28 @@
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/jsonGetter.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/messageLayer.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/ethernet.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/jsonGetter.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/messageLayer.c">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/CMakeLists.txt">

@@ -128,77 +128,29 @@ json_testbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/build
 .PHONY : json_testbench/fast
 
-ethernet.obj: ethernet.c.obj
-.PHONY : ethernet.obj
+Src/main.obj: Src/main.c.obj
+.PHONY : Src/main.obj
 
 # target to build an object file
-ethernet.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.obj
-.PHONY : ethernet.c.obj
+Src/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.obj
+.PHONY : Src/main.c.obj
 
-ethernet.i: ethernet.c.i
-.PHONY : ethernet.i
-
-# target to preprocess a source file
-ethernet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.i
-.PHONY : ethernet.c.i
-
-ethernet.s: ethernet.c.s
-.PHONY : ethernet.s
-
-# target to generate assembly for a file
-ethernet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.s
-.PHONY : ethernet.c.s
-
-jsonGetter.obj: jsonGetter.c.obj
-.PHONY : jsonGetter.obj
-
-# target to build an object file
-jsonGetter.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/jsonGetter.c.obj
-.PHONY : jsonGetter.c.obj
-
-jsonGetter.i: jsonGetter.c.i
-.PHONY : jsonGetter.i
+Src/main.i: Src/main.c.i
+.PHONY : Src/main.i
 
 # target to preprocess a source file
-jsonGetter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/jsonGetter.c.i
-.PHONY : jsonGetter.c.i
+Src/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.i
+.PHONY : Src/main.c.i
 
-jsonGetter.s: jsonGetter.c.s
-.PHONY : jsonGetter.s
-
-# target to generate assembly for a file
-jsonGetter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/jsonGetter.c.s
-.PHONY : jsonGetter.c.s
-
-main.obj: main.c.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.obj
-.PHONY : main.c.obj
-
-main.i: main.c.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-.PHONY : main.s
+Src/main.s: Src/main.c.s
+.PHONY : Src/main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.s
-.PHONY : main.c.s
+Src/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.s
+.PHONY : Src/main.c.s
 
 managers/Src/analogInDigitalOutManager.obj: managers/Src/analogInDigitalOutManager.c.obj
 .PHONY : managers/Src/analogInDigitalOutManager.obj
@@ -320,53 +272,101 @@ managers/Src/pieceCountManager.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.s
 .PHONY : managers/Src/pieceCountManager.c.s
 
-messageLayer.obj: messageLayer.c.obj
-.PHONY : messageLayer.obj
+testBenchUtils/Src/testBenchVars.obj: testBenchUtils/Src/testBenchVars.c.obj
+.PHONY : testBenchUtils/Src/testBenchVars.obj
 
 # target to build an object file
-messageLayer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/messageLayer.c.obj
-.PHONY : messageLayer.c.obj
+testBenchUtils/Src/testBenchVars.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj
+.PHONY : testBenchUtils/Src/testBenchVars.c.obj
 
-messageLayer.i: messageLayer.c.i
-.PHONY : messageLayer.i
+testBenchUtils/Src/testBenchVars.i: testBenchUtils/Src/testBenchVars.c.i
+.PHONY : testBenchUtils/Src/testBenchVars.i
 
 # target to preprocess a source file
-messageLayer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/messageLayer.c.i
-.PHONY : messageLayer.c.i
+testBenchUtils/Src/testBenchVars.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.i
+.PHONY : testBenchUtils/Src/testBenchVars.c.i
 
-messageLayer.s: messageLayer.c.s
-.PHONY : messageLayer.s
+testBenchUtils/Src/testBenchVars.s: testBenchUtils/Src/testBenchVars.c.s
+.PHONY : testBenchUtils/Src/testBenchVars.s
 
 # target to generate assembly for a file
-messageLayer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/messageLayer.c.s
-.PHONY : messageLayer.c.s
+testBenchUtils/Src/testBenchVars.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.s
+.PHONY : testBenchUtils/Src/testBenchVars.c.s
 
-testBenchVars.obj: testBenchVars.c.obj
-.PHONY : testBenchVars.obj
+utils/Src/ethernet.obj: utils/Src/ethernet.c.obj
+.PHONY : utils/Src/ethernet.obj
 
 # target to build an object file
-testBenchVars.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.obj
-.PHONY : testBenchVars.c.obj
+utils/Src/ethernet.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.obj
+.PHONY : utils/Src/ethernet.c.obj
 
-testBenchVars.i: testBenchVars.c.i
-.PHONY : testBenchVars.i
+utils/Src/ethernet.i: utils/Src/ethernet.c.i
+.PHONY : utils/Src/ethernet.i
 
 # target to preprocess a source file
-testBenchVars.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.i
-.PHONY : testBenchVars.c.i
+utils/Src/ethernet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.i
+.PHONY : utils/Src/ethernet.c.i
 
-testBenchVars.s: testBenchVars.c.s
-.PHONY : testBenchVars.s
+utils/Src/ethernet.s: utils/Src/ethernet.c.s
+.PHONY : utils/Src/ethernet.s
 
 # target to generate assembly for a file
-testBenchVars.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.s
-.PHONY : testBenchVars.c.s
+utils/Src/ethernet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.s
+.PHONY : utils/Src/ethernet.c.s
+
+utils/Src/jsonGetter.obj: utils/Src/jsonGetter.c.obj
+.PHONY : utils/Src/jsonGetter.obj
+
+# target to build an object file
+utils/Src/jsonGetter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.obj
+.PHONY : utils/Src/jsonGetter.c.obj
+
+utils/Src/jsonGetter.i: utils/Src/jsonGetter.c.i
+.PHONY : utils/Src/jsonGetter.i
+
+# target to preprocess a source file
+utils/Src/jsonGetter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.i
+.PHONY : utils/Src/jsonGetter.c.i
+
+utils/Src/jsonGetter.s: utils/Src/jsonGetter.c.s
+.PHONY : utils/Src/jsonGetter.s
+
+# target to generate assembly for a file
+utils/Src/jsonGetter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.s
+.PHONY : utils/Src/jsonGetter.c.s
+
+utils/Src/messageLayer.obj: utils/Src/messageLayer.c.obj
+.PHONY : utils/Src/messageLayer.obj
+
+# target to build an object file
+utils/Src/messageLayer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.obj
+.PHONY : utils/Src/messageLayer.c.obj
+
+utils/Src/messageLayer.i: utils/Src/messageLayer.c.i
+.PHONY : utils/Src/messageLayer.i
+
+# target to preprocess a source file
+utils/Src/messageLayer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.i
+.PHONY : utils/Src/messageLayer.c.i
+
+utils/Src/messageLayer.s: utils/Src/messageLayer.c.s
+.PHONY : utils/Src/messageLayer.s
+
+# target to generate assembly for a file
+utils/Src/messageLayer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.s
+.PHONY : utils/Src/messageLayer.c.s
 
 # Help Target
 help:
@@ -377,15 +377,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... json_testbench
-	@echo ... ethernet.obj
-	@echo ... ethernet.i
-	@echo ... ethernet.s
-	@echo ... jsonGetter.obj
-	@echo ... jsonGetter.i
-	@echo ... jsonGetter.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Src/main.obj
+	@echo ... Src/main.i
+	@echo ... Src/main.s
 	@echo ... managers/Src/analogInDigitalOutManager.obj
 	@echo ... managers/Src/analogInDigitalOutManager.i
 	@echo ... managers/Src/analogInDigitalOutManager.s
@@ -401,12 +395,18 @@ help:
 	@echo ... managers/Src/pieceCountManager.obj
 	@echo ... managers/Src/pieceCountManager.i
 	@echo ... managers/Src/pieceCountManager.s
-	@echo ... messageLayer.obj
-	@echo ... messageLayer.i
-	@echo ... messageLayer.s
-	@echo ... testBenchVars.obj
-	@echo ... testBenchVars.i
-	@echo ... testBenchVars.s
+	@echo ... testBenchUtils/Src/testBenchVars.obj
+	@echo ... testBenchUtils/Src/testBenchVars.i
+	@echo ... testBenchUtils/Src/testBenchVars.s
+	@echo ... utils/Src/ethernet.obj
+	@echo ... utils/Src/ethernet.i
+	@echo ... utils/Src/ethernet.s
+	@echo ... utils/Src/jsonGetter.obj
+	@echo ... utils/Src/jsonGetter.i
+	@echo ... utils/Src/jsonGetter.s
+	@echo ... utils/Src/messageLayer.obj
+	@echo ... utils/Src/messageLayer.i
+	@echo ... utils/Src/messageLayer.s
 .PHONY : help
 
 

@@ -6,7 +6,6 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/digimatic.c \
-../Core/Src/ethernet.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
@@ -17,7 +16,6 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/digimatic.o \
-./Core/Src/ethernet.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
@@ -28,7 +26,6 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/digimatic.d \
-./Core/Src/ethernet.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \

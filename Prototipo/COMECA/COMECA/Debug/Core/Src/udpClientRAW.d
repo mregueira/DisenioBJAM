@@ -58,7 +58,24 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
- ../Core/Inc/ethernet.h ../Core/Inc/message.h ../Core/Inc/udpClientRAW.h
+ ../Core/Src/../utils/Inc/ethernet.h \
+ ../Core/Src/../utils/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/message.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/json.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/analogInManager.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/digitalOutManager.h \
+ ../Core/Src/../utils/Inc/../../Inc/message.h \
+ ../Core/Src/../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/Src/../utils/Inc/../../Inc/message.h ../Core/Inc/udpClientRAW.h
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
 
@@ -180,8 +197,40 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
 
-../Core/Inc/ethernet.h:
+../Core/Src/../utils/Inc/ethernet.h:
 
-../Core/Inc/message.h:
+../Core/Src/../utils/Inc/../../Inc/CODE_TESTING.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/message.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/json.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/analogInManager.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h:
+
+../Core/Src/../utils/Inc/../../managers/Inc/digitalOutManager.h:
+
+../Core/Src/../utils/Inc/../../Inc/message.h:
+
+../Core/Src/../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/Src/../utils/Inc/../../Inc/message.h:
 
 ../Core/Inc/udpClientRAW.h:

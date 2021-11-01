@@ -5,9 +5,9 @@
 #ifndef JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 
-#include "../../message.h"
-#include "../../messageLayer.h"
-#include "../../jsonGetter.h"
+#include "../../testBenchUtils/Inc/message.h"
+#include "../../utils/Inc/messageLayer.h"
+#include "../../utils/Inc/jsonGetter.h"
 #include "analogInManager.h"
 #include "digitalOutManager.h"
 void analogInDigitalOutManager(message_t json);

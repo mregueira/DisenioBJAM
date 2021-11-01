@@ -5,9 +5,9 @@
 #ifndef JSON_TESTBENCH_PIECECOUNTMANAGER_H
 #define JSON_TESTBENCH_PIECECOUNTMANAGER_H
 
-#include "../../message.h"
-#include "../../messageLayer.h"
-#include "../../ethernet.h"
+#include "../../testBenchUtils/Inc/message.h"
+#include "../../utils/Inc/messageLayer.h"
+#include "../../utils/Inc/ethernet.h"
 
 void pieceCountManager(void);
 

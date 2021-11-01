@@ -5,17 +5,17 @@
 #ifndef JSON_TESTBENCH_ANALOGINMANAGER_H
 #define JSON_TESTBENCH_ANALOGINMANAGER_H
 
-#define TESTING
+#include "../../Inc/CODE_TESTING.h"
 
 #ifdef TESTING
-#include "../../testBenchVars.h"
+#include "../../testBenchUtils/Inc/testBenchVars.h"
 #endif
 
 #include "stdbool.h"
-#include "../../message.h"
-#include "../../jsonGetter.h"
-#include "../../messageLayer.h"
-#include "../../ethernet.h"
+#include "../../testBenchUtils/Inc/message.h"
+#include "../../utils/Inc/jsonGetter.h"
+#include "../../utils/Inc/messageLayer.h"
+#include "../../utils/Inc/ethernet.h"
 
 #define MIN_VALID_VALUE 50 // todo: this will probably change
 #define MAX_VALID_VALUE 150
