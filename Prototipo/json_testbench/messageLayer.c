@@ -37,4 +37,5 @@ message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, b
     message_t msg2send;
     msg2send.msg = str2send;
     msg2send.len = len;
+    return msg2send;
 }

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h
+message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+stdlib.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdlib.h
+stdbool.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdbool.h
+stdint.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdint.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
 stddef.h
 -
@@ -16,15 +26,35 @@ stdlib.h
 inttypes.h
 -
 
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.c
-jsonGetter.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
-
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
 message.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
 json.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c
+stdio.h
+-
+ethernet.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h
+string.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/string.h
+json.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
+assert.h
+-
+messageLayer.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h
+jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h
+stdbool.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdbool.h
+message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+stdio.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdio.h
 

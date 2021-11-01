@@ -44,18 +44,10 @@ void AnalogInManager(message_t json){
     int inputNum = getInputNumber(json);
 
     char str2send[100];
-    message_t msg2send;
+    bool isValid = analogValidate(receivedData);
+    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
 
-    int len = -1;
-    if(analogValidate(receivedData)){ // si es valido
-        len = sprintf(str2send,"{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": %d, \"analogData\": %d}", inputNum, receivedData);
-    }else{
-        len = sprintf(str2send,"{\"frameType\": \"RETRY_ANALOG_IN\",\"inputNumber\": %d}", inputNum);
-    }
-    msg2send.msg = str2send;
-    msg2send.len = len;
-
-    ETHsendMessage(msg2send);
+    ETHsendMessage(msg);
 }
 
 void DigitalOutManager(message_t json){
