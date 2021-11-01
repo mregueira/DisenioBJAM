@@ -8,10 +8,12 @@
     int readAdc(int inputNum){
         return getAdcMeasure();
     }
-    bool analogValidate(uint32_t analogData){
-        return analogData <= 150 && analogData >= 50;
-    }
+
 #endif
+
+bool analogValidate(uint32_t analogData){
+    return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
+}
 
 void analogInManager(message_t json){
     int inputNum = getInputNumber(json);

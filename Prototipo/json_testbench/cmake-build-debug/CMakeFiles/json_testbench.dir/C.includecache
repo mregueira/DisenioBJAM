@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.c
+ethernet.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h
+managers/Inc/analogInDigitalOutManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h
+message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+testBenchVars.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
 stddef.h
 -
@@ -22,6 +34,32 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
 json.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h
+../../message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+../../messageLayer.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h
+../../jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
+analogInManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInManager.h
+digitalOutManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInManager.h
+../../testBenchVars.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.h
+stdbool.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/stdbool.h
+../../message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+../../jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
+../../messageLayer.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h
+../../ethernet.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h
 stdio.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/stdio.h
@@ -32,11 +70,15 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
 ../../jsonGetter.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
 
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c
-../Inc/digitalOutManager.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h
-
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.h
+stdbool.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdbool.h
+message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+stdio.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/stdio.h
 
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.h
 stdbool.h
