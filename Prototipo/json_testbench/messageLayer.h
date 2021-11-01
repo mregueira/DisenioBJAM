@@ -13,5 +13,6 @@ message_t sendCaliperWarningMessage(char * str2send);
 message_t sendCaliperMeasure(char * str2send, float measure);
 message_t sendIncrementPieceCount(char * str2send);
 message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, bool isValid);
+message_t sendCaliperWarning(char * str2send);
 
 #endif //JSON_TESTBENCH_MESSAGELAYER_H

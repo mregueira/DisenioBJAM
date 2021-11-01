@@ -39,3 +39,11 @@ message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, b
     msg2send.len = len;
     return msg2send;
 }
+
+message_t sendCaliperWarning(char * str2send){
+    int len = sprintf(str2send,"{\"frameType\": \"WARNING_RETRY_CALIPER\"}");
+    message_t msg2send;
+    msg2send.msg = str2send;
+    msg2send.len = len;
+    return msg2send;
+}
