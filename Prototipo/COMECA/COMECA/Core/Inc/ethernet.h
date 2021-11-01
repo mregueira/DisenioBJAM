@@ -21,8 +21,8 @@
 void ETHonMessageReceived(message_t message);
 void ETHsendMessage(message_t message);
 
-void AnalogInManager(void);
-void DigitalOutManager(void);
+void AnalogInManager(message_t);
+void DigitalOutManager(message_t);
 
 
 #endif /* SRC_ETHERNET_H_ */

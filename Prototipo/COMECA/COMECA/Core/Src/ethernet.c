@@ -7,38 +7,38 @@
 #include "ethernet.h"
 #include "udpClientRAW.h"
 #include "string.h"
-
+#include "json.h"
+#include <stdio.h>
 
 void caliperManager(char* data){
 	return;
 }
 
 
-char rx_frame_type[FRAME_CHARS+1];
-char rx_data[DATA_CHARS+1];
+void ETHonMessageReceived(message_t json){
 
-char tx_frame[FRAME_CHARS+DELIMITER_CHARS+DATA_CHARS+1];
+	struct json_value_s* root = json_parse(json.msg, json.len);
+	assert(root);
+	assert(root->type == json_type_object);
 
-void destructureFrame(message_t message){
-	// assume a message comes in a format like:
-	// FRAME_TYPE(10chars), DELIMITER (1 char), DATA (10 chars)
+	struct json_object_s* object = (struct json_object_s*)root->payload;
+	assert(object);
 
-	memcpy(rx_frame_type, message.msg, FRAME_CHARS);
-	rx_frame_type[FRAME_CHARS+1] = '\0';
-	memcpy(rx_data, message.msg+(FRAME_CHARS+DELIMITER_CHARS), DATA_CHARS);
-	rx_data[DATA_CHARS+1] = '\0';
-}
+	struct json_object_element_s* frameType = object->start;
 
+	assert(0 == strcmp(frameType->name->string, "frameType"));
+	assert(frameType->value->type == json_type_string);
 
-void ETHonMessageReceived(message_t message){
+	struct json_string_s* frameTypeValue = (struct json_string_s*)frameType->value->payload;
 
-	destructureFrame(message);
-
-	if(memcmp(rx_frame_type, "ANALOG_IN", FRAME_CHARS)){
-		AnalogInManager();
-	}else if(strcmp(rx_frame_type, "DIGITAL_OUT")){
-		DigitalOutManager();
+	if(strcmp(frameTypeValue->string, "READ_ANALOG_IN") == 0){
+		AnalogInManager(json);
 	}
+
+	if(strcmp(frameTypeValue->string, "DIGITAL_OUT") == 0){
+		DigitalOutManager(json);
+	}
+
 
 	return;
 }
@@ -46,23 +46,6 @@ void ETHonMessageReceived(message_t message){
 void ETHsendMessage(message_t message){
 	udpClient_custom_string(message);
 }
-
-
-message_t buildFrame(const char* frame_type, const char* data){
-	memset(tx_frame, (int)('_'), FRAME_CHARS+DELIMITER_CHARS+DATA_CHARS+1);
-	memcpy(tx_frame, frame_type, FRAME_CHARS);
-	tx_frame[FRAME_CHARS] = DELIMITER;
-	memcpy(tx_frame, data, DATA_CHARS);
-	tx_frame[FRAME_CHARS+DELIMITER_CHARS+DATA_CHARS] = '\0';
-
-	message_t message;
-	message.msg = tx_frame;
-	message.len = FRAME_CHARS+DELIMITER_CHARS+DATA_CHARS+1;
-
-	return message;
-}
-
-
 
 int readAdc(void){
 	return 0;
@@ -72,37 +55,45 @@ bool analogValidate(uint32_t analogData){
 	return false;
 }
 
-void AnalogInManager(void){
+void AnalogInManager(message_t json){
 	int receivedData = readAdc();
-	char data[DATA_CHARS];
+
     if(analogValidate(receivedData)){ // si es valido
-	    itoa(receivedData, data, DATA_CHARS);
-		ETHsendMessage(buildFrame("ANALOG_IN_MEASURE", data));
+
+		struct json_value_s* root = json_parse(json.msg, json.len);
+		struct json_object_s* object = (struct json_object_s*)root->payload;
+		struct json_object_element_s* frameType = object->start;
+		struct json_object_element_s* inputNumber = frameType->next->value;
+		struct json_number_s* extracted = json_value_as_number(inputNumber);
+		int inputNum = atoi(extracted->number);
+
+		char str2send[100];
+		int len = sprintf(str2send,"{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": %d, \"analogData\": %d}", inputNum, receivedData);
+		message_t msg2send;
+		msg2send.msg = str2send;
+		msg2send.len = len;
+
+		ETHsendMessage(msg2send);
+
 
     }else{
-		ETHsendMessage(buildFrame("RETRY_ANALOG_IN", data));
+
+		char str2send[100];
+		int len = sprintf(str2send,"{\"frameType\": \"RETRY_ANALOG_IN\"}");
+		message_t msg2send;
+		msg2send.msg = str2send;
+		msg2send.len = len;
+
+		ETHsendMessage(msg2send);
     }
 }
 
-void DigitalOutManager(void){
-	// its either ON/OFF and then comes the OUTPUT Number
-	// Format: ON (SPACE) outputNumber
-	// e.g. : "ON 3"
+void DigitalOutManager(message_t json){
 //	uint8_t outputNumber = (int) (rx_data[3]-'0');
-	if(memcmp(rx_data,"ON", 2)){
-//		HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PIN_SET);
-	} else {
-//		HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PIN_RESET);
-	}
+//	if(memcmp(rx_data,"ON", 2)){
+////		HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PIN_SET);
+//	} else {
+////		HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PIN_RESET);
+//	}
 }
 
-//void AnalogInDigitalOutManager(const char* rx_string){
-//
-//	received_frame_t received_state = get_state_from_recevied_string();
-//    if(received_state == READ_ANALOG_INPUT){
-//    		uint16_t receivedData = readAdc();
-//
-//    }else if(received_state == SET_DIGITAL_OUTPUT){
-//        HAL_GPIO_WritePin(DIG_OUT_1((bool)receivedData));
-//    }
-//}
