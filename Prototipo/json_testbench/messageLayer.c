@@ -11,8 +11,13 @@ message_t sendCaliperWarningMessage(char * str2send){
     return msg2send;
 };
 
-message_t sendCaliperMeasure(char * str2send, float measure){
-    int len = sprintf(str2send,"{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": %f}", measure);
+message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure){
+    int len = -1;
+    if(measure.unit){
+        int len = sprintf(str2send,"{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": %f,\"unit\": \"inch\"}", measure.number);
+    } else {
+        int len = sprintf(str2send,"{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": %f,\"unit\": \"mm\"}", measure.number);
+    }
     message_t msg2send;
     msg2send.msg = str2send;
     msg2send.len = len;

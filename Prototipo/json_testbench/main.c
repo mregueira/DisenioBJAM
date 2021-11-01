@@ -33,7 +33,7 @@ int main() {
     setValidCaliperMeasure(true);
 
     caliperManager(3);         // TODO: must check this %f format
-    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": 1.252340}") == 0);
+    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": 1.234520,\"unit\": \"mm\"}") == 0);
 
     setValidCaliperMeasure(false);
 

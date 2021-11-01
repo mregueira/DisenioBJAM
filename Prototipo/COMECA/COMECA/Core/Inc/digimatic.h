@@ -65,7 +65,10 @@ typedef struct{
 	frame_context_t frame;
 } digimatic_processing_t;
 
-
+typedef struct {
+    float number;
+    bool unit;
+}digimatic_measure_t;
 
 
 void onRisingEdgeOfReqSignal(caliper_number curr_caliper);

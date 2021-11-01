@@ -8,8 +8,8 @@
     // this should come from udpClientRAW.h
     void udpClient_custom_string(message_t msg){
         strcpy(getTestBench(), msg.msg);
-//        printf(getTestBench());
-//        printf("\n");
+        printf(getTestBench());
+        printf("\n");
     }
 #endif
 
