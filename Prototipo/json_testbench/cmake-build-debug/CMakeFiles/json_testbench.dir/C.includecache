@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
+stddef.h
+-
+string.h
+-
+stdlib.h
+-
+inttypes.h
+-
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.c
+jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.h
+message.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+json.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/json.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/message.h
+
