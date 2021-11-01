@@ -8,21 +8,20 @@
 #ifndef SRC_ETHERNET_H_
 #define SRC_ETHERNET_H_
 
+#define TESTING
+
 #include "message.h"
-#include "stdlib.h" // itoa
-#include "stdbool.h"
-#include "stdint.h" // for uintx_t
+#include "jsonGetter.h"
+#include "string.h"
+#include "caliper_number.h"
 
-#define DELIMITER ':'
-#define FRAME_CHARS 15
-#define DATA_CHARS 15
-#define DELIMITER_CHARS 1
+#include "managers/Inc/analogInManager.h"
+#include "managers/Inc/digitalOutManager.h"
 
-void ETHonMessageReceived(message_t message);
+void caliperManager(caliper_number caliperNumber);
+void pieceCountManager(void);
+void ETHonMessageReceived(message_t json);
 void ETHsendMessage(message_t message);
-
-void AnalogInManager(message_t);
-void DigitalOutManager(message_t);
 
 
 #endif /* SRC_ETHERNET_H_ */

@@ -128,6 +128,30 @@ json_testbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/build
 .PHONY : json_testbench/fast
 
+ethernet.obj: ethernet.c.obj
+.PHONY : ethernet.obj
+
+# target to build an object file
+ethernet.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.obj
+.PHONY : ethernet.c.obj
+
+ethernet.i: ethernet.c.i
+.PHONY : ethernet.i
+
+# target to preprocess a source file
+ethernet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.i
+.PHONY : ethernet.c.i
+
+ethernet.s: ethernet.c.s
+.PHONY : ethernet.s
+
+# target to generate assembly for a file
+ethernet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ethernet.c.s
+.PHONY : ethernet.c.s
+
 jsonGetter.obj: jsonGetter.c.obj
 .PHONY : jsonGetter.obj
 
@@ -176,6 +200,126 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.s
 .PHONY : main.c.s
 
+managers/Src/analogInDigitalOutManager.obj: managers/Src/analogInDigitalOutManager.c.obj
+.PHONY : managers/Src/analogInDigitalOutManager.obj
+
+# target to build an object file
+managers/Src/analogInDigitalOutManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.obj
+.PHONY : managers/Src/analogInDigitalOutManager.c.obj
+
+managers/Src/analogInDigitalOutManager.i: managers/Src/analogInDigitalOutManager.c.i
+.PHONY : managers/Src/analogInDigitalOutManager.i
+
+# target to preprocess a source file
+managers/Src/analogInDigitalOutManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.i
+.PHONY : managers/Src/analogInDigitalOutManager.c.i
+
+managers/Src/analogInDigitalOutManager.s: managers/Src/analogInDigitalOutManager.c.s
+.PHONY : managers/Src/analogInDigitalOutManager.s
+
+# target to generate assembly for a file
+managers/Src/analogInDigitalOutManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.s
+.PHONY : managers/Src/analogInDigitalOutManager.c.s
+
+managers/Src/analogInManager.obj: managers/Src/analogInManager.c.obj
+.PHONY : managers/Src/analogInManager.obj
+
+# target to build an object file
+managers/Src/analogInManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.obj
+.PHONY : managers/Src/analogInManager.c.obj
+
+managers/Src/analogInManager.i: managers/Src/analogInManager.c.i
+.PHONY : managers/Src/analogInManager.i
+
+# target to preprocess a source file
+managers/Src/analogInManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.i
+.PHONY : managers/Src/analogInManager.c.i
+
+managers/Src/analogInManager.s: managers/Src/analogInManager.c.s
+.PHONY : managers/Src/analogInManager.s
+
+# target to generate assembly for a file
+managers/Src/analogInManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.s
+.PHONY : managers/Src/analogInManager.c.s
+
+managers/Src/caliperManager.obj: managers/Src/caliperManager.c.obj
+.PHONY : managers/Src/caliperManager.obj
+
+# target to build an object file
+managers/Src/caliperManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.obj
+.PHONY : managers/Src/caliperManager.c.obj
+
+managers/Src/caliperManager.i: managers/Src/caliperManager.c.i
+.PHONY : managers/Src/caliperManager.i
+
+# target to preprocess a source file
+managers/Src/caliperManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.i
+.PHONY : managers/Src/caliperManager.c.i
+
+managers/Src/caliperManager.s: managers/Src/caliperManager.c.s
+.PHONY : managers/Src/caliperManager.s
+
+# target to generate assembly for a file
+managers/Src/caliperManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.s
+.PHONY : managers/Src/caliperManager.c.s
+
+managers/Src/digitalOutManager.obj: managers/Src/digitalOutManager.c.obj
+.PHONY : managers/Src/digitalOutManager.obj
+
+# target to build an object file
+managers/Src/digitalOutManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.obj
+.PHONY : managers/Src/digitalOutManager.c.obj
+
+managers/Src/digitalOutManager.i: managers/Src/digitalOutManager.c.i
+.PHONY : managers/Src/digitalOutManager.i
+
+# target to preprocess a source file
+managers/Src/digitalOutManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.i
+.PHONY : managers/Src/digitalOutManager.c.i
+
+managers/Src/digitalOutManager.s: managers/Src/digitalOutManager.c.s
+.PHONY : managers/Src/digitalOutManager.s
+
+# target to generate assembly for a file
+managers/Src/digitalOutManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.s
+.PHONY : managers/Src/digitalOutManager.c.s
+
+managers/Src/pieceCountManager.obj: managers/Src/pieceCountManager.c.obj
+.PHONY : managers/Src/pieceCountManager.obj
+
+# target to build an object file
+managers/Src/pieceCountManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.obj
+.PHONY : managers/Src/pieceCountManager.c.obj
+
+managers/Src/pieceCountManager.i: managers/Src/pieceCountManager.c.i
+.PHONY : managers/Src/pieceCountManager.i
+
+# target to preprocess a source file
+managers/Src/pieceCountManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.i
+.PHONY : managers/Src/pieceCountManager.c.i
+
+managers/Src/pieceCountManager.s: managers/Src/pieceCountManager.c.s
+.PHONY : managers/Src/pieceCountManager.s
+
+# target to generate assembly for a file
+managers/Src/pieceCountManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.s
+.PHONY : managers/Src/pieceCountManager.c.s
+
 messageLayer.obj: messageLayer.c.obj
 .PHONY : messageLayer.obj
 
@@ -200,6 +344,30 @@ messageLayer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/messageLayer.c.s
 .PHONY : messageLayer.c.s
 
+testBenchVars.obj: testBenchVars.c.obj
+.PHONY : testBenchVars.obj
+
+# target to build an object file
+testBenchVars.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.obj
+.PHONY : testBenchVars.c.obj
+
+testBenchVars.i: testBenchVars.c.i
+.PHONY : testBenchVars.i
+
+# target to preprocess a source file
+testBenchVars.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.i
+.PHONY : testBenchVars.c.i
+
+testBenchVars.s: testBenchVars.c.s
+.PHONY : testBenchVars.s
+
+# target to generate assembly for a file
+testBenchVars.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchVars.c.s
+.PHONY : testBenchVars.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -209,15 +377,36 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... json_testbench
+	@echo ... ethernet.obj
+	@echo ... ethernet.i
+	@echo ... ethernet.s
 	@echo ... jsonGetter.obj
 	@echo ... jsonGetter.i
 	@echo ... jsonGetter.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... managers/Src/analogInDigitalOutManager.obj
+	@echo ... managers/Src/analogInDigitalOutManager.i
+	@echo ... managers/Src/analogInDigitalOutManager.s
+	@echo ... managers/Src/analogInManager.obj
+	@echo ... managers/Src/analogInManager.i
+	@echo ... managers/Src/analogInManager.s
+	@echo ... managers/Src/caliperManager.obj
+	@echo ... managers/Src/caliperManager.i
+	@echo ... managers/Src/caliperManager.s
+	@echo ... managers/Src/digitalOutManager.obj
+	@echo ... managers/Src/digitalOutManager.i
+	@echo ... managers/Src/digitalOutManager.s
+	@echo ... managers/Src/pieceCountManager.obj
+	@echo ... managers/Src/pieceCountManager.i
+	@echo ... managers/Src/pieceCountManager.s
 	@echo ... messageLayer.obj
 	@echo ... messageLayer.i
 	@echo ... messageLayer.s
+	@echo ... testBenchVars.obj
+	@echo ... testBenchVars.i
+	@echo ... testBenchVars.s
 .PHONY : help
 
 

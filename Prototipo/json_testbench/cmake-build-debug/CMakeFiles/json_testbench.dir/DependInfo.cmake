@@ -8,9 +8,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ethernet.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/ethernet.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/jsonGetter.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/jsonGetter.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/main.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInDigitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/messageLayer.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/messageLayer.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchVars.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/testBenchVars.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
