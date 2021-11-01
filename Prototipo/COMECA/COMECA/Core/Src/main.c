@@ -217,9 +217,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, DIG_OUT_4_Pin|DIG_OUT_3_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, DIG_OUT_2_Pin|DIG_OUT_1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : CAL4_CLK_Pin CAL2_CLK_Pin CAL1_CLK_Pin */
   GPIO_InitStruct.Pin = CAL4_CLK_Pin|CAL2_CLK_Pin|CAL1_CLK_Pin;
@@ -258,6 +265,20 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CAL2_DATA_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : DIG_OUT_4_Pin DIG_OUT_3_Pin */
+  GPIO_InitStruct.Pin = DIG_OUT_4_Pin|DIG_OUT_3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : DIG_OUT_2_Pin DIG_OUT_1_Pin */
+  GPIO_InitStruct.Pin = DIG_OUT_2_Pin|DIG_OUT_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -266,7 +287,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : uC_PLC_Pin uC_PEDAL_Pin */
+  GPIO_InitStruct.Pin = uC_PLC_Pin|uC_PEDAL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -279,13 +315,40 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
-		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+//		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET); // turn off REQ
+		HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_RESET); //
+		HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_RESET); //
+		HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_RESET); //
+
 		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
+		onRisingEdgeOfReqSignal(CALIPER_2);
+		onRisingEdgeOfReqSignal(CALIPER_3);
+		onRisingEdgeOfReqSignal(CALIPER_4);
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
+	// llega una interrupcion por GPIO
+
+	if(GPIO_Pin ==CAL1_CLK_Pin || GPIO_Pin == CAL2_CLK_Pin || GPIO_Pin == CAL3_CLK_Pin || GPIO_Pin CAL4_CLK_Pin ){
+		//esto se hace si el GPIO_Pin es alguno de los del calibre (CLK)
+		onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
+	}
+
+	if(GPIO_Pin == uC_PEDAL_Pin){
+		// que pasa con el pedal de los calibres
+	  HAL_TIM_Base_Start_IT(&htim14); // start timer
+	  HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	}
+
+	if(GPIO_Pin == uC_PLC_Pin){
+		// que pasa si viene el PLC
+		pieceCountManager();
+	}
 }
 
 

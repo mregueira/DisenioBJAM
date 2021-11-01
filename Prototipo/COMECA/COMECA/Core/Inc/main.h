@@ -61,12 +61,14 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define CAL4_CLK_Pin GPIO_PIN_2
 #define CAL4_CLK_GPIO_Port GPIOE
+#define CAL4_CLK_EXTI_IRQn EXTI2_IRQn
 #define CAL4_DATA_Pin GPIO_PIN_4
 #define CAL4_DATA_GPIO_Port GPIOE
 #define CAL3_REQ_Pin GPIO_PIN_6
 #define CAL3_REQ_GPIO_Port GPIOE
 #define CAL3_CLK_Pin GPIO_PIN_3
 #define CAL3_CLK_GPIO_Port GPIOC
+#define CAL3_CLK_EXTI_IRQn EXTI3_IRQn
 #define CAL3_DATA_Pin GPIO_PIN_0
 #define CAL3_DATA_GPIO_Port GPIOA
 #define CAL2_DATA_Pin GPIO_PIN_1
@@ -75,6 +77,7 @@ void Error_Handler(void);
 #define CAL2_REQ_GPIO_Port GPIOE
 #define CAL2_CLK_Pin GPIO_PIN_9
 #define CAL2_CLK_GPIO_Port GPIOE
+#define CAL2_CLK_EXTI_IRQn EXTI9_5_IRQn
 #define CAL1_DATA_Pin GPIO_PIN_11
 #define CAL1_DATA_GPIO_Port GPIOE
 #define CAL1_REQ_Pin GPIO_PIN_13
@@ -82,6 +85,20 @@ void Error_Handler(void);
 #define CAL1_CLK_Pin GPIO_PIN_15
 #define CAL1_CLK_GPIO_Port GPIOE
 #define CAL1_CLK_EXTI_IRQn EXTI15_10_IRQn
+#define DIG_OUT_4_Pin GPIO_PIN_13
+#define DIG_OUT_4_GPIO_Port GPIOD
+#define DIG_OUT_3_Pin GPIO_PIN_15
+#define DIG_OUT_3_GPIO_Port GPIOD
+#define DIG_OUT_2_Pin GPIO_PIN_7
+#define DIG_OUT_2_GPIO_Port GPIOC
+#define DIG_OUT_1_Pin GPIO_PIN_9
+#define DIG_OUT_1_GPIO_Port GPIOC
+#define uC_PLC_Pin GPIO_PIN_6
+#define uC_PLC_GPIO_Port GPIOB
+#define uC_PLC_EXTI_IRQn EXTI9_5_IRQn
+#define uC_PEDAL_Pin GPIO_PIN_8
+#define uC_PEDAL_GPIO_Port GPIOB
+#define uC_PEDAL_EXTI_IRQn EXTI9_5_IRQn
 #define CAL4_REQ_Pin GPIO_PIN_0
 #define CAL4_REQ_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
