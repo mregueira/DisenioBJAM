@@ -15,7 +15,8 @@ void udpClient_custom_string(message_t msg){
 }
 
 void ETHonMessageReceived(message_t json){
-    const char * frameType = getFrameType(json);
+    char frameType[20];
+    getFrameType(json, frameType);
 
     if(strcmp(frameType, "READ_ANALOG_IN") == 0){
         AnalogInManager(json);
@@ -52,7 +53,8 @@ void AnalogInManager(message_t json){
 
 void DigitalOutManager(message_t json){
     int outputNum = getOutputNum(json);
-    char * outputState = getOutputState(json);
+    char outputState[4];
+    getOutputState(json, outputState);
 
     if(strcmp(outputState, "ON") == 0){
         sprintf(testBench,"ON->%d", outputNum);

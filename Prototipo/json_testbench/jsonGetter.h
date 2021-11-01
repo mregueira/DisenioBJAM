@@ -8,9 +8,9 @@
 #include "message.h"
 #include "json.h"
 
-const char * getFrameType(message_t);
+void getFrameType(message_t json, char* frameTypePtr);
 int getInputNumber(message_t);
 int getOutputNum(message_t);
-const char * getOutputState(message_t);
+void getOutputState(message_t json, char* outputStatePtr);
 
 #endif //JSON_TESTBENCH_JSONGETTER_H
