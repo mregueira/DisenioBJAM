@@ -9,10 +9,14 @@
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/testBenchVars.h"
+#include "../../testBenchUtils/Inc/message.h"
+#else
+#include "../../Inc/message.h"
+
 #endif
 
 #include "stdbool.h"
-#include "../../testBenchUtils/Inc/message.h"
+
 #include "../../utils/Inc/jsonGetter.h"
 #include "../../utils/Inc/messageLayer.h"
 #include "../../utils/Inc/ethernet.h"

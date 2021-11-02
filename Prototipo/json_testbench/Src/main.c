@@ -32,13 +32,18 @@ int main() {
 
     setValidCaliperMeasure(true);
 
-    caliperManager(3);         // TODO: must check this %f format
-    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"data\": 1.234520,\"unit\": \"mm\"}") == 0);
+    setDigimaticMeasure(1.23452, false);
+    caliperManager(3);
+    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": 3,\"data\": 1.23452,\"unit\": \"mm\"}") == 0);
+
+    setDigimaticMeasure(-10.54355, true);
+    caliperManager(3);
+    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": 3,\"data\": -10.54355,\"unit\": \"inch\"}") == 0);
 
     setValidCaliperMeasure(false);
 
     caliperManager(3);
-    assert(strcmp(getTestBench(), "{\"frameType\": \"WARNING_RETRY_CALIPER\"}") == 0);
+    assert(strcmp(getTestBench(), "{\"frameType\": \"WARNING_RETRY_CALIPER\" ,\"caliperNumber\": 3}") == 0);
 
     //  -  Piece Count Manager
     pieceCountManager();

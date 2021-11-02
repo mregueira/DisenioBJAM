@@ -10,8 +10,11 @@
 #ifdef TESTING
 #include "stdio.h"
 #include "../../testBenchUtils/Inc/testBenchVars.h"
-#endif
 #include "../../testBenchUtils/Inc/message.h"
+#else
+#include "stm32f4xx_hal.h"
+#include "../../Inc/message.h"
+#endif
 #include "../../utils/Inc/jsonGetter.h"
 
 void digitalOutManager(message_t json);

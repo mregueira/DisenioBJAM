@@ -12,10 +12,7 @@ digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
 }
 // this should come from "digimatic.h"
 digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
-    digimatic_measure_t measure;
-    measure.number =  1.23452;
-    measure.unit = false;
-    return measure;
+    return getDigimaticMeasure();
 }
 // this should come from "digimatic.h"
 bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
@@ -37,9 +34,10 @@ void caliperManager(caliper_number caliperNumber){
     char str2send[MAX_STRING_SIZE];
     message_t msg;
     if(isValid){
-        msg = sendCaliperMeasure(str2send, digimaticMeasure(digimaticFrames));
+    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+        msg = sendCaliperMeasure(str2send, measure, caliperNumber);
     } else {
-        msg = sendCaliperWarning(str2send);
+        msg = sendCaliperWarning(str2send, caliperNumber);
     }
 
     ETHsendMessage(msg);

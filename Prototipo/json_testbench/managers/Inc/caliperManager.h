@@ -5,23 +5,28 @@
 #ifndef JSON_TESTBENCH_CALIPERMANAGER_H
 #define JSON_TESTBENCH_CALIPERMANAGER_H
 
-#define MAX_STRING_SIZE 50
+#define MAX_STRING_SIZE 80
 #include "../../Inc/CODE_TESTING.h"
 
 #define RETRY_TIMES 3
 
-#include "../../testBenchUtils/Inc/caliper_number.h"
+
 #include "stdbool.h"
-#include "../../testBenchUtils/Inc/message.h"
+
 #include "../../utils/Inc/messageLayer.h"
 #include "../../utils/Inc/ethernet.h"
 
 #ifdef TESTING
+#include "../../testBenchUtils/Inc/caliper_number.h"
+#include "../../testBenchUtils/Inc/digimatic_measure_t.h"
+#include "../../testBenchUtils/Inc/message.h"
 #include "../../testBenchUtils/Inc/testBenchVars.h"
+
 typedef uint8_t digimatic_frame_t;
 digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper);
 #else
-#include "digimatic.h"
+#include "../../Inc/digimatic.h"
+#include "../../Inc/message.h"
 #endif
 
 void caliperManager(caliper_number caliperNumber);

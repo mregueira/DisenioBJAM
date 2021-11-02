@@ -5,7 +5,13 @@
 #ifndef JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 
+#include "../../Inc/CODE_TESTING.h"
+
+#ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
+#else
+#include "../../Inc/message.h"
+#endif
 #include "../../utils/Inc/messageLayer.h"
 #include "../../utils/Inc/jsonGetter.h"
 #include "analogInManager.h"

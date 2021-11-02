@@ -32,6 +32,7 @@ Core/managers/Src/digitalOutManager.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Core/managers/Src/../Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/json.h
 
@@ -98,6 +99,8 @@ Core/managers/Src/digitalOutManager.o: \
 ../Core/managers/Src/../Inc/../../Inc/message.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h:
+
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:
 

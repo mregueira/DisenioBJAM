@@ -9,6 +9,10 @@
         return getAdcMeasure();
     }
 
+#else
+    int readAdc(int inputNum){
+        return 100;
+    }
 #endif
 
 bool analogValidate(uint32_t analogData){
@@ -18,7 +22,6 @@ bool analogValidate(uint32_t analogData){
 void analogInManager(message_t json){
     int inputNum = getInputNumber(json);
     int receivedData = readAdc(inputNum);
-
 
     char str2send[100];
     bool isValid = analogValidate(receivedData);

@@ -115,6 +115,9 @@
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h">
 			<Option target="json_testbench"/>
 		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h">
+			<Option target="json_testbench"/>
+		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h">
 			<Option target="json_testbench"/>
 		</Unit>

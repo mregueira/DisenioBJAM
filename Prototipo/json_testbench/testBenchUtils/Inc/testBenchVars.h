@@ -10,12 +10,15 @@
 #ifdef TESTING
 
 #include "stdbool.h"
+#include "../../testBenchUtils/Inc/digimatic_measure_t.h"
 
 int getAdcMeasure(void);
 void setAdcMeasure(int measure);
 char* getTestBench(void);
 void setValidCaliperMeasure(bool);
 bool getIsValidCaliperMeasure(void);
+void setDigimaticMeasure(float number, bool mmOrInches);
+digimatic_measure_t getDigimaticMeasure(void);
 
 #endif
 

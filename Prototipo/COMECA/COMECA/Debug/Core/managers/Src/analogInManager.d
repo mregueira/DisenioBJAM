@@ -4,10 +4,10 @@ Core/managers/Src/analogInManager.o: \
  ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/json.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/messageLayer.h \
- ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/digimatic.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
@@ -57,13 +57,13 @@ Core/managers/Src/analogInManager.o: \
 
 ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h:
 
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h:
+
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/json.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/messageLayer.h:
-
-../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/digimatic.h:
 

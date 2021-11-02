@@ -6,6 +6,7 @@
 int adc_measure;
 char testBench[1000];
 bool isValidCaliperMeasure = true;
+digimatic_measure_t measure;
 
 int getAdcMeasure(void){ return adc_measure;}
 void setAdcMeasure(int measure){adc_measure = measure;}
@@ -14,3 +15,9 @@ void setValidCaliperMeasure(bool value){
     isValidCaliperMeasure = value;
 }
 bool getIsValidCaliperMeasure(void){ return isValidCaliperMeasure; };
+void setDigimaticMeasure(float number, bool mmOrInches){
+    measure.number = number;
+    measure.unit = mmOrInches;
+}
+
+digimatic_measure_t getDigimaticMeasure(void){ return measure; };

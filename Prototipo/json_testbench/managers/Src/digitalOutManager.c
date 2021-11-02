@@ -7,12 +7,17 @@
 #ifdef TESTING
 void turnOn(int outputNum){
     sprintf(getTestBench(),"ON->%d", outputNum);
+    printf(getTestBench());
+    printf("\n");
 }
 void turnOff(int outputNum){
     sprintf(getTestBench(),"OFF->%d", outputNum);
+    printf(getTestBench());
+    printf("\n");
 }
 
 #else
+
 
 // SALIDAS DIGITALES
 // {PC9, PC7, PD15, PD13}

@@ -8,13 +8,16 @@
 #ifndef SRC_ETHERNET_H_
 #define SRC_ETHERNET_H_
 
+
 #include "../../Inc/CODE_TESTING.h"
-#include "../../testBenchUtils/Inc/message.h"
+
 #include "../../managers/Inc/analogInDigitalOutManager.h"
 
 #ifdef TESTING
+#include "../../testBenchUtils/Inc/message.h"
 #include "../../testBenchUtils/Inc/testBenchVars.h"
 #else
+#include "../../Inc/message.h"
 #include "../../Inc/udpClientRAW.h"
 #endif
 

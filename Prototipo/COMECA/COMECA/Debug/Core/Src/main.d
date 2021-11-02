@@ -72,6 +72,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
@@ -235,6 +236,8 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h:
 
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
 
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 

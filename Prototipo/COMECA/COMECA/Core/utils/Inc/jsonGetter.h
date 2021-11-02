@@ -5,6 +5,8 @@
 #ifndef JSON_TESTBENCH_JSONGETTER_H
 #define JSON_TESTBENCH_JSONGETTER_H
 
+#include "../../Inc/CODE_TESTING.h"
+
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #else

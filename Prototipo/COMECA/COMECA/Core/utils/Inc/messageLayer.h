@@ -13,18 +13,18 @@
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
-typedef struct {
-    float number;
-    bool unit;
-}digimatic_measure_t;
+#include "../../testBenchUtils/Inc/caliper_number.h"
+#include "../../testBenchUtils/Inc/digimatic_measure_t.h"
 #else
 #include "../../Inc/digimatic.h"
 #include "../../Inc/message.h"
 #endif
 
-message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure);
+message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber);
+message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber);
+
 message_t sendIncrementPieceCount(char * str2send);
 message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, bool isValid);
-message_t sendCaliperWarning(char * str2send);
+
 
 #endif //JSON_TESTBENCH_MESSAGELAYER_H
