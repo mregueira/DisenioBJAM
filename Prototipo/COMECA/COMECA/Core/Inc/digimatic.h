@@ -74,7 +74,7 @@ typedef struct {
 
 void onRisingEdgeOfReqSignal(caliper_number curr_caliper);
 
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper);
+void onRisingEdgeOfClockSignal(caliper_number curr_caliper, void (*onFinishedGettingFramesFor)(caliper_number));
 
 int getCaliperNumberGivenClockPin(uint16_t CLK_Pin);
 

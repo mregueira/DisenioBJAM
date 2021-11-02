@@ -25,6 +25,9 @@
 /* USER CODE BEGIN Includes */
 #include "udpClientRAW.h"
 #include "digimatic.h"
+#include "../managers/Inc/caliperManager.h"
+#include "../managers/Inc/pieceCountManager.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -331,9 +334,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	// llega una interrupcion por GPIO
 
-	if(GPIO_Pin ==CAL1_CLK_Pin || GPIO_Pin == CAL2_CLK_Pin || GPIO_Pin == CAL3_CLK_Pin || GPIO_Pin CAL4_CLK_Pin ){
+	if(GPIO_Pin ==CAL1_CLK_Pin || GPIO_Pin == CAL2_CLK_Pin || GPIO_Pin == CAL3_CLK_Pin || GPIO_Pin == CAL4_CLK_Pin ){
 		//esto se hace si el GPIO_Pin es alguno de los del calibre (CLK)
-		onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
+
+		onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin), caliperManager); // aca se realiza la lectura de los bits y se va guardando en el buffer
 	}
 
 	if(GPIO_Pin == uC_PEDAL_Pin){
