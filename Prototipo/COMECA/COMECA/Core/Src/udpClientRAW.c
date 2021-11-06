@@ -32,7 +32,7 @@
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
 
 struct udp_pcb *upcb;
-char buffer[100];
+char buffer[1000];
 message_t message;
 
 static void udpClient_send_first_message(void)
@@ -74,7 +74,7 @@ void udpClient_connect(void)
 
 	/* configure destination IP address and port */
 	ip_addr_t DestIPaddr;
-	IP_ADDR4(&DestIPaddr, 192, 168, 0, 25);
+	IP_ADDR4(&DestIPaddr, 192, 168, 0, 12); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 7);
 
 	if (err == ERR_OK)

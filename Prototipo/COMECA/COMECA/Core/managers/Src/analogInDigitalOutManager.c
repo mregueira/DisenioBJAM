@@ -4,7 +4,7 @@
 #include "../Inc/analogInDigitalOutManager.h"
 
 void analogInDigitalOutManager(message_t json){
-    char frameType[20];
+    char frameType[100];
     getFrameType(json, frameType);
 
     if(strcmp(frameType, "READ_ANALOG_IN") == 0){

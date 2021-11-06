@@ -51,4 +51,4 @@ json.h:3171:7:json_write_pretty_array	48	static
 json.h:3228:7:json_write_pretty_object	48	static
 json.h:3297:7:json_write_pretty_value	32	static
 json.h:3336:7:json_write_pretty	56	static
-analogInDigitalOutManager.c:6:6:analogInDigitalOutManager	40	static
+analogInDigitalOutManager.c:6:6:analogInDigitalOutManager	120	static
