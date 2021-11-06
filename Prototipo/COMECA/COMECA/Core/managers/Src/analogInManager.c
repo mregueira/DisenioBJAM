@@ -3,6 +3,8 @@
 //
 #include "../Inc/analogInManager.h"
 
+extern SPI_HandleTypeDef hspi3;
+
 #ifdef TESTING
     // these functions should come from analogInManager.h
     int readAdc(int inputNum){
@@ -19,13 +21,21 @@ bool analogValidate(uint32_t analogData){
     return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
 }
 
+void sendADCReadRequest(int inputNum){
+	uint8_t pData[1];
+	uint16_t timeout = 50;
+	HAL_SPI_Transmit(&hspi3, pData, sizeof(pData), timeout);
+}
+
 void analogInManager(message_t json){
     int inputNum = getInputNumber(json);
-    int receivedData = readAdc(inputNum);
+//    int receivedData = readAdc(inputNum);
 
-    char str2send[100];
-    bool isValid = analogValidate(receivedData);
-    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
+    sendADCReadRequest(inputNum);
 
-    ETHsendMessage(msg);
+//    char str2send[100];
+//    bool isValid = analogValidate(receivedData);
+//    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
+//
+//    ETHsendMessage(msg);
 }

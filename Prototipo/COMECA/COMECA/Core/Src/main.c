@@ -61,9 +61,13 @@ typedef enum {
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+SPI_HandleTypeDef hspi3;
+
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
+
+uint8_t rxBuffer[2];
 
 /* USER CODE END PV */
 
@@ -71,6 +75,7 @@ TIM_HandleTypeDef htim14;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM14_Init(void);
+static void MX_SPI3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -111,9 +116,11 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM14_Init();
   MX_LWIP_Init();
+  MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
   HAL_TIM_Base_Start_IT(&htim14);
+  HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
 
   /* USER CODE END 2 */
 
@@ -172,6 +179,44 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
+}
+
+/**
+  * @brief SPI3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI3_Init(void)
+{
+
+  /* USER CODE BEGIN SPI3_Init 0 */
+
+  /* USER CODE END SPI3_Init 0 */
+
+  /* USER CODE BEGIN SPI3_Init 1 */
+
+  /* USER CODE END SPI3_Init 1 */
+  /* SPI3 parameter configuration*/
+  hspi3.Instance = SPI3;
+  hspi3.Init.Mode = SPI_MODE_MASTER;
+  hspi3.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi3.Init.DataSize = SPI_DATASIZE_16BIT;
+  hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi3.Init.NSS = SPI_NSS_SOFT;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi3.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SPI3_Init 2 */
+
+  /* USER CODE END SPI3_Init 2 */
+
 }
 
 /**
@@ -356,9 +401,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 }
 
 
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
+// now we have on buffer the data
 
 
-
+}
 
 
 
