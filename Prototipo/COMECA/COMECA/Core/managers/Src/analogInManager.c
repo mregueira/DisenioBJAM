@@ -22,14 +22,17 @@ bool analogValidate(uint32_t analogData){
 }
 
 void sendADCReadRequest(int inputNum){
-	uint8_t pData[1];
+//	uint8_t pData[1];
+	uint8_t pData[1] = {ADC_CH0_MASK};
 	uint16_t timeout = 50;
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 	HAL_SPI_Transmit(&hspi3, pData, sizeof(pData), timeout);
 }
 
 void analogInManager(message_t json){
     int inputNum = getInputNumber(json);
 //    int receivedData = readAdc(inputNum);
+
 
     sendADCReadRequest(inputNum);
 

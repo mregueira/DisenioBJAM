@@ -54,4 +54,4 @@ json.h:3336:7:json_write_pretty	56	static
 analogInManager.c:15:9:readAdc	16	static
 analogInManager.c:20:6:analogValidate	16	static
 analogInManager.c:24:6:sendADCReadRequest	24	static
-analogInManager.c:30:6:analogInManager	24	static
+analogInManager.c:32:6:analogInManager	24	static
