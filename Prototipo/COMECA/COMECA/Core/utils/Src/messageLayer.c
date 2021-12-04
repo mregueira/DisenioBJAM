@@ -40,10 +40,10 @@ message_t sendIncrementPieceCount(char * str2send){
     return msg2send;
 }
 
-message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, bool isValid){
+message_t sendAnalogInMessage(char * str2send, int inputNum, float receivedData, bool isValid){
     int len = -1;
     if(isValid){ // si es valido
-        len = sprintf(str2send,"{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": %d, \"analogData\": %d}", inputNum, receivedData);
+        len = sprintf(str2send,"{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": %d, \"analogData\": %.5f}", inputNum, receivedData);
     }else{
         len = sprintf(str2send,"{\"frameType\": \"RETRY_ANALOG_IN\",\"inputNumber\": %d}", inputNum);
     }

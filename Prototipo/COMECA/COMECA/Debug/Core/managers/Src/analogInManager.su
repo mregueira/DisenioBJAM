@@ -51,7 +51,7 @@ json.h:3171:7:json_write_pretty_array	48	static
 json.h:3228:7:json_write_pretty_object	48	static
 json.h:3297:7:json_write_pretty_value	32	static
 json.h:3336:7:json_write_pretty	56	static
-analogInManager.c:15:9:readAdc	16	static
-analogInManager.c:20:6:analogValidate	16	static
-analogInManager.c:24:6:sendADCReadRequest	24	static
-analogInManager.c:32:6:analogInManager	24	static
+analogInManager.c:18:9:readAdc	16	static
+analogInManager.c:23:6:analogValidate	16	static
+analogInManager.c:29:10:sendADCReadRequest	24	static
+analogInManager.c:42:6:analogInManager	144	static

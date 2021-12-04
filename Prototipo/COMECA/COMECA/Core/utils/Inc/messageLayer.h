@@ -24,7 +24,7 @@ message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, calip
 message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber);
 
 message_t sendIncrementPieceCount(char * str2send);
-message_t sendAnalogInMessage(char * str2send, int inputNum, int receivedData, bool isValid);
+message_t sendAnalogInMessage(char * str2send, int inputNum, float receivedData, bool isValid);
 
 
 #endif //JSON_TESTBENCH_MESSAGELAYER_H

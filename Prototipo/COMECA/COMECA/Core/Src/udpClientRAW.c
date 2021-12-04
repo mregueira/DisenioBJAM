@@ -74,7 +74,7 @@ void udpClient_connect(void)
 
 	/* configure destination IP address and port */
 	ip_addr_t DestIPaddr;
-	IP_ADDR4(&DestIPaddr, 192, 168, 0, 10); // CAMBIAR ESTO SIEMRPE!
+	IP_ADDR4(&DestIPaddr, 192, 168, 0, 22); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 7);
 
 	if (err == ERR_OK)
