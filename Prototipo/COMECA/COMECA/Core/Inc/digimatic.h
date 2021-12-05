@@ -12,6 +12,7 @@
 #include <string.h> // for memset
 #include "stdbool.h"
 #include "main.h"
+#include <math.h>
 
 #define BITS_PER_FRAME 4
 #define NUMBER_OF_CALIPERS 4
@@ -65,13 +66,22 @@ typedef struct{
 	frame_context_t frame;
 } digimatic_processing_t;
 
-
+typedef struct {
+    float number;
+    bool unit;
+}digimatic_measure_t;
 
 
 void onRisingEdgeOfReqSignal(caliper_number curr_caliper);
 
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper);
+void onRisingEdgeOfClockSignal(caliper_number curr_caliper, void (*onFinishedGettingFramesFor)(caliper_number));
 
 int getCaliperNumberGivenClockPin(uint16_t CLK_Pin);
+
+digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame);
+
+digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper);
+
+bool validCaliperMeasure(digimatic_frame_t* digimaticFrame);
 
 #endif /* INC_DIGIMATIC_H_ */

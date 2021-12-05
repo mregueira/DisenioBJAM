@@ -25,6 +25,9 @@
 /* USER CODE BEGIN Includes */
 #include "udpClientRAW.h"
 #include "digimatic.h"
+#include "../managers/Inc/caliperManager.h"
+#include "../managers/Inc/pieceCountManager.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,7 +35,8 @@
 
 typedef enum {
     READ_ANALOG_INPUT,
-    SET_DIGITAL_OUTPUT
+    SET_DIGITAL_OUTPUT,
+	INVALID_RX_FRAME
 } received_frame_t;
 
 typedef enum {
@@ -57,10 +61,17 @@ typedef enum {
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+<<<<<<< HEAD
+SPI_HandleTypeDef hspi3;
+
+=======
 TIM_HandleTypeDef htim2;
+>>>>>>> master
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
+
+uint8_t rxBuffer[2];
 
 /* USER CODE END PV */
 
@@ -68,7 +79,11 @@ TIM_HandleTypeDef htim14;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM14_Init(void);
+<<<<<<< HEAD
+static void MX_SPI3_Init(void);
+=======
 static void MX_TIM2_Init(void);
+>>>>>>> master
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -109,11 +124,19 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM14_Init();
   MX_LWIP_Init();
+<<<<<<< HEAD
+  MX_SPI3_Init();
+  /* USER CODE BEGIN 2 */
+  udpClient_connect();
+  HAL_TIM_Base_Start_IT(&htim14);
+  HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
+=======
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
   HAL_TIM_Base_Start_IT(&htim14);
   HAL_TIM_Base_Start_IT(&htim2);
+>>>>>>> master
 
   /* USER CODE END 2 */
 
@@ -168,6 +191,49 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+<<<<<<< HEAD
+  {
+    Error_Handler();
+  }
+  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
+}
+
+/**
+  * @brief SPI3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SPI3_Init(void)
+{
+
+  /* USER CODE BEGIN SPI3_Init 0 */
+
+  /* USER CODE END SPI3_Init 0 */
+
+  /* USER CODE BEGIN SPI3_Init 1 */
+
+  /* USER CODE END SPI3_Init 1 */
+  /* SPI3 parameter configuration*/
+  hspi3.Instance = SPI3;
+  hspi3.Init.Mode = SPI_MODE_MASTER;
+  hspi3.Init.Direction = SPI_DIRECTION_2LINES;
+  hspi3.Init.DataSize = SPI_DATASIZE_8BIT;
+  hspi3.Init.CLKPolarity = SPI_POLARITY_LOW;
+  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi3.Init.NSS = SPI_NSS_SOFT;
+  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+  hspi3.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
+  hspi3.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi3.Init.CRCPolynomial = 10;
+  if (HAL_SPI_Init(&hspi3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN SPI3_Init 2 */
+
+  /* USER CODE END SPI3_Init 2 */
+=======
   {
     Error_Handler();
   }
@@ -216,6 +282,7 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
+>>>>>>> master
 
 }
 
@@ -265,9 +332,19 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, CAL3_REQ_Pin|CAL2_REQ_Pin|CAL1_REQ_Pin|CAL4_REQ_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, DIG_OUT_4_Pin|DIG_OUT_3_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, DIG_OUT_2_Pin|DIG_OUT_1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : CAL4_CLK_Pin CAL2_CLK_Pin CAL1_CLK_Pin */
   GPIO_InitStruct.Pin = CAL4_CLK_Pin|CAL2_CLK_Pin|CAL1_CLK_Pin;
@@ -300,12 +377,36 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CAL3_DATA_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : PA4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_4;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : CAL2_DATA_Pin */
   GPIO_InitStruct.Pin = CAL2_DATA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CAL2_DATA_GPIO_Port, &GPIO_InitStruct);
 
+<<<<<<< HEAD
+  /*Configure GPIO pins : DIG_OUT_4_Pin DIG_OUT_3_Pin */
+  GPIO_InitStruct.Pin = DIG_OUT_4_Pin|DIG_OUT_3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : DIG_OUT_2_Pin DIG_OUT_1_Pin */
+  GPIO_InitStruct.Pin = DIG_OUT_2_Pin|DIG_OUT_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+=======
+>>>>>>> master
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -314,7 +415,25 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+<<<<<<< HEAD
+  /*Configure GPIO pins : uC_PLC_Pin uC_PEDAL_Pin */
+  GPIO_InitStruct.Pin = uC_PLC_Pin|uC_PEDAL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+=======
+>>>>>>> master
   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -330,37 +449,50 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	}
 	if(htim  == &htim14){
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
-		HAL_GPIO_TogglePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+//		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
+		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET); // turn off REQ
+		HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_RESET); //
+		HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_RESET); //
+		HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_RESET); //
+
 		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
+		onRisingEdgeOfReqSignal(CALIPER_2);
+		onRisingEdgeOfReqSignal(CALIPER_3);
+		onRisingEdgeOfReqSignal(CALIPER_4);
 	}
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin)); // aca se realiza la lectura de los bits y se va guardando en el buffer
+	// llega una interrupcion por GPIO
+
+	if(GPIO_Pin ==CAL1_CLK_Pin || GPIO_Pin == CAL2_CLK_Pin || GPIO_Pin == CAL3_CLK_Pin || GPIO_Pin == CAL4_CLK_Pin ){
+		//esto se hace si el GPIO_Pin es alguno de los del calibre (CLK)
+
+		onRisingEdgeOfClockSignal(getCaliperNumberGivenClockPin(GPIO_Pin), caliperManager); // aca se realiza la lectura de los bits y se va guardando en el buffer
+	}
+
+	if(GPIO_Pin == uC_PEDAL_Pin){
+		// que pasa con el pedal de los calibres
+	  HAL_TIM_Base_Start_IT(&htim14); // start timer
+	  HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	  HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+	}
+
+	if(GPIO_Pin == uC_PLC_Pin){
+		// que pasa si viene el PLC
+		pieceCountManager();
+	}
 }
 
 
-bool analogValidate(uint32_t analogData){
-	return false;
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
+// now we have on buffer the data
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+
 }
 
-void AnalogInDigitalOutManager(void){
-//    uint16_t receivedFrame = HAL_ETH_GetReceivedFrame(...); // not sure, maybe read a register instead
-//    received_frame_t received_state = ETHReceiveFrameHandler(receivedFrame, &receivedData);
-    uint16_t receivedData = GPIO_PIN_SET;
-	received_frame_t received_state = SET_DIGITAL_OUTPUT;
-
-    if(received_state == READ_ANALOG_INPUT){
-        if(analogValidate(receivedData)){ // si es valido
-//            ETHSendFrameHandler(ANALOG_IN_MEASURE, &receivedData);
-        }else{
-//            ETHSendFrameHandler(RETRY_ANALOG_IN_MEASURE, NULL);
-        }
-
-    }else if(received_state == SET_DIGITAL_OUTPUT){
-        HAL_GPIO_WritePin(DIG_OUT_1((bool)receivedData));
-    }
-}
 
 
 //void irqHandler(){

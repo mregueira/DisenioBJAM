@@ -25,14 +25,52 @@ Mcu.IP0=ETH
 Mcu.IP1=LWIP
 Mcu.IP2=NVIC
 Mcu.IP3=RCC
+<<<<<<< HEAD
+Mcu.IP4=SPI3
+Mcu.IP5=SYS
+=======
 Mcu.IP4=SYS
 Mcu.IP5=TIM2
+>>>>>>> master
 Mcu.IP6=TIM14
 Mcu.IPNb=7
 Mcu.Name=STM32F407V(E-G)Tx
 Mcu.Package=LQFP100
 Mcu.Pin0=PE2
 Mcu.Pin1=PE4
+<<<<<<< HEAD
+Mcu.Pin10=PA4
+Mcu.Pin11=PA7
+Mcu.Pin12=PC4
+Mcu.Pin13=PC5
+Mcu.Pin14=PB1
+Mcu.Pin15=PE7
+Mcu.Pin16=PE9
+Mcu.Pin17=PE11
+Mcu.Pin18=PE13
+Mcu.Pin19=PE15
+Mcu.Pin2=PE6
+Mcu.Pin20=PB11
+Mcu.Pin21=PB12
+Mcu.Pin22=PB13
+Mcu.Pin23=PD13
+Mcu.Pin24=PD15
+Mcu.Pin25=PC7
+Mcu.Pin26=PC9
+Mcu.Pin27=PA8
+Mcu.Pin28=PA13
+Mcu.Pin29=PA14
+Mcu.Pin3=PH0-OSC_IN
+Mcu.Pin30=PC10
+Mcu.Pin31=PC11
+Mcu.Pin32=PC12
+Mcu.Pin33=PB6
+Mcu.Pin34=PB8
+Mcu.Pin35=PE0
+Mcu.Pin36=VP_LWIP_VS_Enabled
+Mcu.Pin37=VP_SYS_VS_Systick
+Mcu.Pin38=VP_TIM14_VS_ClockSourceINT
+=======
 Mcu.Pin10=PA7
 Mcu.Pin11=PC4
 Mcu.Pin12=PC5
@@ -55,13 +93,18 @@ Mcu.Pin27=VP_SYS_VS_Systick
 Mcu.Pin28=VP_TIM2_VS_ClockSourceINT
 Mcu.Pin29=VP_TIM14_VS_ClockSourceINT
 Mcu.Pin3=PH0-OSC_IN
+>>>>>>> master
 Mcu.Pin4=PH1-OSC_OUT
 Mcu.Pin5=PC1
 Mcu.Pin6=PC3
 Mcu.Pin7=PA0-WKUP
 Mcu.Pin8=PA1
 Mcu.Pin9=PA2
+<<<<<<< HEAD
+Mcu.PinsNb=39
+=======
 Mcu.PinsNb=30
+>>>>>>> master
 Mcu.ThirdPartyNb=0
 Mcu.UserConstants=
 Mcu.UserName=STM32F407VGTx
@@ -70,15 +113,27 @@ MxDb.Version=DB.6.0.30
 NVIC.BusFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.DebugMonitor_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.EXTI15_10_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+<<<<<<< HEAD
+NVIC.EXTI2_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+NVIC.EXTI3_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+NVIC.EXTI9_5_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+=======
+>>>>>>> master
 NVIC.ForceEnableDMAVector=true
 NVIC.HardFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.MemoryManagement_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.NonMaskableInt_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.PendSV_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.PriorityGroup=NVIC_PRIORITYGROUP_4
+<<<<<<< HEAD
+NVIC.SPI3_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:true\:false\:false
+NVIC.SysTick_IRQn=true\:0\:0\:false\:false\:true\:false\:true
+=======
 NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 NVIC.SysTick_IRQn=true\:0\:0\:false\:false\:true\:false\:true
 NVIC.TIM2_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+>>>>>>> master
 NVIC.TIM8_TRG_COM_TIM14_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 NVIC.UsageFault_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 PA0-WKUP.GPIOParameters=GPIO_PuPd,GPIO_Label
@@ -94,6 +149,14 @@ PA14.Mode=Serial_Wire
 PA14.Signal=SYS_JTCK-SWCLK
 PA2.Mode=RMII
 PA2.Signal=ETH_MDIO
+<<<<<<< HEAD
+PA4.GPIOParameters=GPIO_Speed,PinState
+PA4.GPIO_Speed=GPIO_SPEED_FREQ_VERY_HIGH
+PA4.Locked=true
+PA4.PinState=GPIO_PIN_SET
+PA4.Signal=GPIO_Output
+=======
+>>>>>>> master
 PA7.Mode=RMII
 PA7.Signal=ETH_CRS_DV
 PA8.GPIOParameters=GPIO_Speed
@@ -111,8 +174,27 @@ PB12.Mode=RMII
 PB12.Signal=ETH_TXD0
 PB13.Mode=RMII
 PB13.Signal=ETH_TXD1
+<<<<<<< HEAD
+PB6.GPIOParameters=GPIO_Label
+PB6.GPIO_Label=uC_PLC
+PB6.Locked=true
+PB6.Signal=GPXTI6
+PB8.GPIOParameters=GPIO_Label
+PB8.GPIO_Label=uC_PEDAL
+PB8.Locked=true
+PB8.Signal=GPXTI8
 PC1.Mode=RMII
 PC1.Signal=ETH_MDC
+PC10.Mode=Full_Duplex_Master
+PC10.Signal=SPI3_SCK
+PC11.Mode=Full_Duplex_Master
+PC11.Signal=SPI3_MISO
+PC12.Mode=Full_Duplex_Master
+PC12.Signal=SPI3_MOSI
+=======
+PC1.Mode=RMII
+PC1.Signal=ETH_MDC
+>>>>>>> master
 PC3.GPIOParameters=GPIO_PuPd,GPIO_Label
 PC3.GPIO_Label=CAL3_CLK
 PC3.GPIO_PuPd=GPIO_PULLUP
@@ -122,6 +204,25 @@ PC4.Mode=RMII
 PC4.Signal=ETH_RXD0
 PC5.Mode=RMII
 PC5.Signal=ETH_RXD1
+<<<<<<< HEAD
+PC7.GPIOParameters=GPIO_Label
+PC7.GPIO_Label=DIG_OUT_2
+PC7.Locked=true
+PC7.Signal=GPIO_Output
+PC9.GPIOParameters=GPIO_Label
+PC9.GPIO_Label=DIG_OUT_1
+PC9.Locked=true
+PC9.Signal=GPIO_Output
+PD13.GPIOParameters=GPIO_Label
+PD13.GPIO_Label=DIG_OUT_4
+PD13.Locked=true
+PD13.Signal=GPIO_Output
+PD15.GPIOParameters=GPIO_Label
+PD15.GPIO_Label=DIG_OUT_3
+PD15.Locked=true
+PD15.Signal=GPIO_Output
+=======
+>>>>>>> master
 PE0.GPIOParameters=GPIO_Label,GPIO_ModeDefaultOutputPP
 PE0.GPIO_Label=CAL4_REQ
 PE0.GPIO_ModeDefaultOutputPP=GPIO_MODE_OUTPUT_OD
@@ -199,7 +300,11 @@ ProjectManager.StackSize=0x400
 ProjectManager.TargetToolchain=STM32CubeIDE
 ProjectManager.ToolChainLocation=
 ProjectManager.UnderRoot=true
+<<<<<<< HEAD
+ProjectManager.functionlistsort=1-MX_GPIO_Init-GPIO-false-HAL-true,2-SystemClock_Config-RCC-false-HAL-false,3-MX_TIM14_Init-TIM14-false-HAL-true,4-MX_LWIP_Init-LWIP-false-HAL-false,5-MX_SPI3_Init-SPI3-false-HAL-true
+=======
 ProjectManager.functionlistsort=1-MX_GPIO_Init-GPIO-false-HAL-true,2-SystemClock_Config-RCC-false-HAL-false,3-MX_TIM14_Init-TIM14-false-HAL-true,4-MX_LWIP_Init-LWIP-false-HAL-false
+>>>>>>> master
 RCC.48MHZClocksFreq_Value=50000000
 RCC.AHBFreq_Value=50000000
 RCC.APB1CLKDivider=RCC_HCLK_DIV2
@@ -242,6 +347,24 @@ SH.GPXTI2.0=GPIO_EXTI2
 SH.GPXTI2.ConfNb=1
 SH.GPXTI3.0=GPIO_EXTI3
 SH.GPXTI3.ConfNb=1
+<<<<<<< HEAD
+SH.GPXTI6.0=GPIO_EXTI6
+SH.GPXTI6.ConfNb=1
+SH.GPXTI8.0=GPIO_EXTI8
+SH.GPXTI8.ConfNb=1
+SH.GPXTI9.0=GPIO_EXTI9
+SH.GPXTI9.ConfNb=1
+SPI3.BaudRatePrescaler=SPI_BAUDRATEPRESCALER_16
+SPI3.CalculateBaudRate=1.5625 MBits/s
+SPI3.DataSize=SPI_DATASIZE_8BIT
+SPI3.Direction=SPI_DIRECTION_2LINES
+SPI3.IPParameters=VirtualType,Mode,Direction,CalculateBaudRate,DataSize,BaudRatePrescaler
+SPI3.Mode=SPI_MODE_MASTER
+SPI3.VirtualType=VM_MASTER
+TIM14.IPParameters=Prescaler,Period
+TIM14.Period=9375 - 1
+TIM14.Prescaler=800 - 1
+=======
 SH.GPXTI9.0=GPIO_EXTI9
 SH.GPXTI9.ConfNb=1
 TIM14.IPParameters=Prescaler,Period
@@ -250,13 +373,17 @@ TIM14.Prescaler=800 - 1
 TIM2.IPParameters=Prescaler,Period
 TIM2.Period=10000-1
 TIM2.Prescaler=5000-1
+>>>>>>> master
 VP_LWIP_VS_Enabled.Mode=Enabled
 VP_LWIP_VS_Enabled.Signal=LWIP_VS_Enabled
 VP_SYS_VS_Systick.Mode=SysTick
 VP_SYS_VS_Systick.Signal=SYS_VS_Systick
 VP_TIM14_VS_ClockSourceINT.Mode=Enable_Timer
 VP_TIM14_VS_ClockSourceINT.Signal=TIM14_VS_ClockSourceINT
+<<<<<<< HEAD
+=======
 VP_TIM2_VS_ClockSourceINT.Mode=Internal
 VP_TIM2_VS_ClockSourceINT.Signal=TIM2_VS_ClockSourceINT
+>>>>>>> master
 board=custom
 isbadioc=false

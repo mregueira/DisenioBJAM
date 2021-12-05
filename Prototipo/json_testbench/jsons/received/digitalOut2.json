@@ -1,0 +1,5 @@
+{
+  "frameType": "DIGITAL_OUTPUT_SET_STATE",
+  "outputNumber": 1,
+  "state": "OFF"
+}

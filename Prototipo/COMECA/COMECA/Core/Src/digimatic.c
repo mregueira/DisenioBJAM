@@ -40,7 +40,7 @@ void onRisingEdgeOfReqSignal(caliper_number curr_caliper){
 }
 
 
-void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
+void onRisingEdgeOfClockSignal(caliper_number curr_caliper, void (*onFinishedGettingFramesFor)(caliper_number)){
 	if(digimatic[curr_caliper].caliper_state != IDLE && digimatic[curr_caliper].caliper_state != FINISHED){
 		digimatic[curr_caliper].caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
 		if(digimatic[curr_caliper].frame.index == 0){
@@ -58,15 +58,80 @@ void onRisingEdgeOfClockSignal(caliper_number curr_caliper){
 		if(digimatic[curr_caliper].frame.index == NUMBER_OF_FRAMES){
 			digimatic[curr_caliper].frame.index = 0;
 			digimatic[curr_caliper].caliper_state = FINISHED;
+			onFinishedGettingFramesFor(curr_caliper);
 		}
 	}
 }
 
-digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper){
+digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
 	if(digimatic[curr_caliper].caliper_state == FINISHED){
 		digimatic[curr_caliper].caliper_state = IDLE;
-		return &digimatic[curr_caliper].frames[0];
+		return &(digimatic[curr_caliper].frames[0]);
 	}else{
 		return NULL;
 	}
 }
+
+
+digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
+//  ignore all 'F'
+    digimaticFrame+= 4;
+//  get sign
+    float sign = (*digimaticFrame) == 8? -1: 1;
+//  advance pointer and get digits;
+    digimaticFrame++;
+    int digits_left = 6;
+    float number = 0;
+    while(digits_left){
+        number += pow(10,digits_left)*(*digimaticFrame);
+        digits_left--;
+        digimaticFrame++;
+    }
+    // digimaticFrame is now on d12
+    float decimal_point = pow(10,(*digimaticFrame)+1);
+    digimaticFrame++;
+    int unit = (*digimaticFrame);
+    digimatic_measure_t measure;
+    measure.number = sign*number/decimal_point;
+    measure.unit = unit;
+
+    return measure;
+}
+
+bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
+	digimatic_frame_t* auxDigimaticFrame = digimaticFrame;
+
+//  check all 'F' = 15
+	for(int i = 0; i<4; i++){
+		if((*auxDigimaticFrame != 15)){
+			return false;
+		}
+		auxDigimaticFrame++;
+	}
+// check sign
+	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 8){
+		return false;
+	}
+
+	auxDigimaticFrame++;
+// check digits between 0 and 9
+	for(int i = 0; i<6; i++){
+		if((*auxDigimaticFrame) > 9 || (*auxDigimaticFrame < 0)){
+			return false;
+		}
+		auxDigimaticFrame++;
+	}
+// check decimal point between 0 and 5
+	if((*auxDigimaticFrame) < 0 || (*auxDigimaticFrame) > 5){
+		return false;
+	}
+
+	auxDigimaticFrame++;
+// check unit
+	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 1){
+		return false;
+	}
+
+	return true;
+}
+

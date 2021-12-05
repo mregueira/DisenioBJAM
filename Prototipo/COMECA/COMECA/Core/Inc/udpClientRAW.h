@@ -22,9 +22,16 @@
 #ifndef INC_UDPCLIENTRAW_H_
 #define INC_UDPCLIENTRAW_H_
 
+<<<<<<< HEAD
+#include "message.h"
+
+void udpClient_connect(void);
+void udpClient_custom_string(message_t message);
+=======
 
 
 void udpClient_connect(void);
+>>>>>>> master
 
 
 #endif /* INC_UDPCLIENTRAW_H_ */

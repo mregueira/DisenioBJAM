@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="json_testbench"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="json_testbench">
+				<Option output="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/json_testbench.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_testbench"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="json_testbench/fast">
+				<Option output="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/json_testbench.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 json_testbench/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/CODE_TESTING.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Src/main.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInManager.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/caliperManager.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/pieceCountManager.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInDigitalOutManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/jsonGetter.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/messageLayer.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/ethernet.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/jsonGetter.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/messageLayer.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

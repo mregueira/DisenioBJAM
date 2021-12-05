@@ -25,11 +25,44 @@
 
 #include "stdio.h"
 #include "string.h"
+<<<<<<< HEAD
+#include "../utils/Inc/ethernet.h"
+=======
 
+>>>>>>> master
 #include "udpClientRAW.h"
 
 
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
+<<<<<<< HEAD
+
+struct udp_pcb *upcb;
+char buffer[1000];
+message_t message;
+
+static void udpClient_send_first_message(void)
+{
+  struct pbuf *txBuf;
+  char data[100];
+
+  int len = sprintf(data, "Success on Initializing UDP Client");
+
+  /* allocate pbuf from pool*/
+  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+
+  if (txBuf != NULL)
+  {
+    /* copy data to pbuf */
+    pbuf_take(txBuf, data, len);
+
+    /* send udp data */
+    udp_send(upcb, txBuf);
+
+    /* free pbuf */
+    pbuf_free(txBuf);
+  }
+}
+=======
 static void udpClient_send(void);
 
 struct udp_pcb *upcb;
@@ -53,6 +86,7 @@ void PseudoHAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 4. Process reply and go back to step 2, if necessary.
 5. Close socket descriptor and exit.
 */
+>>>>>>> master
 
 
 void udpClient_connect(void)
@@ -70,25 +104,45 @@ void udpClient_connect(void)
 
 	/* configure destination IP address and port */
 	ip_addr_t DestIPaddr;
+<<<<<<< HEAD
+	IP_ADDR4(&DestIPaddr, 192, 168, 0, 22); // CAMBIAR ESTO SIEMRPE!
+=======
 	IP_ADDR4(&DestIPaddr, 192, 168, 0, 25);
+>>>>>>> master
 	err= udp_connect(upcb, &DestIPaddr, 7);
 
 	if (err == ERR_OK)
 	{
+<<<<<<< HEAD
+//		/* 2. Send message to server */
+		udpClient_send_first_message ();
+=======
 		/* 2. Send message to server */
 		udpClient_send ();
+>>>>>>> master
 
 		/* 3. Set a receive callback for the upcb */
 		udp_recv(upcb, udp_receive_callback, NULL);
 	}
 }
 
+<<<<<<< HEAD
+
+void udpClient_custom_string(message_t message)
+=======
 static void udpClient_send(void)
+>>>>>>> master
 {
   struct pbuf *txBuf;
   char data[100];
 
+<<<<<<< HEAD
+	/* Copy the message data to the txBuf */
+  strncpy (data, message.msg, message.len);
+  int len = message.len;
+=======
   int len = sprintf(data, "sending UDP client message %d", counter);
+>>>>>>> master
 
   /* allocate pbuf from pool*/
   txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
@@ -112,11 +166,26 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 	/* Copy the data from the pbuf */
 	strncpy (buffer, (char *)p->payload, p->len);
 
+<<<<<<< HEAD
+	// store the Ethernet Message
+	message.msg = buffer;
+	message.len = p-> len;
+
+	// process the received message
+	ETHonMessageReceived(message);
+=======
 	/*increment message count */
 	counter++;
+>>>>>>> master
 
 	/* Free receive pbuf */
 	pbuf_free(p);
 }
 
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> master
