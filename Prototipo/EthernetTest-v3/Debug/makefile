@@ -70,8 +70,8 @@ all: main-build
 main-build: EthernetTest-v3.elf secondary-outputs
 
 # Tool invocations
-EthernetTest-v3.elf: $(OBJS) $(USER_OBJS) C:\Users\Marcelo\STM32CubeIDE\workspace_1.4.0\EthernetTest-v3\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EthernetTest-v3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Marcelo\STM32CubeIDE\workspace_1.4.0\EthernetTest-v3\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EthernetTest-v3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+EthernetTest-v3.elf: $(OBJS) $(USER_OBJS) C:\Github_Repos\DisenioBJAM\Prototipo\EthernetTest-v3\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "EthernetTest-v3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Github_Repos\DisenioBJAM\Prototipo\EthernetTest-v3\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EthernetTest-v3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

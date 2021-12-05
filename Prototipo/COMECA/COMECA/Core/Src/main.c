@@ -61,8 +61,12 @@ typedef enum {
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+<<<<<<< HEAD
 SPI_HandleTypeDef hspi3;
 
+=======
+TIM_HandleTypeDef htim2;
+>>>>>>> master
 TIM_HandleTypeDef htim14;
 
 /* USER CODE BEGIN PV */
@@ -75,7 +79,11 @@ uint8_t rxBuffer[2];
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM14_Init(void);
+<<<<<<< HEAD
 static void MX_SPI3_Init(void);
+=======
+static void MX_TIM2_Init(void);
+>>>>>>> master
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -116,11 +124,19 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM14_Init();
   MX_LWIP_Init();
+<<<<<<< HEAD
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
   HAL_TIM_Base_Start_IT(&htim14);
   HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
+=======
+  MX_TIM2_Init();
+  /* USER CODE BEGIN 2 */
+  udpClient_connect();
+  HAL_TIM_Base_Start_IT(&htim14);
+  HAL_TIM_Base_Start_IT(&htim2);
+>>>>>>> master
 
   /* USER CODE END 2 */
 
@@ -175,6 +191,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+<<<<<<< HEAD
   {
     Error_Handler();
   }
@@ -216,6 +233,56 @@ static void MX_SPI3_Init(void)
   /* USER CODE BEGIN SPI3_Init 2 */
 
   /* USER CODE END SPI3_Init 2 */
+=======
+  {
+    Error_Handler();
+  }
+  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 5000-1;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 10000-1;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+>>>>>>> master
 
 }
 
@@ -323,6 +390,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(CAL2_DATA_GPIO_Port, &GPIO_InitStruct);
 
+<<<<<<< HEAD
   /*Configure GPIO pins : DIG_OUT_4_Pin DIG_OUT_3_Pin */
   GPIO_InitStruct.Pin = DIG_OUT_4_Pin|DIG_OUT_3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -337,6 +405,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+=======
+>>>>>>> master
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -345,12 +415,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+<<<<<<< HEAD
   /*Configure GPIO pins : uC_PLC_Pin uC_PEDAL_Pin */
   GPIO_InitStruct.Pin = uC_PLC_Pin|uC_PEDAL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+=======
+>>>>>>> master
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI2_IRQn);
@@ -371,6 +444,9 @@ static void MX_GPIO_Init(void)
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if(htim == &htim2){
+		PseudoHAL_TIM_PeriodElapsedCallback(htim);
+	}
 	if(htim  == &htim14){
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 //		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
