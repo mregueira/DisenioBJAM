@@ -66,7 +66,7 @@ void onRisingEdgeOfClockSignal(caliper_number curr_caliper, void (*onFinishedGet
 digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
 	if(digimatic[curr_caliper].caliper_state == FINISHED){
 		digimatic[curr_caliper].caliper_state = IDLE;
-		return &digimatic[curr_caliper].frames[0];
+		return &(digimatic[curr_caliper].frames[0]);
 	}else{
 		return NULL;
 	}
@@ -88,7 +88,7 @@ digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
         digimaticFrame++;
     }
     // digimaticFrame is now on d12
-    float decimal_point = pow(10,(*digimaticFrame));
+    float decimal_point = pow(10,(*digimaticFrame)+1);
     digimaticFrame++;
     int unit = (*digimaticFrame);
     digimatic_measure_t measure;
@@ -99,33 +99,36 @@ digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
 }
 
 bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
+	digimatic_frame_t* auxDigimaticFrame = digimaticFrame;
+
 //  check all 'F' = 15
 	for(int i = 0; i<4; i++){
-		if((*digimaticFrame != 15)){
+		if((*auxDigimaticFrame != 15)){
 			return false;
 		}
-		digimaticFrame++;
+		auxDigimaticFrame++;
 	}
 // check sign
-	if((*digimaticFrame) != 0 || (*digimaticFrame) != 8){
+	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 8){
 		return false;
 	}
 
-	digimaticFrame++;
+	auxDigimaticFrame++;
 // check digits between 0 and 9
 	for(int i = 0; i<6; i++){
-		if((*digimaticFrame) > 9 || (*digimaticFrame < 0)){
+		if((*auxDigimaticFrame) > 9 || (*auxDigimaticFrame < 0)){
 			return false;
 		}
-		digimaticFrame++;
+		auxDigimaticFrame++;
 	}
 // check decimal point between 0 and 5
-	if((*digimaticFrame) < 0 || (*digimaticFrame) > 5){
+	if((*auxDigimaticFrame) < 0 || (*auxDigimaticFrame) > 5){
 		return false;
 	}
 
+	auxDigimaticFrame++;
 // check unit
-	if((*digimaticFrame) != 0 || (*digimaticFrame) != 1){
+	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 1){
 		return false;
 	}
 

@@ -31,6 +31,7 @@ void caliperManager(caliper_number caliperNumber){
         if(isValid) break;
     }
 
+
     char str2send[MAX_STRING_SIZE];
     message_t msg;
     if(isValid){
