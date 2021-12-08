@@ -46,7 +46,7 @@ static void udpClient_send_first_message(void)
   txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
 
   if (txBuf != NULL)
-  {
+  {Gi
     /* copy data to pbuf */
     pbuf_take(txBuf, data, len);
 

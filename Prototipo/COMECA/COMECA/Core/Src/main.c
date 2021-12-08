@@ -347,7 +347,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : uC_PLC_Pin uC_PEDAL_Pin */
   GPIO_InitStruct.Pin = uC_PLC_Pin|uC_PEDAL_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
@@ -415,19 +415,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	}
 }
 
-
-void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
-// now we have on buffer the data
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
-
-}
-
-
-
-//void irqHandler(){
-//	// cuando llega una interrupcion
-//	AnalogInDigitalOutManager(void);
-//}
 
 /* USER CODE END 4 */
 
