@@ -372,12 +372,15 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
+		HAL_TIM_Base_Stop(&htim14);
+
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 //		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo
 		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_RESET); // turn off REQ
 		HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_RESET); //
 		HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_RESET); //
 		HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_RESET); //
+
 
 		onRisingEdgeOfReqSignal(CALIPER_1); // prendo el flag de poder empezar a leer los bits
 		onRisingEdgeOfReqSignal(CALIPER_2);
@@ -397,11 +400,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 	if(GPIO_Pin == uC_PEDAL_Pin){
 		// que pasa con el pedal de los calibres
-	  HAL_TIM_Base_Start_IT(&htim14); // start timer
+
 	  HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
 	  HAL_GPIO_WritePin(CAL2_REQ_GPIO_Port, CAL2_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
 	  HAL_GPIO_WritePin(CAL3_REQ_GPIO_Port, CAL3_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
 	  HAL_GPIO_WritePin(CAL4_REQ_GPIO_Port, CAL4_REQ_Pin, GPIO_PIN_SET); // supose REQ starts down, we turn on the REQ
+
+	  HAL_TIM_Base_Start_IT(&htim14); // start timer
 	}
 
 	if(GPIO_Pin == uC_PLC_Pin){
