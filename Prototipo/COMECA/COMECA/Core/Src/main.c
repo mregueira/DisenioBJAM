@@ -119,7 +119,7 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
-  HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
+  //HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
 
   /* USER CODE END 2 */
 
@@ -371,7 +371,7 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
-		HAL_TIM_Base_Stop(&htim14);
+		HAL_TIM_Base_Stop_IT(&htim14);
 
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 //		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo

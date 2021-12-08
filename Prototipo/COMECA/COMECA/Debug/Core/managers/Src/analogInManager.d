@@ -41,10 +41,10 @@ Core/managers/Src/analogInManager.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/message.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
@@ -132,13 +132,13 @@ Core/managers/Src/analogInManager.o: \
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/message.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h:
 

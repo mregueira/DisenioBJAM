@@ -5,9 +5,9 @@ Core/utils/Src/ethernet.o: ../Core/utils/Src/ethernet.c \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../Inc/CODE_TESTING.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../Inc/message.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/messageLayer.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h \
+ ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/digimatic.h \
+ ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -37,7 +37,7 @@ Core/utils/Src/ethernet.o: ../Core/utils/Src/ethernet.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
+ ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/json.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/analogInManager.h \
@@ -59,11 +59,11 @@ Core/utils/Src/ethernet.o: ../Core/utils/Src/ethernet.c \
 
 ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/messageLayer.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/CODE_TESTING.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h:
+../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/digimatic.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h:
+../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/main.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
@@ -123,7 +123,7 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/../../Inc/message.h:
 
 ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h:
 

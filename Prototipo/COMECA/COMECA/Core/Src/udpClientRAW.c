@@ -46,7 +46,7 @@ static void udpClient_send_first_message(void)
   txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
 
   if (txBuf != NULL)
-  {Gi
+  {
     /* copy data to pbuf */
     pbuf_take(txBuf, data, len);
 
@@ -74,7 +74,7 @@ void udpClient_connect(void)
 
 	/* configure destination IP address and port */
 	ip_addr_t DestIPaddr;
-	IP_ADDR4(&DestIPaddr, 192, 168, 0, 22); // CAMBIAR ESTO SIEMRPE!
+	IP_ADDR4(&DestIPaddr, 192, 168, 0, 9); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 7);
 
 	if (err == ERR_OK)
@@ -84,6 +84,10 @@ void udpClient_connect(void)
 
 		/* 3. Set a receive callback for the upcb */
 		udp_recv(upcb, udp_receive_callback, NULL);
+	}
+	else
+	{
+		printf("no se pudo contectar");
 	}
 }
 

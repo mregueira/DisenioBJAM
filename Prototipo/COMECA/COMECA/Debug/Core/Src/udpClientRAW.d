@@ -65,10 +65,10 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/message.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/digimatic.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/main.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/json.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/analogInManager.h \
@@ -212,13 +212,13 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
 
 ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/CODE_TESTING.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\digimatic.h:
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/digimatic.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\main.h:
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/main.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/../../Inc/message.h:
 
 ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h:
 

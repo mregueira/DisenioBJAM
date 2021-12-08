@@ -53,5 +53,5 @@ json.h:3297:7:json_write_pretty_value	32	static
 json.h:3336:7:json_write_pretty	56	static
 udpClientRAW.c:38:13:udpClient_send_first_message	120	static
 udpClientRAW.c:62:6:udpClient_connect	24	static
-udpClientRAW.c:91:6:udpClient_custom_string	128	static
-udpClientRAW.c:117:6:udp_receive_callback	24	static
+udpClientRAW.c:95:6:udpClient_custom_string	128	static
+udpClientRAW.c:121:6:udp_receive_callback	24	static

@@ -37,15 +37,15 @@ Core/managers/Src/caliperManager.o: ../Core/managers/Src/caliperManager.c \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/message.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
+ c:\users\marcelo\documents\github\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h \
+ c:\users\marcelo\documents\github\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/json.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
- c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
@@ -128,23 +128,23 @@ Core/managers/Src/caliperManager.o: ../Core/managers/Src/caliperManager.c \
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/CODE_TESTING.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../Inc/message.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\messagelayer.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/messageLayer.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
+c:\users\marcelo\documents\github\diseniobjam\prototipo\comeca\comeca\core\inc\code_testing.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
+c:\users\marcelo\documents\github\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/json.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h:
 
-c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h:
+../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h:
 
