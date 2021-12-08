@@ -119,7 +119,6 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
-  HAL_TIM_Base_Start_IT(&htim14);
   HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
 
   /* USER CODE END 2 */
