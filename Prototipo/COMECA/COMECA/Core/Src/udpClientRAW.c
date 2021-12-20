@@ -37,25 +37,25 @@ message_t message;
 
 static void udpClient_send_first_message(void)
 {
-  struct pbuf *txBuf;
-  char data[100];
-
-  int len = sprintf(data, "Success on Initializing UDP Client");
-
-  /* allocate pbuf from pool*/
-  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
-
-  if (txBuf != NULL)
-  {Gi
-    /* copy data to pbuf */
-    pbuf_take(txBuf, data, len);
-
-    /* send udp data */
-    udp_send(upcb, txBuf);
-
-    /* free pbuf */
-    pbuf_free(txBuf);
-  }
+//  struct pbuf *txBuf;
+//  char data[100];
+//
+//  int len = sprintf(data, "Success on Initializing UDP Client");
+//
+//  /* allocate pbuf from pool*/
+//  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+//
+//  if (txBuf != NULL)
+//  {
+//    /* copy data to pbuf */
+//    pbuf_take(txBuf, data, len);
+//
+//    /* send udp data */
+//    udp_send(upcb, txBuf);
+//
+//    /* free pbuf */
+//    pbuf_free(txBuf);
+//  }
 }
 
 
@@ -68,14 +68,15 @@ void udpClient_connect(void)
 
 	/* Bind the block to module's IP and port */
 	ip_addr_t myIPaddr;
-	IP_ADDR4(&myIPaddr, 192, 168, 0, 111);
-	udp_bind(upcb, &myIPaddr, 8);
+	IP_ADDR4(&myIPaddr, 192, 168, 110, 1);
+	udp_bind(upcb, &myIPaddr, 4444);
 
 
 	/* configure destination IP address and port */
 	ip_addr_t DestIPaddr;
-	IP_ADDR4(&DestIPaddr, 192, 168, 0, 22); // CAMBIAR ESTO SIEMRPE!
-	err= udp_connect(upcb, &DestIPaddr, 7);
+	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
+//	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
+	err= udp_connect(upcb, &DestIPaddr, 4445);
 
 	if (err == ERR_OK)
 	{
@@ -91,7 +92,7 @@ void udpClient_connect(void)
 void udpClient_custom_string(message_t message)
 {
   struct pbuf *txBuf;
-  char data[100];
+  char data[GLOBAL_MAX_STRING_SIZE];
 
 	/* Copy the message data to the txBuf */
   strncpy (data, message.msg, message.len);
