@@ -37,25 +37,25 @@ message_t message;
 
 static void udpClient_send_first_message(void)
 {
-  struct pbuf *txBuf;
-  char data[GLOBAL_MAX_STRING_SIZE];
-
-  int len = sprintf(data, "Success on Initializing UDP Client");
-
-  /* allocate pbuf from pool*/
-  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
-
-  if (txBuf != NULL)
-  {
-    /* copy data to pbuf */
-    pbuf_take(txBuf, data, len);
-
-    /* send udp data */
-    udp_send(upcb, txBuf);
-
-    /* free pbuf */
-    pbuf_free(txBuf);
-  }
+//  struct pbuf *txBuf;
+//  char data[GLOBAL_MAX_STRING_SIZE];
+//
+//  int len = sprintf(data, "Success on Initializing UDP Client");
+//
+//  /* allocate pbuf from pool*/
+//  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
+//
+//  if (txBuf != NULL)
+//  {
+//    /* copy data to pbuf */
+//    pbuf_take(txBuf, data, len);
+//
+//    /* send udp data */
+//    udp_send(upcb, txBuf);
+//
+//    /* free pbuf */
+//    pbuf_free(txBuf);
+//  }
 }
 
 
@@ -76,15 +76,8 @@ void udpClient_connect(void)
 	/* configure destination IP address and port */
 	// ip servidor de datos
 	ip_addr_t DestIPaddr;
-<<<<<<< HEAD
-//	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
-	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
+	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 4445);
-=======
-	IP_ADDR4(&DestIPaddr, 192, 168, 0, 9); // CAMBIAR ESTO SIEMRPE!
-	err= udp_connect(upcb, &DestIPaddr, 7);
->>>>>>> 3e8e7acf55b0e8d7680ab58c1b1d405c31c04f41
-
 	if (err == ERR_OK)
 	{
 //		/* 2. Send message to server */
