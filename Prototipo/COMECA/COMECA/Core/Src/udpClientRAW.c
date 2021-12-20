@@ -76,9 +76,14 @@ void udpClient_connect(void)
 	/* configure destination IP address and port */
 	// ip servidor de datos
 	ip_addr_t DestIPaddr;
+<<<<<<< HEAD
 //	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
 	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 4445);
+=======
+	IP_ADDR4(&DestIPaddr, 192, 168, 0, 9); // CAMBIAR ESTO SIEMRPE!
+	err= udp_connect(upcb, &DestIPaddr, 7);
+>>>>>>> 3e8e7acf55b0e8d7680ab58c1b1d405c31c04f41
 
 	if (err == ERR_OK)
 	{
@@ -87,6 +92,10 @@ void udpClient_connect(void)
 
 		/* 3. Set a receive callback for the upcb */
 		udp_recv(upcb, udp_receive_callback, NULL);
+	}
+	else
+	{
+		printf("no se pudo contectar");
 	}
 }
 
