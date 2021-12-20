@@ -4,7 +4,7 @@
 #include "../Inc/pieceCountManager.h"
 
 void pieceCountManager(void){
-    char str2send[100];
+    char str2send[GLOBAL_MAX_STRING_SIZE];
     message_t msg;
     msg = sendIncrementPieceCount(str2send);
     ETHsendMessage(msg);

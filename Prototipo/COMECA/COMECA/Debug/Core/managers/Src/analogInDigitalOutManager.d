@@ -40,9 +40,11 @@ Core/managers/Src/analogInDigitalOutManager.o: \
  ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/json.h \
  ../Core/managers/Src/../Inc/analogInManager.h \
+ ../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/digitalOutManager.h
 
@@ -126,11 +128,15 @@ Core/managers/Src/analogInDigitalOutManager.o: \
 
 ../Core/managers/Src/../Inc/analogInManager.h:
 
+../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h:
+
 ../Core/managers/Src/../Inc/../../utils/Inc/ethernet.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInDigitalOutManager.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:
 

@@ -13,7 +13,7 @@
 #define ADC_CH3_MASK 0b11100111
 
 
-
+#include "../../Inc/BUFFER_SIZE.h"
 #include "../../Inc/CODE_TESTING.h"
 
 #ifdef TESTING

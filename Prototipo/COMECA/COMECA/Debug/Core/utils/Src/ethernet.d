@@ -41,10 +41,12 @@ Core/utils/Src/ethernet.o: ../Core/utils/Src/ethernet.c \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/json.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/analogInManager.h \
+ ../Core/utils/Src/../Inc/../../managers/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/ethernet.h \
  ../Core/utils/Src/../Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/utils/Src/../Inc/../../Inc/message.h \
  ../Core/utils/Src/../Inc/../../Inc/udpClientRAW.h \
+ ../Core/utils/Src/../Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/utils/Src/../Inc/../../Inc/message.h
 
 ../Core/utils/Src/../Inc/ethernet.h:
@@ -131,6 +133,8 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 
 ../Core/utils/Src/../Inc/../../managers/Inc/analogInManager.h:
 
+../Core/utils/Src/../Inc/../../managers/Inc/../../Inc/BUFFER_SIZE.h:
+
 ../Core/utils/Src/../Inc/../../managers/Inc/../../utils/Inc/ethernet.h:
 
 ../Core/utils/Src/../Inc/../../managers/Inc/digitalOutManager.h:
@@ -138,5 +142,7 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 ../Core/utils/Src/../Inc/../../Inc/message.h:
 
 ../Core/utils/Src/../Inc/../../Inc/udpClientRAW.h:
+
+../Core/utils/Src/../Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/utils/Src/../Inc/../../Inc/message.h:

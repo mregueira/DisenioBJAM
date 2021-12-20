@@ -5,7 +5,7 @@
 #ifndef JSON_TESTBENCH_CALIPERMANAGER_H
 #define JSON_TESTBENCH_CALIPERMANAGER_H
 
-#define MAX_STRING_SIZE 80
+#include "../../Inc/BUFFER_SIZE.h"
 #include "../../Inc/CODE_TESTING.h"
 
 #define RETRY_TIMES 3

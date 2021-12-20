@@ -1,6 +1,7 @@
 Core/managers/Src/pieceCountManager.o: \
  ../Core/managers/Src/pieceCountManager.c \
  ../Core/managers/Src/../Inc/pieceCountManager.h \
+ ../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/messageLayer.h \
@@ -47,12 +48,16 @@ Core/managers/Src/pieceCountManager.o: \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h
 
 ../Core/managers/Src/../Inc/pieceCountManager.h:
+
+../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h:
 
@@ -146,10 +151,14 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h:
 
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h:
+
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:

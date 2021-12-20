@@ -22,6 +22,7 @@
 #ifndef INC_UDPCLIENTRAW_H_
 #define INC_UDPCLIENTRAW_H_
 
+#include "BUFFER_SIZE.h"
 #include "message.h"
 
 void udpClient_connect(void);

@@ -1,6 +1,7 @@
 Core/managers/Src/analogInManager.o: \
  ../Core/managers/Src/analogInManager.c \
  ../Core/managers/Src/../Inc/analogInManager.h \
+ ../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/jsonGetter.h \
@@ -48,9 +49,12 @@ Core/managers/Src/analogInManager.o: \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h
 
 ../Core/managers/Src/../Inc/analogInManager.h:
+
+../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h:
 
@@ -145,5 +149,7 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\jsongetter.h:
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:

@@ -1,5 +1,6 @@
 Core/managers/Src/caliperManager.o: ../Core/managers/Src/caliperManager.c \
  ../Core/managers/Src/../Inc/caliperManager.h \
+ ../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/messageLayer.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
@@ -45,14 +46,18 @@ Core/managers/Src/caliperManager.o: ../Core/managers/Src/caliperManager.c \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h \
  ../Core/managers/Src/../Inc/../../Inc/digimatic.h \
  ../Core/managers/Src/../Inc/../../Inc/message.h
 
 ../Core/managers/Src/../Inc/caliperManager.h:
+
+../Core/managers/Src/../Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../Inc/CODE_TESTING.h:
 
@@ -144,11 +149,15 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/analogInManager.h:
 
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h:
+
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/managers/Src/../Inc/../../utils/Inc/../../Inc/message.h:
 

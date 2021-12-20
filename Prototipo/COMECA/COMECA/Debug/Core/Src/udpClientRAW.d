@@ -72,10 +72,12 @@ Core/Src/udpClientRAW.o: ../Core/Src/udpClientRAW.c \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/jsonGetter.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/json.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/analogInManager.h \
+ ../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h \
  ../Core/Src/../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/Src/../utils/Inc/../../Inc/message.h \
  ../Core/Src/../utils/Inc/../../Inc/udpClientRAW.h \
+ ../Core/Src/../utils/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/Src/../utils/Inc/../../Inc/message.h ../Core/Inc/udpClientRAW.h
 
 ../Middlewares/Third_Party/LwIP/src/include/lwip/pbuf.h:
@@ -226,6 +228,8 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 
 ../Core/Src/../utils/Inc/../../managers/Inc/analogInManager.h:
 
+../Core/Src/../utils/Inc/../../managers/Inc/../../Inc/BUFFER_SIZE.h:
+
 ../Core/Src/../utils/Inc/../../managers/Inc/../../utils/Inc/ethernet.h:
 
 ../Core/Src/../utils/Inc/../../managers/Inc/digitalOutManager.h:
@@ -233,6 +237,8 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 ../Core/Src/../utils/Inc/../../Inc/message.h:
 
 ../Core/Src/../utils/Inc/../../Inc/udpClientRAW.h:
+
+../Core/Src/../utils/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/Src/../utils/Inc/../../Inc/message.h:
 

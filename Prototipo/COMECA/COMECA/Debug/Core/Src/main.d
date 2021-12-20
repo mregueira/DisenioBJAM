@@ -60,8 +60,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/dhcp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h ../Core/Inc/udpClientRAW.h \
- ../Core/Inc/message.h ../Core/Inc/digimatic.h ../Core/Inc/main.h \
- ../Core/Src/../managers/Inc/caliperManager.h \
+ ../Core/Inc/BUFFER_SIZE.h ../Core/Inc/message.h ../Core/Inc/digimatic.h \
+ ../Core/Inc/main.h ../Core/Src/../managers/Inc/caliperManager.h \
+ ../Core/Src/../managers/Inc/../../Inc/BUFFER_SIZE.h \
  ../Core/Src/../managers/Inc/../../Inc/CODE_TESTING.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/messageLayer.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/../../Inc/CODE_TESTING.h \
@@ -77,6 +78,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/../../managers/Inc/analogInManager.h \
+ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h \
  c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/../../managers/Inc/digitalOutManager.h \
  ../Core/Src/../managers/Inc/../../utils/Inc/../../Inc/udpClientRAW.h \
@@ -210,6 +212,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/udpClientRAW.h:
 
+../Core/Inc/BUFFER_SIZE.h:
+
 ../Core/Inc/message.h:
 
 ../Core/Inc/digimatic.h:
@@ -217,6 +221,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/main.h:
 
 ../Core/Src/../managers/Inc/caliperManager.h:
+
+../Core/Src/../managers/Inc/../../Inc/BUFFER_SIZE.h:
 
 ../Core/Src/../managers/Inc/../../Inc/CODE_TESTING.h:
 
@@ -247,6 +253,8 @@ c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\message.h:
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\json.h:
 
 ../Core/Src/../managers/Inc/../../utils/Inc/../../managers/Inc/analogInManager.h:
+
+c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\inc\buffer_size.h:
 
 c:\github_repos\diseniobjam\prototipo\comeca\comeca\core\utils\inc\ethernet.h:
 

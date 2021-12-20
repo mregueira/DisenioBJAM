@@ -46,7 +46,7 @@ void analogInManager(message_t json){
 
     float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
-    char str2send[100];
+    char str2send[GLOBAL_MAX_STRING_SIZE];
     bool isValid = analogValidate(receivedData);
     message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
 

@@ -14,9 +14,11 @@ message_t sendCaliperWarningMessage(char * str2send){
 message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber){
     int len = -1;
     if(measure.unit){
-        len = sprintf(str2send,"{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": %d,\"data\": %.5f,\"unit\": \"inch\"}",caliperNumber, measure.number);
+        len = sprintf(str2send,
+        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"inches\"}}",caliperNumber, measure.number);
     } else {
-        len = sprintf(str2send,"{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": %d,\"data\": %.5f,\"unit\": \"mm\"}",caliperNumber, measure.number);
+        len = sprintf(str2send,
+        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"mm\"}}",caliperNumber, measure.number);
     }
     message_t msg2send;
     msg2send.msg = str2send;
@@ -25,7 +27,9 @@ message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, calip
 }
 
 message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber){
-    int len = sprintf(str2send,"{\"frameType\": \"WARNING_RETRY_CALIPER\" ,\"caliperNumber\": %d}", caliperNumber);
+    int len = sprintf(str2send,
+    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"warning\": \"retryCaliperMeasure\"}}",caliperNumber);
+
     message_t msg2send;
     msg2send.msg = str2send;
     msg2send.len = len;
@@ -33,7 +37,9 @@ message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber){
 }
 
 message_t sendIncrementPieceCount(char * str2send){
-    int len = sprintf(str2send,"{\"frameType\": \"INCREMENT_PIECE_COUNTER\"}");
+    int len = sprintf(str2send,
+    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"contarPieza\"}");
+
     message_t msg2send;
     msg2send.msg = str2send;
     msg2send.len = len;
@@ -43,9 +49,12 @@ message_t sendIncrementPieceCount(char * str2send){
 message_t sendAnalogInMessage(char * str2send, int inputNum, float receivedData, bool isValid){
     int len = -1;
     if(isValid){ // si es valido
-        len = sprintf(str2send,"{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": %d, \"analogData\": %.5f}", inputNum, receivedData);
+        len = sprintf(str2send,
+        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"measure\": %.5f}}",inputNum, receivedData);
+
     }else{
-        len = sprintf(str2send,"{\"frameType\": \"RETRY_ANALOG_IN\",\"inputNumber\": %d}", inputNum);
+        len = sprintf(str2send,
+        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"warning\": \"retryAnalogIn\"}}", inputNum);
     }
     message_t msg2send;
     msg2send.msg = str2send;
