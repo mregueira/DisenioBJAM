@@ -1,5 +1,0 @@
-messageLayer.c:6:11:sendCaliperWarningMessage	32	static
-messageLayer.c:14:11:sendCaliperMeasure	56	static
-messageLayer.c:29:11:sendCaliperWarning	40	static
-messageLayer.c:39:11:sendIncrementPieceCount	32	static
-messageLayer.c:49:11:sendAnalogInMessage	56	static
