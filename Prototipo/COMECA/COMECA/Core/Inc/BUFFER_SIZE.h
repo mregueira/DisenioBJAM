@@ -10,5 +10,4 @@
 
 #define GLOBAL_MAX_STRING_SIZE 1000
 
-
 #endif /* INC_BUFFER_SIZE_H_ */

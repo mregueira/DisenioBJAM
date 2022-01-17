@@ -78,6 +78,9 @@ void udpClient_connect(void)
 	ip_addr_t DestIPaddr;
 	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 4445);
+//	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
+// 	err= udp_connect(upcb, &DestIPaddr, 4445);
+
 	if (err == ERR_OK)
 	{
 //		/* 2. Send message to server */
