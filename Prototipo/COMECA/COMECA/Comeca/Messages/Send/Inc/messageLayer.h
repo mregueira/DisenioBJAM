@@ -9,12 +9,10 @@
 
 #include "stdio.h"
 
-#include "../../TestingResources/Inc/CODE_TESTING.h"
-
 #ifdef TESTING
-#include "../../testBenchUtils/Inc/message.h"
-#include "../../testBenchUtils/Inc/caliper_number.h"
-#include "../../testBenchUtils/Inc/digimatic_measure_t.h"
+#include "../../../../testBenchUtils/Inc/message.h"
+#include "../../../../testBenchUtils/Inc/caliper_number.h"
+#include "../../../../testBenchUtils/Inc/digimatic_measure_t.h"
 #else
 #include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
 #include "../../Comeca/Common/Inc/message.h"

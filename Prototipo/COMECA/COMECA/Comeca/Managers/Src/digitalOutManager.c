@@ -18,7 +18,6 @@ void turnOff(int outputNum){
 
 #else
 
-
 // SALIDAS DIGITALES
 // {PC9, PC7, PD15, PD13}
 GPIO_TypeDef* outputGpioPortMapping[] = {GPIOC,GPIOC,GPIOD,GPIOD};

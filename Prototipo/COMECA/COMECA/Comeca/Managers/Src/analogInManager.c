@@ -3,30 +3,20 @@
 //
 #include "../../../Comeca/Managers/Inc/analogInManager.h"
 
-extern SPI_HandleTypeDef hspi3;
+
 
 uint8_t pTxData[1]= {ADC_CH0_MASK};
 uint8_t pRxData[2]= {0, 0};
+uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
 
 #ifdef TESTING
     // these functions should come from analogInManager.h
-    int readAdc(int inputNum){
+    uint16_t readAdc(int inputNum){
         return getAdcMeasure();
     }
-
 #else
-    int readAdc(int inputNum){
-        return 100;
-    }
-#endif
-
-bool analogValidate(uint32_t analogData){
-    return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
-}
-
-uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
-
-uint16_t sendADCReadRequest(int inputNum){
+    extern SPI_HandleTypeDef hspi3;
+    uint16_t sendADCReadRequest(int inputNum){
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
 	pTxData[0]=ADC_CH[inputNum];
 	uint32_t Timeout = HAL_MAX_DELAY;
@@ -38,12 +28,23 @@ uint16_t sendADCReadRequest(int inputNum){
 
 	return (((uint16_t)pRxData[0]) << 5) | pRxData[1];
 }
+#endif
+
+bool analogValidate(float analogData){
+    return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
+}
+
+
+
 
 void analogInManager(message_t json){
     int inputNum = getInputNumber(json);
 
+#ifdef TESTING
+    uint16_t analog_data = readAdc(inputNum);
+#else
     uint16_t analog_data = sendADCReadRequest(inputNum);
-
+#endif
     float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
     char str2send[GLOBAL_MAX_STRING_SIZE];

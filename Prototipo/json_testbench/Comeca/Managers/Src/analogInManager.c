@@ -7,14 +7,15 @@
 
 uint8_t pTxData[1]= {ADC_CH0_MASK};
 uint8_t pRxData[2]= {0, 0};
+uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
 
 #ifdef TESTING
-    // these functions should come from analogInManager.h
-    uint16_t readAdc(int inputNum){
-        return getAdcMeasure();
-    }
+// these functions should come from analogInManager.h
+uint16_t readAdc(int inputNum){
+    return getAdcMeasure();
+}
 #else
-    extern SPI_HandleTypeDef hspi3;
+extern SPI_HandleTypeDef hspi3;
     uint16_t sendADCReadRequest(int inputNum){
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
 	pTxData[0]=ADC_CH[inputNum];
@@ -33,7 +34,7 @@ bool analogValidate(float analogData){
     return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
 }
 
-uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
+
 
 
 void analogInManager(message_t json){

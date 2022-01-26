@@ -5,13 +5,11 @@
 #ifndef JSON_TESTBENCH_DIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_DIGITALOUTMANAGER_H
 
-#include "../../TestingResources/Inc/CODE_TESTING.h"
-
 
 #ifdef TESTING
 #include "stdio.h"
-#include "../../testBenchUtils/Inc/testBenchVars.h"
-#include "../../testBenchUtils/Inc/message.h"
+#include "../../../testBenchUtils/Inc/testBenchVars.h"
+#include "../../../testBenchUtils/Inc/message.h"
 #else
 #include "stm32f4xx_hal.h"
 #include "../../Common/Inc/message.h"

@@ -5,11 +5,8 @@
 #ifndef JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 
-
-#include "../../../TestingResources/Inc/CODE_TESTING.h"
-
 #ifdef TESTING
-#include "../../testBenchUtils/Inc/message.h"
+#include "../../../testBenchUtils/Inc/message.h"
 #else
 #include "../../Common/Inc/message.h"
 #endif

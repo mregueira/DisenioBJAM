@@ -3,14 +3,6 @@
 //
 #include "../Inc/messageLayer.h"
 
-message_t sendCaliperWarningMessage(char * str2send){
-    int len = sprintf(str2send,"{\"frameType\": \"WARNING_RETRY_CALIPER\"}");
-    message_t msg2send;
-    msg2send.msg = str2send;
-    msg2send.len = len;
-    return msg2send;
-};
-
 message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber){
     int len = -1;
     if(measure.unit){

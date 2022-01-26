@@ -9,13 +9,11 @@
 #define SRC_ETHERNET_H_
 
 
-#include "../../../TestingResources/Inc/CODE_TESTING.h"
-
 #include "../../../Comeca/Managers/Inc/analogInDigitalOutManager.h"
 
 #ifdef TESTING
-#include "../../testBenchUtils/Inc/message.h"
-#include "../../testBenchUtils/Inc/testBenchVars.h"
+#include "../../../testBenchUtils/Inc/message.h"
+#include "../../../testBenchUtils/Inc/testBenchVars.h"
 #else
 #include "../../Common/Inc/message.h"
 #include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"

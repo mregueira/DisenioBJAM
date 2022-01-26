@@ -6,10 +6,9 @@
 #define JSON_TESTBENCH_PIECECOUNTMANAGER_H
 
 #include "../../Common/Inc/BUFFER_SIZE.h"
-#include "../../../TestingResources/Inc/CODE_TESTING.h"
 
 #ifdef TESTING
-#include "../../testBenchUtils/Inc/message.h"
+#include "../../../testBenchUtils/Inc/message.h"
 #else
 #include "../../Common/Inc/message.h"
 #endif

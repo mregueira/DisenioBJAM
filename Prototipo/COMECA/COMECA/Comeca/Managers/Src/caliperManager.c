@@ -39,7 +39,8 @@ void caliperManager(caliper_number caliperNumber){
         msg = sendCaliperMeasure(str2send, measure, caliperNumber);
         ETHsendMessage(msg);
     } else {
-//        msg = sendCaliperWarning(str2send, caliperNumber);
+        msg = sendCaliperWarning(str2send, caliperNumber);
+        ETHsendMessage(msg);
     }
 
 }
