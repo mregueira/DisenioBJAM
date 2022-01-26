@@ -37,9 +37,9 @@ void caliperManager(caliper_number caliperNumber){
     if(isValid){
     	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
         msg = sendCaliperMeasure(str2send, measure, caliperNumber);
+        ETHsendMessage(msg);
     } else {
-        msg = sendCaliperWarning(str2send, caliperNumber);
+//        msg = sendCaliperWarning(str2send, caliperNumber);
     }
 
-    ETHsendMessage(msg);
 }

@@ -5,6 +5,7 @@
 #ifndef JSON_TESTBENCH_PIECECOUNTMANAGER_H
 #define JSON_TESTBENCH_PIECECOUNTMANAGER_H
 
+#include "../../Inc/BUFFER_SIZE.h"
 #include "../../Inc/CODE_TESTING.h"
 
 #ifdef TESTING

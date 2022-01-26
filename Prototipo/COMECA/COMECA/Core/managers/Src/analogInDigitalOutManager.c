@@ -4,14 +4,14 @@
 #include "../Inc/analogInDigitalOutManager.h"
 
 void analogInDigitalOutManager(message_t json){
-    char frameType[100];
+    char frameType[GLOBAL_MAX_STRING_SIZE];
     getFrameType(json, frameType);
 
     if(strcmp(frameType, "READ_ANALOG_IN") == 0){
         analogInManager(json);
     }
 
-    if(strcmp(frameType, "DIGITAL_OUTPUT_SET_STATE") == 0){
+    if(strcmp(frameType, "setSalidaDigital") == 0){
         digitalOutManager(json);
     }
 }

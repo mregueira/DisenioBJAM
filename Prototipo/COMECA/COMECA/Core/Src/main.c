@@ -108,7 +108,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  HAL_Delay(5000);
 
   /* USER CODE END SysInit */
 
@@ -119,7 +119,7 @@ int main(void)
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   udpClient_connect();
-  HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
+  //HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
 
   /* USER CODE END 2 */
 
@@ -236,7 +236,7 @@ static void MX_TIM14_Init(void)
   htim14.Instance = TIM14;
   htim14.Init.Prescaler = 800 - 1;
   htim14.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim14.Init.Period = 9375 - 1;
+  htim14.Init.Period = 500 - 1;
   htim14.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim14.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim14) != HAL_OK)
@@ -371,7 +371,7 @@ static void MX_GPIO_Init(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim  == &htim14){
-		HAL_TIM_Base_Stop(&htim14);
+		HAL_TIM_Base_Stop_IT(&htim14);
 
 		// todo: esta funcion va a cambiar cuando hagamos las pruebas finales, porque es solo un ejemplo.
 //		HAL_GPIO_WritePin(CAL1_REQ_GPIO_Port, CAL1_REQ_Pin); // periodicamente tenemos un request, en teoria setteado cada 93.75ms, empieza bajo

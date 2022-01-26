@@ -32,13 +32,13 @@
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
 
 struct udp_pcb *upcb;
-char buffer[1000];
+char buffer[GLOBAL_MAX_STRING_SIZE];
 message_t message;
 
 static void udpClient_send_first_message(void)
 {
 //  struct pbuf *txBuf;
-//  char data[100];
+//  char data[GLOBAL_MAX_STRING_SIZE];
 //
 //  int len = sprintf(data, "Success on Initializing UDP Client");
 //
@@ -68,15 +68,18 @@ void udpClient_connect(void)
 
 	/* Bind the block to module's IP and port */
 	ip_addr_t myIPaddr;
+	// ip modulo
 	IP_ADDR4(&myIPaddr, 192, 168, 110, 1);
 	udp_bind(upcb, &myIPaddr, 4444);
 
 
 	/* configure destination IP address and port */
+	// ip servidor de datos
 	ip_addr_t DestIPaddr;
 	IP_ADDR4(&DestIPaddr, 192, 168, 50, 43); // CAMBIAR ESTO SIEMRPE!
-//	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
 	err= udp_connect(upcb, &DestIPaddr, 4445);
+//	IP_ADDR4(&DestIPaddr, 192, 168, 50, 203); // CAMBIAR ESTO SIEMRPE!
+// 	err= udp_connect(upcb, &DestIPaddr, 4445);
 
 	if (err == ERR_OK)
 	{
@@ -85,6 +88,10 @@ void udpClient_connect(void)
 
 		/* 3. Set a receive callback for the upcb */
 		udp_recv(upcb, udp_receive_callback, NULL);
+	}
+	else
+	{
+		printf("no se pudo contectar");
 	}
 }
 
