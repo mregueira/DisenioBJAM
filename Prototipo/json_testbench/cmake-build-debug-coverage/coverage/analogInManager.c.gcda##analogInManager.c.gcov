@@ -1,59 +1,82 @@
-        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c
-        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\analogInManager.c.gcno
-        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\analogInManager.c.gcda
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInManager.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInManager.c.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1://
         -:    2:// Created by joa-m on 11/1/2021.
         -:    3://
-        -:    4:#include "../Inc/analogInManager.h"
+        -:    4:#include "../../../Comeca/Managers/Inc/analogInManager.h"
         -:    5:
-        -:    6:#ifdef TESTING
-        -:    7:    // these functions should come from analogInManager.h
+        -:    6:
+        -:    7:
+        -:    8:uint8_t pTxData[1]= {ADC_CH0_MASK};
+        -:    9:uint8_t pRxData[2]= {0, 0};
+        -:   10:
+        -:   11:#ifdef TESTING
+        -:   12:    // these functions should come from analogInManager.h
 function readAdc called 2 returned 100% blocks executed 100%
-        2:    8:    int readAdc(int inputNum){
-        2:    8-block  0
-        2:    9:        return getAdcMeasure();
-        2:    9-block  0
+        2:   13:    uint16_t readAdc(int inputNum){
+        2:   13-block  0
+        2:   14:        return getAdcMeasure();
+        2:   14-block  0
 call    0 returned 2
-        -:   10:    }
-        -:   11:
-        -:   12:#else
-        -:   13:    int readAdc(int inputNum){
-        -:   14:        return 100;
         -:   15:    }
-        -:   16:#endif
-        -:   17:
+        -:   16:#else
+        -:   17:    extern SPI_HandleTypeDef hspi3;
+        -:   18:    uint16_t sendADCReadRequest(int inputNum){
+        -:   19:	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
+        -:   20:	pTxData[0]=ADC_CH[inputNum];
+        -:   21:	uint32_t Timeout = HAL_MAX_DELAY;
+        -:   22:	HAL_SPI_Transmit(&hspi3, pTxData, 1, Timeout);
+        -:   23:	HAL_SPI_Receive(&hspi3, pRxData, 2, Timeout);
+        -:   24:	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, SET);
+        -:   25:	pRxData[0] = pRxData[0] & 0x7F;
+        -:   26:	pRxData[1] = pRxData[1] >> 3;
+        -:   27:
+        -:   28:	return (((uint16_t)pRxData[0]) << 5) | pRxData[1];
+        -:   29:}
+        -:   30:#endif
+        -:   31:
 function analogValidate called 2 returned 100% blocks executed 100%
-        2:   18:bool analogValidate(uint32_t analogData){
-        2:   18-block  0
-        2:   19:    return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
-        2:   19-block  0
-branch  0 taken 1 (fallthrough)
-branch  1 taken 1
-        1:   19-block  1
+        2:   32:bool analogValidate(float analogData){
+        2:   32-block  0
+        2:   33:    return analogData <= MAX_VALID_VALUE && analogData >= MIN_VALID_VALUE;
+        2:   33-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:   33-block  1
 branch  2 taken 1 (fallthrough)
-branch  3 taken 0
-        1:   19-block  2
-        1:   19-block  3
-        2:   19-block  4
-        -:   20:}
-        -:   21:
+branch  3 taken 1
+        1:   33-block  2
+        1:   33-block  3
+        2:   33-block  4
+        -:   34:}
+        -:   35:
+        -:   36:uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
+        -:   37:
+        -:   38:
 function analogInManager called 2 returned 100% blocks executed 100%
-        2:   22:void analogInManager(message_t json){
-        2:   22-block  0
-        2:   23:    int inputNum = getInputNumber(json);
-        2:   23-block  0
+        2:   39:void analogInManager(message_t json){
+        2:   39-block  0
+        2:   40:    int inputNum = getInputNumber(json);
+        2:   40-block  0
 call    0 returned 2
-        2:   24:    int receivedData = readAdc(inputNum);
+        -:   41:
+        -:   42:#ifdef TESTING
+        2:   43:    uint16_t analog_data = readAdc(inputNum);
 call    0 returned 2
-        -:   25:
-        -:   26:    char str2send[100];
-        2:   27:    bool isValid = analogValidate(receivedData);
+        -:   44:#else
+        -:   45:    uint16_t analog_data = sendADCReadRequest(inputNum);
+        -:   46:#endif
+        2:   47:    float receivedData = (analog_data/4096.0)*(3300.0/150.0);
+        -:   48:
+        -:   49:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        2:   50:    bool isValid = analogValidate(receivedData);
 call    0 returned 2
-        2:   28:    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
+        2:   51:    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
 call    0 returned 2
-        -:   29:
-        2:   30:    ETHsendMessage(msg);
+        -:   52:
+        2:   53:    ETHsendMessage(msg);
 call    0 returned 2
-        2:   31:}
+        2:   54:}

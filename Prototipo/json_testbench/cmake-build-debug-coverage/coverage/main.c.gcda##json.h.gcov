@@ -1,6 +1,6 @@
-        -:    0:Source:c:/github_repos/diseniobjam/prototipo/json_testbench/utils/inc/json.h
-        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Src\main.c.gcno
-        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Src\main.c.gcda
+        -:    0:Source:c:/github_repos/diseniobjam/prototipo/json_testbench/externallibs/jsonparser/inc/json.h
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\main.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\main.c.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1:/*
@@ -544,19 +544,19 @@ branch  3 never executed
         -:  495:}
         -:  496:
         -:  497:json_weak int json_skip_whitespace(struct json_parse_state_s *state);
-function json_skip_whitespace called 424 returned 100% blocks executed 100%
-      424:  498:int json_skip_whitespace(struct json_parse_state_s *state) {
-      424:  498-block  0
-      424:  499:  size_t offset = state->offset;
-      424:  500:  const size_t size = state->size;
-      424:  501:  const char *const src = state->src;
+function json_skip_whitespace called 421 returned 100% blocks executed 100%
+      421:  498:int json_skip_whitespace(struct json_parse_state_s *state) {
+      421:  498-block  0
+      421:  499:  size_t offset = state->offset;
+      421:  500:  const size_t size = state->size;
+      421:  501:  const char *const src = state->src;
         -:  502:
         -:  503:  /* the only valid whitespace according to ECMA-404 is ' ', '\n', '\r' and
         -:  504:   * '\t'. */
-      424:  505:  switch (src[offset]) {
-      424:  505-block  0
+      421:  505:  switch (src[offset]) {
+      421:  505-block  0
 branch  0 taken 290
-branch  1 taken 134
+branch  1 taken 131
         -:  506:  default:
       290:  507:    return 0;
       290:  507-block  0
@@ -564,16 +564,16 @@ branch  1 taken 134
         -:  509:  case '\r':
         -:  510:  case '\t':
         -:  511:  case '\n':
-      134:  512:    break;
-      134:  512-block  0
+      131:  512:    break;
+      131:  512-block  0
         -:  513:  }
         -:  514:
         -:  515:  do {
-      444:  516:    switch (src[offset]) {
-      444:  516-block  0
+      438:  516:    switch (src[offset]) {
+      438:  516-block  0
 branch  0 taken 124
-branch  1 taken 238
-branch  2 taken 82
+branch  1 taken 235
+branch  2 taken 79
         -:  517:    default:
         -:  518:      /* Update offset. */
       124:  519:      state->offset = offset;
@@ -582,25 +582,25 @@ branch  2 taken 82
         -:  521:    case ' ':
         -:  522:    case '\r':
         -:  523:    case '\t':
-      238:  524:      break;
-      238:  524-block  0
+      235:  524:      break;
+      235:  524-block  0
         -:  525:    case '\n':
-       82:  526:      state->line_no++;
-       82:  527:      state->line_offset = offset;
-       82:  528:      break;
-       82:  528-block  0
+       79:  526:      state->line_no++;
+       79:  527:      state->line_offset = offset;
+       79:  528:      break;
+       79:  528-block  0
         -:  529:    }
         -:  530:
-      320:  531:    offset++;
-      320:  532:  } while (offset < size);
-      320:  532-block  0
-branch  0 taken 310
-branch  1 taken 10 (fallthrough)
+      314:  531:    offset++;
+      314:  532:  } while (offset < size);
+      314:  532-block  0
+branch  0 taken 307
+branch  1 taken 7 (fallthrough)
         -:  533:
         -:  534:  /* Update offset. */
-       10:  535:  state->offset = offset;
-       10:  536:  return 1;
-       10:  536-block  0
+        7:  535:  state->offset = offset;
+        7:  536:  return 1;
+        7:  536-block  0
         -:  537:}
         -:  538:
         -:  539:json_weak int json_skip_c_style_comments(struct json_parse_state_s *state);
@@ -753,20 +753,20 @@ branch  0 never executed
 branch  1 never executed
         -:  630:  } else {
         -:  631:    do {
-      434:  632:      if (state->offset == size) {
-      434:  632-block  0
+      431:  632:      if (state->offset == size) {
+      431:  632-block  0
 branch  0 taken 10 (fallthrough)
-branch  1 taken 424
+branch  1 taken 421
        10:  633:        state->error = json_parse_error_premature_end_of_buffer;
        10:  634:        return 1;
        10:  634-block  0
         -:  635:      }
         -:  636:
-      424:  637:      did_consume = json_skip_whitespace(state);
-      424:  637-block  0
-call    0 returned 424
-      424:  638:    } while (0 != did_consume);
-branch  0 taken 134
+      421:  637:      did_consume = json_skip_whitespace(state);
+      421:  637-block  0
+call    0 returned 421
+      421:  638:    } while (0 != did_consume);
+branch  0 taken 131
 branch  1 taken 290 (fallthrough)
         -:  639:  }
         -:  640:
@@ -844,24 +844,24 @@ branch  3 never executed
         -:  682:  /* skip leading '"' or '\''. */
        42:  683:  offset++;
         -:  684:
-      493:  685:  while ((offset < size) && (quote_to_use != src[offset])) {
+      445:  685:  while ((offset < size) && (quote_to_use != src[offset])) {
        42:  685-block  0
-      493:  685-block  1
-branch  0 taken 493 (fallthrough)
+      445:  685-block  1
+branch  0 taken 445 (fallthrough)
 branch  1 taken 0
-      493:  685-block  2
-branch  2 taken 451
+      445:  685-block  2
+branch  2 taken 403
 branch  3 taken 42 (fallthrough)
         -:  686:    /* add space for the character. */
-      451:  687:    data_size++;
+      403:  687:    data_size++;
         -:  688:
-      451:  689:    switch (src[offset]) {
-      451:  689-block  0
-branch  0 taken 451
+      403:  689:    switch (src[offset]) {
+      403:  689-block  0
+branch  0 taken 403
 branch  1 taken 0
         -:  690:    default:
-      451:  691:      break;
-      451:  691-block  0
+      403:  691:      break;
+      403:  691-block  0
         -:  692:    case '\0':
         -:  693:    case '\t':
     #####:  694:      state->error = json_parse_error_invalid_string;
@@ -870,10 +870,10 @@ branch  1 taken 0
     $$$$$:  696-block  0
         -:  697:    }
         -:  698:
-      451:  699:    if ('\\' == src[offset]) {
-      451:  699-block  0
+      403:  699:    if ('\\' == src[offset]) {
+      403:  699-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 451
+branch  1 taken 403
         -:  700:      /* skip reverse solidus character. */
     #####:  701:      offset++;
         -:  702:
@@ -1036,13 +1036,13 @@ branch  3 never executed
     $$$$$:  795-block  0
     $$$$$:  795-block  1
         -:  796:      }
-      451:  797:    } else if (('\r' == src[offset]) || ('\n' == src[offset])) {
-      451:  797-block  0
-branch  0 taken 451 (fallthrough)
+      403:  797:    } else if (('\r' == src[offset]) || ('\n' == src[offset])) {
+      403:  797-block  0
+branch  0 taken 403 (fallthrough)
 branch  1 taken 0
-      451:  797-block  1
+      403:  797-block  1
 branch  2 taken 0 (fallthrough)
-branch  3 taken 451
+branch  3 taken 403
     #####:  798:      if (!(json_parse_flags_allow_multi_line_strings & flags_bitset)) {
     $$$$$:  798-block  0
 branch  0 never executed
@@ -1058,8 +1058,8 @@ branch  1 never executed
     $$$$$:  805-block  0
         -:  806:    } else {
         -:  807:      /* skip character (valid part of sequence). */
-      451:  808:      offset++;
-      451:  808-block  0
+      403:  808:      offset++;
+      403:  808-block  0
         -:  809:    }
         -:  810:  }
         -:  811:
@@ -1207,7 +1207,7 @@ call    0 returned 26
         -:  886:
         -:  887:json_weak int json_get_object_size(struct json_parse_state_s *state,
         -:  888:                                   int is_global_object);
-function json_get_object_size called 10 returned 100% blocks executed 53%
+function json_get_object_size called 10 returned 100% blocks executed 56%
        10:  889:int json_get_object_size(struct json_parse_state_s *state,
        10:  889-block  0
         -:  890:                         int is_global_object) {
@@ -1440,14 +1440,14 @@ branch  1 taken 0 (fallthrough)
         -: 1014:
        10: 1015:  if ((state->offset == size) && !is_global_object && !found_closing_brace) {
        10: 1015-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 10
-    $$$$$: 1015-block  1
-branch  2 never executed
-branch  3 never executed
-    $$$$$: 1015-block  2
-branch  4 never executed
-branch  5 never executed
+branch  0 taken 3 (fallthrough)
+branch  1 taken 7
+        3: 1015-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0
+        3: 1015-block  2
+branch  4 taken 0 (fallthrough)
+branch  5 taken 3
     #####: 1016:    state->error = json_parse_error_premature_end_of_buffer;
     #####: 1017:    return 1;
     $$$$$: 1017-block  0
@@ -2285,15 +2285,15 @@ branch  1 taken 42
         -: 1420:  /* skip leading '"' or '\''. */
        42: 1421:  offset++;
         -: 1422:
-      493: 1423:  while (quote_to_use != src[offset]) {
+      445: 1423:  while (quote_to_use != src[offset]) {
        42: 1423-block  0
-      493: 1423-block  1
-branch  0 taken 451
+      445: 1423-block  1
+branch  0 taken 403
 branch  1 taken 42 (fallthrough)
-      451: 1424:    if ('\\' == src[offset]) {
-      451: 1424-block  0
+      403: 1424:    if ('\\' == src[offset]) {
+      403: 1424-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 451
+branch  1 taken 403
         -: 1425:      /* skip the reverse solidus. */
     #####: 1426:      offset++;
         -: 1427:
@@ -2446,8 +2446,8 @@ branch  1 never executed
         -: 1515:      }
         -: 1516:    } else {
         -: 1517:      /* copy the character. */
-      451: 1518:      data[bytes_written++] = src[offset++];
-      451: 1518-block  0
+      403: 1518:      data[bytes_written++] = src[offset++];
+      403: 1518-block  0
         -: 1519:    }
         -: 1520:  }
         -: 1521:

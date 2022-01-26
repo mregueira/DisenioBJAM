@@ -5,8 +5,6 @@
 #ifndef JSON_TESTBENCH_DIGIMATIC_MEASURE_T_H
 #define JSON_TESTBENCH_DIGIMATIC_MEASURE_T_H
 
-#include "../../Inc/CODE_TESTING.h"
-
 #ifdef TESTING
 typedef struct {
     float number;

@@ -20,10 +20,10 @@ function getAdcMeasure called 2 returned 100% blocks executed 100%
 function setAdcMeasure called 2 returned 100% blocks executed 100%
         2:   12:void setAdcMeasure(int measure){adc_measure = measure;}
         2:   12-block  0
-function getTestBench called 22 returned 100% blocks executed 100%
-       44:   13:char* getTestBench(void){return testBench;}
-       22:   13-block  0
-       22:   13-block  1
+function getTestBench called 24 returned 100% blocks executed 100%
+       48:   13:char* getTestBench(void){return testBench;}
+       24:   13-block  0
+       24:   13-block  1
 function setValidCaliperMeasure called 2 returned 100% blocks executed 100%
         2:   14:void setValidCaliperMeasure(bool value){
         2:   14-block  0

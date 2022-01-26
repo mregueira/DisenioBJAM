@@ -24,6 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DTESTING"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
@@ -43,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DTESTING"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
@@ -76,40 +78,55 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/CODE_TESTING.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Inc/ethernet.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Src/main.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Src/ethernet.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInDigitalOutManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInManager.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/caliperManager.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/caliperManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/pieceCountManager.h">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/pieceCountManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInDigitalOutManager.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInDigitalOutManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/digitalOutManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c">
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h">
@@ -122,21 +139,6 @@
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/jsonGetter.h">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/messageLayer.h">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/ethernet.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/jsonGetter.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/messageLayer.c">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/CMakeLists.txt">

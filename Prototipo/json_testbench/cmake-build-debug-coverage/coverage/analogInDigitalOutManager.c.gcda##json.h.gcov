@@ -1,6 +1,6 @@
-        -:    0:Source:c:/github_repos/diseniobjam/prototipo/json_testbench/utils/inc/json.h
-        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\analogInDigitalOutManager.c.gcno
-        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\analogInDigitalOutManager.c.gcda
+        -:    0:Source:c:/github_repos/diseniobjam/prototipo/json_testbench/externallibs/jsonparser/inc/json.h
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInDigitalOutManager.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInDigitalOutManager.c.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1:/*

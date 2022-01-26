@@ -1,14 +1,14 @@
-        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Src/main.c
-        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Src\main.c.gcno
-        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Src\main.c.gcda
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\main.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\main.c.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1:#include <stdio.h>
-        -:    2:#include "../utils/Inc/ethernet.h"
+        -:    2:#include "Comeca/EthernetEvent/Inc/ethernet.h"
         -:    3:#include <assert.h>
         -:    4:#include <string.h>
-        -:    5:#include "../managers/Inc/caliperManager.h"
-        -:    6:#include "../managers/Inc/pieceCountManager.h"
+        -:    5:#include "Comeca/Managers/Inc/caliperManager.h"
+        -:    6:#include "Comeca/Managers/Inc/pieceCountManager.h"
         -:    7:#include "stdlib.h"
         -:    8:
 function json_to_msg called 3 returned 100% blocks executed 100%
@@ -54,7 +54,7 @@ call    0 returned 1
 call    0 returned 1
         1:   36:    caliperManager(3);
 call    0 returned 1
-        1:   37:    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": 3,\"data\": 1.23452,\"unit\": \"mm\"}") == 0);
+        1:   37:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": 3, \"measure\": 1.23452, \"unit\": \"mm\"}}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
@@ -66,7 +66,7 @@ call    3 never executed
 call    0 returned 1
         1:   40:    caliperManager(3);
 call    0 returned 1
-        1:   41:    assert(strcmp(getTestBench(), "{\"frameType\": \"SEND_CALIPER_MEASURE\",\"caliperNumber\": 3,\"data\": -10.54355,\"unit\": \"inch\"}") == 0);
+        1:   41:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": 3, \"measure\": -10.54355, \"unit\": \"inches\"}}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
@@ -79,7 +79,7 @@ call    0 returned 1
         -:   44:
         1:   45:    caliperManager(3);
 call    0 returned 1
-        1:   46:    assert(strcmp(getTestBench(), "{\"frameType\": \"WARNING_RETRY_CALIPER\" ,\"caliperNumber\": 3}") == 0);
+        1:   46:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": 3, \"warning\": \"retryCaliperMeasure\"}}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
@@ -90,7 +90,7 @@ call    3 never executed
         1:   49:    pieceCountManager();
         1:   49-block  0
 call    0 returned 1
-        1:   50:    assert(strcmp(getTestBench(), "{\"frameType\": \"INCREMENT_PIECE_COUNTER\"}") == 0);
+        1:   50:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"contarPieza\"}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
@@ -102,11 +102,11 @@ call    3 never executed
         1:   54:    message_t msg = json_to_msg(filename);
         1:   54-block  0
 call    0 returned 1
-        1:   55:    setAdcMeasure(100);
+        1:   55:    setAdcMeasure(1000);
 call    0 returned 1
         1:   56:    ETHonMessageReceived(msg); // calls analogInManager(msg);
 call    0 returned 1
-        1:   57:    assert(strcmp(getTestBench(), "{\"frameType\": \"MEASURED_ANALOG_IN\",\"inputNumber\": 2, \"analogData\": 100}") == 0);
+        1:   57:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": 2, \"measure\": 5.37109}}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
@@ -118,7 +118,7 @@ call    3 never executed
 call    0 returned 1
         1:   60:    ETHonMessageReceived(msg); // calls analogInManager(msg);
 call    0 returned 1
-        1:   61:    assert(strcmp(getTestBench(), "{\"frameType\": \"RETRY_ANALOG_IN\",\"inputNumber\": 2}") == 0);
+        1:   61:    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": 2, \"warning\": \"retryAnalogIn\"}}") == 0);
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1

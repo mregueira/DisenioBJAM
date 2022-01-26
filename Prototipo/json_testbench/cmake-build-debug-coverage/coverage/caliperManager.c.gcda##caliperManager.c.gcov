@@ -1,12 +1,12 @@
-        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c
-        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\caliperManager.c.gcno
-        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\managers\Src\caliperManager.c.gcda
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\caliperManager.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\caliperManager.c.gcda
         -:    0:Runs:1
         -:    0:Programs:1
         -:    1://
         -:    2:// Created by joa-m on 11/1/2021.
         -:    3://
-        -:    4:#include "../Inc/caliperManager.h"
+        -:    4:#include "../../../Comeca/Managers/Inc/caliperManager.h"
         -:    5:
         -:    6:#ifdef TESTING
         -:    7:
@@ -60,24 +60,26 @@ branch  1 taken 3
         2:   31-block  0
         -:   32:    }
         -:   33:
-        -:   34:    char str2send[MAX_STRING_SIZE];
-        -:   35:    message_t msg;
-        3:   36:    if(isValid){
-        3:   36-block  0
+        -:   34:
+        -:   35:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        -:   36:    message_t msg;
+        3:   37:    if(isValid){
+        3:   37-block  0
 branch  0 taken 2 (fallthrough)
 branch  1 taken 1
-        2:   37:    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
-        2:   37-block  0
+        2:   38:    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+        2:   38-block  0
 call    0 returned 2
-        2:   38:        msg = sendCaliperMeasure(str2send, measure, caliperNumber);
+        2:   39:        msg = sendCaliperMeasure(str2send, measure, caliperNumber);
 call    0 returned 2
-        -:   39:    } else {
-        1:   40:        msg = sendCaliperWarning(str2send, caliperNumber);
-        1:   40-block  0
+        2:   40:        ETHsendMessage(msg);
+call    0 returned 2
+        -:   41:    } else {
+        1:   42:        msg = sendCaliperWarning(str2send, caliperNumber);
+        1:   42-block  0
 call    0 returned 1
-        -:   41:    }
-        -:   42:
-        3:   43:    ETHsendMessage(msg);
-        3:   43-block  0
-call    0 returned 3
-        3:   44:}
+        1:   43:        ETHsendMessage(msg);
+call    0 returned 1
+        -:   44:    }
+        -:   45:
+        3:   46:}

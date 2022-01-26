@@ -8,18 +8,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Src/main.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Src/main.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInDigitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Src/ethernet.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInDigitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/digitalOutManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/main.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/ethernet.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/jsonGetter.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.obj"
-  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/messageLayer.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_C
+  "TESTING"
+  )
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
