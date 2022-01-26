@@ -9,15 +9,15 @@
 
 #include "stdio.h"
 
-#include "../../Inc/CODE_TESTING.h"
+#include "../../TestingResources/Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #include "../../testBenchUtils/Inc/caliper_number.h"
 #include "../../testBenchUtils/Inc/digimatic_measure_t.h"
 #else
-#include "../../Inc/digimatic.h"
-#include "../../Inc/message.h"
+#include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
+#include "../../Comeca/Common/Inc/message.h"
 #endif
 
 message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber);

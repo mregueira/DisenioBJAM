@@ -5,17 +5,21 @@
 #ifndef JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H
 
-#include "../../Inc/CODE_TESTING.h"
+
+#include "../../../TestingResources/Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #else
-#include "../../Inc/message.h"
+#include "../../Common/Inc/message.h"
 #endif
-#include "../../utils/Inc/messageLayer.h"
-#include "../../utils/Inc/jsonGetter.h"
-#include "analogInManager.h"
-#include "digitalOutManager.h"
+
+#include "../../Messages/Send/Inc/messageLayer.h"
+#include "../../Messages/Receive/Inc/jsonGetter.h"
+
+#include "../../../Comeca/Managers/Inc/analogInManager.h"
+#include "../../../Comeca/Managers/Inc/digitalOutManager.h"
+
 void analogInDigitalOutManager(message_t json);
 
 #endif //JSON_TESTBENCH_ANALOGINDIGITALOUTMANAGER_H

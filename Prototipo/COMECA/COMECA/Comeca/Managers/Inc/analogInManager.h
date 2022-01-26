@@ -13,21 +13,21 @@
 #define ADC_CH3_MASK 0b11100111
 
 
-#include "../../Inc/BUFFER_SIZE.h"
-#include "../../Inc/CODE_TESTING.h"
+#include "../../../TestingResources/Inc/CODE_TESTING.h"
+#include "../../Common/Inc/BUFFER_SIZE.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/testBenchVars.h"
 #include "../../testBenchUtils/Inc/message.h"
 #else
-#include "../../Inc/message.h"
+#include "../../Common/Inc/message.h"
 
 #endif
 
 #include "stdbool.h"
-#include "../../utils/Inc/jsonGetter.h"
-#include "../../utils/Inc/messageLayer.h"
-#include "../../utils/Inc/ethernet.h"
+#include "../../Messages/Receive/Inc/jsonGetter.h"
+#include "../../Messages/Send/Inc/messageLayer.h"
+#include "../../EthernetEvent/Inc/ethernet.h"
 
 #define MIN_VALID_VALUE 4 // todo: this will probably change
 #define MAX_VALID_VALUE 20

@@ -108,6 +108,26 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/messageLayer.h
 ../../utils/Inc/ethernet.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/ethernet.h
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInDigitalOutManager.c
+../Inc/analogInDigitalOutManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInDigitalOutManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/analogInManager.c
+../Inc/analogInManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/analogInManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/caliperManager.c
+../Inc/caliperManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/caliperManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/digitalOutManager.c
+../Inc/digitalOutManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/digitalOutManager.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Src/pieceCountManager.c
+../Inc/pieceCountManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/managers/Inc/pieceCountManager.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
 ../../Inc/CODE_TESTING.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/CODE_TESTING.h
@@ -129,6 +149,10 @@ stdbool.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/stdbool.h
 ../../testBenchUtils/Inc/digimatic_measure_t.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c
+../Inc/testBenchVars.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h
 
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/ethernet.h
 ../../Inc/CODE_TESTING.h
@@ -181,4 +205,16 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimati
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/digimatic.h
 ../../Inc/message.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Inc/message.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/ethernet.c
+../Inc/ethernet.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/ethernet.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/jsonGetter.c
+../Inc/jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/jsonGetter.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Src/messageLayer.c
+../Inc/messageLayer.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/utils/Inc/messageLayer.h
 

@@ -1,7 +1,7 @@
 //
 // Created by joa-m on 11/1/2021.
 //
-#include "../Inc/pieceCountManager.h"
+#include "../../../Comeca/Managers/Inc/pieceCountManager.h"
 
 void pieceCountManager(void){
     char str2send[GLOBAL_MAX_STRING_SIZE];

@@ -1,7 +1,7 @@
 //
 // Created by joa-m on 11/1/2021.
 //
-#include "../Inc/analogInDigitalOutManager.h"
+#include "../../../Comeca/Managers/Inc/analogInDigitalOutManager.h"
 
 void analogInDigitalOutManager(message_t json){
     char frameType[GLOBAL_MAX_STRING_SIZE];

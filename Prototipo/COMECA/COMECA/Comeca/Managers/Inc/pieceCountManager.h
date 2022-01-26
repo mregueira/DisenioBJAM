@@ -5,17 +5,17 @@
 #ifndef JSON_TESTBENCH_PIECECOUNTMANAGER_H
 #define JSON_TESTBENCH_PIECECOUNTMANAGER_H
 
-#include "../../Inc/BUFFER_SIZE.h"
-#include "../../Inc/CODE_TESTING.h"
+#include "../../Common/Inc/BUFFER_SIZE.h"
+#include "../../../TestingResources/Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #else
-#include "../../Inc/message.h"
+#include "../../Common/Inc/message.h"
 #endif
 
-#include "../../utils/Inc/messageLayer.h"
-#include "../../utils/Inc/ethernet.h"
+#include "../../Messages/Send/Inc/messageLayer.h"
+#include "../../EthernetEvent/Inc/ethernet.h"
 
 void pieceCountManager(void);
 

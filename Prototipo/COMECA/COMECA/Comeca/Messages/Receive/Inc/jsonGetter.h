@@ -5,15 +5,15 @@
 #ifndef JSON_TESTBENCH_JSONGETTER_H
 #define JSON_TESTBENCH_JSONGETTER_H
 
-#include "../../Inc/CODE_TESTING.h"
+#include "../../TestingResources/Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #else
-#include "../../Inc/message.h"
+#include "../../Comeca/Common/Inc/message.h"
 #endif
 
-#include "json.h"
+#include "../../ExternalLibs/JSONParser/Inc/json.h"
 
 void getFrameType(message_t json, char* frameTypePtr);
 int getInputNumber(message_t json);

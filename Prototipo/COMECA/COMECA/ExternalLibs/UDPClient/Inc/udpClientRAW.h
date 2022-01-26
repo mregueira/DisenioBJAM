@@ -22,8 +22,8 @@
 #ifndef INC_UDPCLIENTRAW_H_
 #define INC_UDPCLIENTRAW_H_
 
-#include "BUFFER_SIZE.h"
-#include "message.h"
+#include "../../Comeca/Common/Inc/BUFFER_SIZE.h"
+#include "../../Comeca/Common/Inc/message.h"
 
 void udpClient_connect(void);
 void udpClient_custom_string(message_t message);

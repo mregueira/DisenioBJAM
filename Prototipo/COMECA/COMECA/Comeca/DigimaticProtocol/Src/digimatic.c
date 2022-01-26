@@ -5,7 +5,7 @@
  *      Author: joa-m
  */
 
-#include "digimatic.h"
+#include "../Inc/digimatic.h"
 
 static digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
 

@@ -5,7 +5,8 @@
 #ifndef JSON_TESTBENCH_DIGITALOUTMANAGER_H
 #define JSON_TESTBENCH_DIGITALOUTMANAGER_H
 
-#include "../../Inc/CODE_TESTING.h"
+#include "../../TestingResources/Inc/CODE_TESTING.h"
+
 
 #ifdef TESTING
 #include "stdio.h"
@@ -13,9 +14,10 @@
 #include "../../testBenchUtils/Inc/message.h"
 #else
 #include "stm32f4xx_hal.h"
-#include "../../Inc/message.h"
+#include "../../Common/Inc/message.h"
 #endif
-#include "../../utils/Inc/jsonGetter.h"
+
+#include "../../Messages/Receive/Inc/jsonGetter.h"
 
 void digitalOutManager(message_t json);
 

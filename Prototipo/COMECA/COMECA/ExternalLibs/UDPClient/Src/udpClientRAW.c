@@ -25,9 +25,8 @@
 
 #include "stdio.h"
 #include "string.h"
-#include "../utils/Inc/ethernet.h"
-#include "udpClientRAW.h"
-
+#include "../../Comeca/EthernetEvent/Inc/ethernet.h"
+#include "../Inc/udpClientRAW.h"
 
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
 

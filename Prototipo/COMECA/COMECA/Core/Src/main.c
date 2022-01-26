@@ -23,10 +23,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "udpClientRAW.h"
-#include "digimatic.h"
-#include "../managers/Inc/caliperManager.h"
-#include "../managers/Inc/pieceCountManager.h"
+#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
+#include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
+
+#include "../../Comeca/Managers/Inc/caliperManager.h"
+#include "../../Comeca/Managers/Inc/pieceCountManager.h"
 
 /* USER CODE END Includes */
 

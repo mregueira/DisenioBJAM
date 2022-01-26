@@ -9,16 +9,16 @@
 #define SRC_ETHERNET_H_
 
 
-#include "../../Inc/CODE_TESTING.h"
+#include "../../../TestingResources/Inc/CODE_TESTING.h"
 
-#include "../../managers/Inc/analogInDigitalOutManager.h"
+#include "../../../Comeca/Managers/Inc/analogInDigitalOutManager.h"
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/message.h"
 #include "../../testBenchUtils/Inc/testBenchVars.h"
 #else
-#include "../../Inc/message.h"
-#include "../../Inc/udpClientRAW.h"
+#include "../../Common/Inc/message.h"
+#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
 #endif
 
 void ETHsendMessage(message_t message);

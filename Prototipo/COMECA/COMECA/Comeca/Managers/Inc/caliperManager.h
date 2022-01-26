@@ -5,16 +5,17 @@
 #ifndef JSON_TESTBENCH_CALIPERMANAGER_H
 #define JSON_TESTBENCH_CALIPERMANAGER_H
 
-#include "../../Inc/BUFFER_SIZE.h"
-#include "../../Inc/CODE_TESTING.h"
+#include "../../Common/Inc/BUFFER_SIZE.h"
+#include "../../../TestingResources/Inc/CODE_TESTING.h"
 
 #define RETRY_TIMES 3
 
 
 #include "stdbool.h"
 
-#include "../../utils/Inc/messageLayer.h"
-#include "../../utils/Inc/ethernet.h"
+#include "../../EthernetEvent/Inc/ethernet.h"
+#include "../../Messages/Send/Inc/messageLayer.h"
+
 
 #ifdef TESTING
 #include "../../testBenchUtils/Inc/caliper_number.h"
@@ -25,8 +26,8 @@
 typedef uint8_t digimatic_frame_t;
 digimatic_frame_t* digimaticGetMeasure(caliper_number curr_caliper);
 #else
-#include "../../Inc/digimatic.h"
-#include "../../Inc/message.h"
+#include "../../DigimaticProtocol/Inc/digimatic.h"
+#include "../../Common/Inc/message.h"
 #endif
 
 void caliperManager(caliper_number caliperNumber);

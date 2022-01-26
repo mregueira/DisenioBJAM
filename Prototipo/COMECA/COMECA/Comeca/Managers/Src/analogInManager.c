@@ -1,7 +1,7 @@
 //
 // Created by joa-m on 11/1/2021.
 //
-#include "../Inc/analogInManager.h"
+#include "../../../Comeca/Managers/Inc/analogInManager.h"
 
 extern SPI_HandleTypeDef hspi3;
 

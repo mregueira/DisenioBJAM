@@ -1,7 +1,7 @@
 //
 // Created by joa-m on 11/1/2021.
 //
-#include "../Inc/digitalOutManager.h"
+#include "../../../Comeca/Managers/Inc/digitalOutManager.h"
 
 
 #ifdef TESTING
