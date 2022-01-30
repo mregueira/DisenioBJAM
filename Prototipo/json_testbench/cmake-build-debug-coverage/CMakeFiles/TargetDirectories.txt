@@ -1,3 +1,0 @@
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/json_testbench.dir
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
