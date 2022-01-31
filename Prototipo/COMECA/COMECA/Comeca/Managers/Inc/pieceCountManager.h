@@ -14,7 +14,6 @@
 #endif
 
 #include "../../Messages/Send/Inc/messageLayer.h"
-#include "../../EthernetEvent/Inc/ethernet.h"
 
 void pieceCountManager(void);
 

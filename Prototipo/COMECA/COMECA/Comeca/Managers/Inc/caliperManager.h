@@ -12,7 +12,6 @@
 
 #include "stdbool.h"
 
-#include "../../EthernetEvent/Inc/ethernet.h"
 #include "../../Messages/Send/Inc/messageLayer.h"
 
 

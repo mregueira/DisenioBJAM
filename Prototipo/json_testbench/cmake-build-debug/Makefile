@@ -152,30 +152,6 @@ Comeca/EthernetEvent/Src/ethernet.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.s
 .PHONY : Comeca/EthernetEvent/Src/ethernet.c.s
 
-Comeca/Managers/Src/analogInDigitalOutManager.obj: Comeca/Managers/Src/analogInDigitalOutManager.c.obj
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.obj
-
-# target to build an object file
-Comeca/Managers/Src/analogInDigitalOutManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.c.obj
-
-Comeca/Managers/Src/analogInDigitalOutManager.i: Comeca/Managers/Src/analogInDigitalOutManager.c.i
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.i
-
-# target to preprocess a source file
-Comeca/Managers/Src/analogInDigitalOutManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.i
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.c.i
-
-Comeca/Managers/Src/analogInDigitalOutManager.s: Comeca/Managers/Src/analogInDigitalOutManager.c.s
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.s
-
-# target to generate assembly for a file
-Comeca/Managers/Src/analogInDigitalOutManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.s
-.PHONY : Comeca/Managers/Src/analogInDigitalOutManager.c.s
-
 Comeca/Managers/Src/analogInManager.obj: Comeca/Managers/Src/analogInManager.c.obj
 .PHONY : Comeca/Managers/Src/analogInManager.obj
 
@@ -380,9 +356,6 @@ help:
 	@echo ... Comeca/EthernetEvent/Src/ethernet.obj
 	@echo ... Comeca/EthernetEvent/Src/ethernet.i
 	@echo ... Comeca/EthernetEvent/Src/ethernet.s
-	@echo ... Comeca/Managers/Src/analogInDigitalOutManager.obj
-	@echo ... Comeca/Managers/Src/analogInDigitalOutManager.i
-	@echo ... Comeca/Managers/Src/analogInDigitalOutManager.s
 	@echo ... Comeca/Managers/Src/analogInManager.obj
 	@echo ... Comeca/Managers/Src/analogInManager.i
 	@echo ... Comeca/Managers/Src/analogInManager.s

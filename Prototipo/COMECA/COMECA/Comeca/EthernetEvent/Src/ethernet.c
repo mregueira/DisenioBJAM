@@ -18,5 +18,14 @@ void ETHsendMessage(message_t message){
 }
 
 void ETHonMessageReceived(message_t json){
-    analogInDigitalOutManager(json);
+    char frameType[GLOBAL_MAX_STRING_SIZE];
+    getFrameType(json, frameType);
+
+    if(strcmp(frameType, "READ_ANALOG_IN") == 0){
+        analogInManager(json);
+    }
+
+    if(strcmp(frameType, "setSalidaDigital") == 0){
+        digitalOutManager(json);
+    }
 }

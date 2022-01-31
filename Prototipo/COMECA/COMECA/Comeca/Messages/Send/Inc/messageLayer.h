@@ -13,16 +13,19 @@
 #include "../../../../testBenchUtils/Inc/message.h"
 #include "../../../../testBenchUtils/Inc/caliper_number.h"
 #include "../../../../testBenchUtils/Inc/digimatic_measure_t.h"
+#include "../../../Common/Inc/BUFFER_SIZE.h"
+#include "../../../EthernetEvent/Inc/ethernet.h"
 #else
 #include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
 #include "../../Comeca/Common/Inc/message.h"
+#include "../../../EthernetEvent/Inc/ethernet.h"
 #endif
 
-message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber);
-message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber);
+void sendCaliperMeasure(digimatic_measure_t measure, caliper_number caliperNumber);
+void sendCaliperWarning(caliper_number caliperNumber);
 
-message_t sendIncrementPieceCount(char * str2send);
-message_t sendAnalogInMessage(char * str2send, int inputNum, float receivedData, bool isValid);
-
+void sendIncrementPieceCount(void);
+void sendAnalogInMessage(int inputNum, float receivedData);
+void sendAnalogInWarning(int inputNum);
 
 #endif //JSON_TESTBENCH_MESSAGELAYER_H

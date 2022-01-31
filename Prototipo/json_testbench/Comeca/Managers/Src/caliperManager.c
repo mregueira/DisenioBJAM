@@ -31,16 +31,11 @@ void caliperManager(caliper_number caliperNumber){
         if(isValid) break;
     }
 
-
-    char str2send[GLOBAL_MAX_STRING_SIZE];
-    message_t msg;
     if(isValid){
     	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
-        msg = sendCaliperMeasure(str2send, measure, caliperNumber);
-        ETHsendMessage(msg);
+    	sendCaliperMeasure(measure, caliperNumber);
     } else {
-        msg = sendCaliperWarning(str2send, caliperNumber);
-        ETHsendMessage(msg);
+    	sendCaliperWarning(caliperNumber);
     }
 
 }

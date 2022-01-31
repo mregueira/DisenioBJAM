@@ -47,9 +47,12 @@ void analogInManager(message_t json){
 #endif
     float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
-    char str2send[GLOBAL_MAX_STRING_SIZE];
-    bool isValid = analogValidate(receivedData);
-    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
 
-    ETHsendMessage(msg);
+    bool isValid = analogValidate(receivedData);
+
+    if(isValid){
+    	sendAnalogInMessage(inputNum, receivedData);
+    } else {
+    	sendAnalogInWarning(inputNum);
+    }
 }

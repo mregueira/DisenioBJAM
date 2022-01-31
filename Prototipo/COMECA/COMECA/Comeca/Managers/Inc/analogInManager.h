@@ -26,7 +26,6 @@
 #include "stdbool.h"
 #include "../../Messages/Receive/Inc/jsonGetter.h"
 #include "../../Messages/Send/Inc/messageLayer.h"
-#include "../../EthernetEvent/Inc/ethernet.h"
 
 #define MIN_VALID_VALUE 4 // todo: this will probably change
 #define MAX_VALID_VALUE 20

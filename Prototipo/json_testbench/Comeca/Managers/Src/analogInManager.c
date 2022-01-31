@@ -10,12 +10,12 @@ uint8_t pRxData[2]= {0, 0};
 uint8_t ADC_CH[4] = {ADC_CH0_MASK, ADC_CH1_MASK, ADC_CH2_MASK, ADC_CH3_MASK};
 
 #ifdef TESTING
-// these functions should come from analogInManager.h
-uint16_t readAdc(int inputNum){
-    return getAdcMeasure();
-}
+    // these functions should come from analogInManager.h
+    uint16_t readAdc(int inputNum){
+        return getAdcMeasure();
+    }
 #else
-extern SPI_HandleTypeDef hspi3;
+    extern SPI_HandleTypeDef hspi3;
     uint16_t sendADCReadRequest(int inputNum){
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, RESET);
 	pTxData[0]=ADC_CH[inputNum];
@@ -47,9 +47,12 @@ void analogInManager(message_t json){
 #endif
     float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
-    char str2send[GLOBAL_MAX_STRING_SIZE];
-    bool isValid = analogValidate(receivedData);
-    message_t msg = sendAnalogInMessage(str2send, inputNum, receivedData, isValid);
 
-    ETHsendMessage(msg);
+    bool isValid = analogValidate(receivedData);
+
+    if(isValid){
+    	sendAnalogInMessage(inputNum, receivedData);
+    } else {
+    	sendAnalogInWarning(inputNum);
+    }
 }

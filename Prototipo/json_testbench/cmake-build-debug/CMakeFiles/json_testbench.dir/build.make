@@ -117,22 +117,9 @@ CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.s"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\EthernetEvent\Src\ethernet.c -o CMakeFiles\json_testbench.dir\Comeca\EthernetEvent\Src\ethernet.c.s
 
-CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj: CMakeFiles/json_testbench.dir/flags.make
-CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj: ../Comeca/Managers/Src/analogInDigitalOutManager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInDigitalOutManager.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\analogInDigitalOutManager.c
-
-CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\analogInDigitalOutManager.c > CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInDigitalOutManager.c.i
-
-CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\analogInDigitalOutManager.c -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInDigitalOutManager.c.s
-
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj: CMakeFiles/json_testbench.dir/flags.make
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj: ../Comeca/Managers/Src/caliperManager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\caliperManager.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\caliperManager.c
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.i: cmake_force
@@ -145,7 +132,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.s: cmake_forc
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj: CMakeFiles/json_testbench.dir/flags.make
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj: ../Comeca/Managers/Src/pieceCountManager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\pieceCountManager.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\pieceCountManager.c
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.i: cmake_force
@@ -158,7 +145,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.s: cmake_f
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj: CMakeFiles/json_testbench.dir/flags.make
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj: ../Comeca/Managers/Src/digitalOutManager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\digitalOutManager.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\digitalOutManager.c
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.i: cmake_force
@@ -171,7 +158,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.s: cmake_f
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj: CMakeFiles/json_testbench.dir/flags.make
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj: ../Comeca/Managers/Src/analogInManager.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\Comeca\Managers\Src\analogInManager.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\Comeca\Managers\Src\analogInManager.c
 
 CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.i: cmake_force
@@ -184,7 +171,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.s: cmake_for
 
 CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj: CMakeFiles/json_testbench.dir/flags.make
 CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj: ../testBenchUtils/Src/testBenchVars.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\json_testbench.dir\testBenchUtils\Src\testBenchVars.c.obj -c C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\testBenchUtils\Src\testBenchVars.c
 
 CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.i: cmake_force
@@ -201,7 +188,6 @@ json_testbench_OBJECTS = \
 "CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj" \
 "CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj" \
 "CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj" \
-"CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj" \
 "CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj" \
 "CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj" \
 "CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj" \
@@ -215,7 +201,6 @@ json_testbench.exe: CMakeFiles/json_testbench.dir/main.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj
-json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInDigitalOutManager.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj
 json_testbench.exe: CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj
@@ -225,7 +210,7 @@ json_testbench.exe: CMakeFiles/json_testbench.dir/build.make
 json_testbench.exe: CMakeFiles/json_testbench.dir/linklibs.rsp
 json_testbench.exe: CMakeFiles/json_testbench.dir/objects1.rsp
 json_testbench.exe: CMakeFiles/json_testbench.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable json_testbench.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable json_testbench.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\json_testbench.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

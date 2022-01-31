@@ -9,8 +9,6 @@
 #define SRC_ETHERNET_H_
 
 
-#include "../../../Comeca/Managers/Inc/analogInDigitalOutManager.h"
-
 #ifdef TESTING
 #include "../../../testBenchUtils/Inc/message.h"
 #include "../../../testBenchUtils/Inc/testBenchVars.h"
@@ -18,6 +16,13 @@
 #include "../../Common/Inc/message.h"
 #include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
 #endif
+
+#include "../../Messages/Send/Inc/messageLayer.h"
+#include "../../Messages/Receive/Inc/jsonGetter.h"
+
+#include "../../../Comeca/Managers/Inc/analogInManager.h"
+#include "../../../Comeca/Managers/Inc/digitalOutManager.h"
+
 
 void ETHsendMessage(message_t message);
 void ETHonMessageReceived(message_t json);

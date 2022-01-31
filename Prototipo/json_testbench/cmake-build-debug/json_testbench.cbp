@@ -78,13 +78,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/BUFFER_SIZE.h">
+			<Option target="json_testbench"/>
+		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Inc/ethernet.h">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Src/ethernet.c">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInDigitalOutManager.h">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInManager.h">
@@ -97,9 +97,6 @@
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/pieceCountManager.h">
-			<Option target="json_testbench"/>
-		</Unit>
-		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInDigitalOutManager.c">
 			<Option target="json_testbench"/>
 		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c">
