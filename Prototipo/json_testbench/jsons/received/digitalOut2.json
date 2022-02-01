@@ -1,5 +1,5 @@
 {
-  "frameType": "DIGITAL_OUTPUT_SET_STATE",
+  "frameType": "setSalidaDigital",
   "outputNumber": 1,
   "state": "OFF"
 }

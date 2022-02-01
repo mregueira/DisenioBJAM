@@ -128,149 +128,197 @@ json_testbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/build
 .PHONY : json_testbench/fast
 
-Src/main.obj: Src/main.c.obj
-.PHONY : Src/main.obj
+Comeca/EthernetEvent/Src/ethernet.obj: Comeca/EthernetEvent/Src/ethernet.c.obj
+.PHONY : Comeca/EthernetEvent/Src/ethernet.obj
 
 # target to build an object file
-Src/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.obj
-.PHONY : Src/main.c.obj
+Comeca/EthernetEvent/Src/ethernet.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj
+.PHONY : Comeca/EthernetEvent/Src/ethernet.c.obj
 
-Src/main.i: Src/main.c.i
-.PHONY : Src/main.i
+Comeca/EthernetEvent/Src/ethernet.i: Comeca/EthernetEvent/Src/ethernet.c.i
+.PHONY : Comeca/EthernetEvent/Src/ethernet.i
 
 # target to preprocess a source file
-Src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.i
-.PHONY : Src/main.c.i
+Comeca/EthernetEvent/Src/ethernet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.i
+.PHONY : Comeca/EthernetEvent/Src/ethernet.c.i
 
-Src/main.s: Src/main.c.s
-.PHONY : Src/main.s
+Comeca/EthernetEvent/Src/ethernet.s: Comeca/EthernetEvent/Src/ethernet.c.s
+.PHONY : Comeca/EthernetEvent/Src/ethernet.s
 
 # target to generate assembly for a file
-Src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Src/main.c.s
-.PHONY : Src/main.c.s
+Comeca/EthernetEvent/Src/ethernet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.s
+.PHONY : Comeca/EthernetEvent/Src/ethernet.c.s
 
-managers/Src/analogInDigitalOutManager.obj: managers/Src/analogInDigitalOutManager.c.obj
-.PHONY : managers/Src/analogInDigitalOutManager.obj
+Comeca/Managers/Src/analogInManager.obj: Comeca/Managers/Src/analogInManager.c.obj
+.PHONY : Comeca/Managers/Src/analogInManager.obj
 
 # target to build an object file
-managers/Src/analogInDigitalOutManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.obj
-.PHONY : managers/Src/analogInDigitalOutManager.c.obj
+Comeca/Managers/Src/analogInManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj
+.PHONY : Comeca/Managers/Src/analogInManager.c.obj
 
-managers/Src/analogInDigitalOutManager.i: managers/Src/analogInDigitalOutManager.c.i
-.PHONY : managers/Src/analogInDigitalOutManager.i
+Comeca/Managers/Src/analogInManager.i: Comeca/Managers/Src/analogInManager.c.i
+.PHONY : Comeca/Managers/Src/analogInManager.i
 
 # target to preprocess a source file
-managers/Src/analogInDigitalOutManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.i
-.PHONY : managers/Src/analogInDigitalOutManager.c.i
+Comeca/Managers/Src/analogInManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.i
+.PHONY : Comeca/Managers/Src/analogInManager.c.i
 
-managers/Src/analogInDigitalOutManager.s: managers/Src/analogInDigitalOutManager.c.s
-.PHONY : managers/Src/analogInDigitalOutManager.s
+Comeca/Managers/Src/analogInManager.s: Comeca/Managers/Src/analogInManager.c.s
+.PHONY : Comeca/Managers/Src/analogInManager.s
 
 # target to generate assembly for a file
-managers/Src/analogInDigitalOutManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInDigitalOutManager.c.s
-.PHONY : managers/Src/analogInDigitalOutManager.c.s
+Comeca/Managers/Src/analogInManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.s
+.PHONY : Comeca/Managers/Src/analogInManager.c.s
 
-managers/Src/analogInManager.obj: managers/Src/analogInManager.c.obj
-.PHONY : managers/Src/analogInManager.obj
+Comeca/Managers/Src/caliperManager.obj: Comeca/Managers/Src/caliperManager.c.obj
+.PHONY : Comeca/Managers/Src/caliperManager.obj
 
 # target to build an object file
-managers/Src/analogInManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.obj
-.PHONY : managers/Src/analogInManager.c.obj
+Comeca/Managers/Src/caliperManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj
+.PHONY : Comeca/Managers/Src/caliperManager.c.obj
 
-managers/Src/analogInManager.i: managers/Src/analogInManager.c.i
-.PHONY : managers/Src/analogInManager.i
+Comeca/Managers/Src/caliperManager.i: Comeca/Managers/Src/caliperManager.c.i
+.PHONY : Comeca/Managers/Src/caliperManager.i
 
 # target to preprocess a source file
-managers/Src/analogInManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.i
-.PHONY : managers/Src/analogInManager.c.i
+Comeca/Managers/Src/caliperManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.i
+.PHONY : Comeca/Managers/Src/caliperManager.c.i
 
-managers/Src/analogInManager.s: managers/Src/analogInManager.c.s
-.PHONY : managers/Src/analogInManager.s
+Comeca/Managers/Src/caliperManager.s: Comeca/Managers/Src/caliperManager.c.s
+.PHONY : Comeca/Managers/Src/caliperManager.s
 
 # target to generate assembly for a file
-managers/Src/analogInManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/analogInManager.c.s
-.PHONY : managers/Src/analogInManager.c.s
+Comeca/Managers/Src/caliperManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.s
+.PHONY : Comeca/Managers/Src/caliperManager.c.s
 
-managers/Src/caliperManager.obj: managers/Src/caliperManager.c.obj
-.PHONY : managers/Src/caliperManager.obj
+Comeca/Managers/Src/digitalOutManager.obj: Comeca/Managers/Src/digitalOutManager.c.obj
+.PHONY : Comeca/Managers/Src/digitalOutManager.obj
 
 # target to build an object file
-managers/Src/caliperManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.obj
-.PHONY : managers/Src/caliperManager.c.obj
+Comeca/Managers/Src/digitalOutManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj
+.PHONY : Comeca/Managers/Src/digitalOutManager.c.obj
 
-managers/Src/caliperManager.i: managers/Src/caliperManager.c.i
-.PHONY : managers/Src/caliperManager.i
+Comeca/Managers/Src/digitalOutManager.i: Comeca/Managers/Src/digitalOutManager.c.i
+.PHONY : Comeca/Managers/Src/digitalOutManager.i
 
 # target to preprocess a source file
-managers/Src/caliperManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.i
-.PHONY : managers/Src/caliperManager.c.i
+Comeca/Managers/Src/digitalOutManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.i
+.PHONY : Comeca/Managers/Src/digitalOutManager.c.i
 
-managers/Src/caliperManager.s: managers/Src/caliperManager.c.s
-.PHONY : managers/Src/caliperManager.s
+Comeca/Managers/Src/digitalOutManager.s: Comeca/Managers/Src/digitalOutManager.c.s
+.PHONY : Comeca/Managers/Src/digitalOutManager.s
 
 # target to generate assembly for a file
-managers/Src/caliperManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/caliperManager.c.s
-.PHONY : managers/Src/caliperManager.c.s
+Comeca/Managers/Src/digitalOutManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.s
+.PHONY : Comeca/Managers/Src/digitalOutManager.c.s
 
-managers/Src/digitalOutManager.obj: managers/Src/digitalOutManager.c.obj
-.PHONY : managers/Src/digitalOutManager.obj
+Comeca/Managers/Src/pieceCountManager.obj: Comeca/Managers/Src/pieceCountManager.c.obj
+.PHONY : Comeca/Managers/Src/pieceCountManager.obj
 
 # target to build an object file
-managers/Src/digitalOutManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.obj
-.PHONY : managers/Src/digitalOutManager.c.obj
+Comeca/Managers/Src/pieceCountManager.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj
+.PHONY : Comeca/Managers/Src/pieceCountManager.c.obj
 
-managers/Src/digitalOutManager.i: managers/Src/digitalOutManager.c.i
-.PHONY : managers/Src/digitalOutManager.i
+Comeca/Managers/Src/pieceCountManager.i: Comeca/Managers/Src/pieceCountManager.c.i
+.PHONY : Comeca/Managers/Src/pieceCountManager.i
 
 # target to preprocess a source file
-managers/Src/digitalOutManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.i
-.PHONY : managers/Src/digitalOutManager.c.i
+Comeca/Managers/Src/pieceCountManager.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.i
+.PHONY : Comeca/Managers/Src/pieceCountManager.c.i
 
-managers/Src/digitalOutManager.s: managers/Src/digitalOutManager.c.s
-.PHONY : managers/Src/digitalOutManager.s
+Comeca/Managers/Src/pieceCountManager.s: Comeca/Managers/Src/pieceCountManager.c.s
+.PHONY : Comeca/Managers/Src/pieceCountManager.s
 
 # target to generate assembly for a file
-managers/Src/digitalOutManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/digitalOutManager.c.s
-.PHONY : managers/Src/digitalOutManager.c.s
+Comeca/Managers/Src/pieceCountManager.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.s
+.PHONY : Comeca/Managers/Src/pieceCountManager.c.s
 
-managers/Src/pieceCountManager.obj: managers/Src/pieceCountManager.c.obj
-.PHONY : managers/Src/pieceCountManager.obj
+Comeca/Messages/Receive/Src/jsonGetter.obj: Comeca/Messages/Receive/Src/jsonGetter.c.obj
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.obj
 
 # target to build an object file
-managers/Src/pieceCountManager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.obj
-.PHONY : managers/Src/pieceCountManager.c.obj
+Comeca/Messages/Receive/Src/jsonGetter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.c.obj
 
-managers/Src/pieceCountManager.i: managers/Src/pieceCountManager.c.i
-.PHONY : managers/Src/pieceCountManager.i
+Comeca/Messages/Receive/Src/jsonGetter.i: Comeca/Messages/Receive/Src/jsonGetter.c.i
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.i
 
 # target to preprocess a source file
-managers/Src/pieceCountManager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.i
-.PHONY : managers/Src/pieceCountManager.c.i
+Comeca/Messages/Receive/Src/jsonGetter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.i
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.c.i
 
-managers/Src/pieceCountManager.s: managers/Src/pieceCountManager.c.s
-.PHONY : managers/Src/pieceCountManager.s
+Comeca/Messages/Receive/Src/jsonGetter.s: Comeca/Messages/Receive/Src/jsonGetter.c.s
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.s
 
 # target to generate assembly for a file
-managers/Src/pieceCountManager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/managers/Src/pieceCountManager.c.s
-.PHONY : managers/Src/pieceCountManager.c.s
+Comeca/Messages/Receive/Src/jsonGetter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.s
+.PHONY : Comeca/Messages/Receive/Src/jsonGetter.c.s
+
+Comeca/Messages/Send/Src/messageLayer.obj: Comeca/Messages/Send/Src/messageLayer.c.obj
+.PHONY : Comeca/Messages/Send/Src/messageLayer.obj
+
+# target to build an object file
+Comeca/Messages/Send/Src/messageLayer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj
+.PHONY : Comeca/Messages/Send/Src/messageLayer.c.obj
+
+Comeca/Messages/Send/Src/messageLayer.i: Comeca/Messages/Send/Src/messageLayer.c.i
+.PHONY : Comeca/Messages/Send/Src/messageLayer.i
+
+# target to preprocess a source file
+Comeca/Messages/Send/Src/messageLayer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.i
+.PHONY : Comeca/Messages/Send/Src/messageLayer.c.i
+
+Comeca/Messages/Send/Src/messageLayer.s: Comeca/Messages/Send/Src/messageLayer.c.s
+.PHONY : Comeca/Messages/Send/Src/messageLayer.s
+
+# target to generate assembly for a file
+Comeca/Messages/Send/Src/messageLayer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.s
+.PHONY : Comeca/Messages/Send/Src/messageLayer.c.s
+
+main.obj: main.c.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.obj
+.PHONY : main.c.obj
+
+main.i: main.c.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/main.c.s
+.PHONY : main.c.s
 
 testBenchUtils/Src/testBenchVars.obj: testBenchUtils/Src/testBenchVars.c.obj
 .PHONY : testBenchUtils/Src/testBenchVars.obj
@@ -296,78 +344,6 @@ testBenchUtils/Src/testBenchVars.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.s
 .PHONY : testBenchUtils/Src/testBenchVars.c.s
 
-utils/Src/ethernet.obj: utils/Src/ethernet.c.obj
-.PHONY : utils/Src/ethernet.obj
-
-# target to build an object file
-utils/Src/ethernet.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.obj
-.PHONY : utils/Src/ethernet.c.obj
-
-utils/Src/ethernet.i: utils/Src/ethernet.c.i
-.PHONY : utils/Src/ethernet.i
-
-# target to preprocess a source file
-utils/Src/ethernet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.i
-.PHONY : utils/Src/ethernet.c.i
-
-utils/Src/ethernet.s: utils/Src/ethernet.c.s
-.PHONY : utils/Src/ethernet.s
-
-# target to generate assembly for a file
-utils/Src/ethernet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/ethernet.c.s
-.PHONY : utils/Src/ethernet.c.s
-
-utils/Src/jsonGetter.obj: utils/Src/jsonGetter.c.obj
-.PHONY : utils/Src/jsonGetter.obj
-
-# target to build an object file
-utils/Src/jsonGetter.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.obj
-.PHONY : utils/Src/jsonGetter.c.obj
-
-utils/Src/jsonGetter.i: utils/Src/jsonGetter.c.i
-.PHONY : utils/Src/jsonGetter.i
-
-# target to preprocess a source file
-utils/Src/jsonGetter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.i
-.PHONY : utils/Src/jsonGetter.c.i
-
-utils/Src/jsonGetter.s: utils/Src/jsonGetter.c.s
-.PHONY : utils/Src/jsonGetter.s
-
-# target to generate assembly for a file
-utils/Src/jsonGetter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/jsonGetter.c.s
-.PHONY : utils/Src/jsonGetter.c.s
-
-utils/Src/messageLayer.obj: utils/Src/messageLayer.c.obj
-.PHONY : utils/Src/messageLayer.obj
-
-# target to build an object file
-utils/Src/messageLayer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.obj
-.PHONY : utils/Src/messageLayer.c.obj
-
-utils/Src/messageLayer.i: utils/Src/messageLayer.c.i
-.PHONY : utils/Src/messageLayer.i
-
-# target to preprocess a source file
-utils/Src/messageLayer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.i
-.PHONY : utils/Src/messageLayer.c.i
-
-utils/Src/messageLayer.s: utils/Src/messageLayer.c.s
-.PHONY : utils/Src/messageLayer.s
-
-# target to generate assembly for a file
-utils/Src/messageLayer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/utils/Src/messageLayer.c.s
-.PHONY : utils/Src/messageLayer.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -377,36 +353,33 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... json_testbench
-	@echo ... Src/main.obj
-	@echo ... Src/main.i
-	@echo ... Src/main.s
-	@echo ... managers/Src/analogInDigitalOutManager.obj
-	@echo ... managers/Src/analogInDigitalOutManager.i
-	@echo ... managers/Src/analogInDigitalOutManager.s
-	@echo ... managers/Src/analogInManager.obj
-	@echo ... managers/Src/analogInManager.i
-	@echo ... managers/Src/analogInManager.s
-	@echo ... managers/Src/caliperManager.obj
-	@echo ... managers/Src/caliperManager.i
-	@echo ... managers/Src/caliperManager.s
-	@echo ... managers/Src/digitalOutManager.obj
-	@echo ... managers/Src/digitalOutManager.i
-	@echo ... managers/Src/digitalOutManager.s
-	@echo ... managers/Src/pieceCountManager.obj
-	@echo ... managers/Src/pieceCountManager.i
-	@echo ... managers/Src/pieceCountManager.s
+	@echo ... Comeca/EthernetEvent/Src/ethernet.obj
+	@echo ... Comeca/EthernetEvent/Src/ethernet.i
+	@echo ... Comeca/EthernetEvent/Src/ethernet.s
+	@echo ... Comeca/Managers/Src/analogInManager.obj
+	@echo ... Comeca/Managers/Src/analogInManager.i
+	@echo ... Comeca/Managers/Src/analogInManager.s
+	@echo ... Comeca/Managers/Src/caliperManager.obj
+	@echo ... Comeca/Managers/Src/caliperManager.i
+	@echo ... Comeca/Managers/Src/caliperManager.s
+	@echo ... Comeca/Managers/Src/digitalOutManager.obj
+	@echo ... Comeca/Managers/Src/digitalOutManager.i
+	@echo ... Comeca/Managers/Src/digitalOutManager.s
+	@echo ... Comeca/Managers/Src/pieceCountManager.obj
+	@echo ... Comeca/Managers/Src/pieceCountManager.i
+	@echo ... Comeca/Managers/Src/pieceCountManager.s
+	@echo ... Comeca/Messages/Receive/Src/jsonGetter.obj
+	@echo ... Comeca/Messages/Receive/Src/jsonGetter.i
+	@echo ... Comeca/Messages/Receive/Src/jsonGetter.s
+	@echo ... Comeca/Messages/Send/Src/messageLayer.obj
+	@echo ... Comeca/Messages/Send/Src/messageLayer.i
+	@echo ... Comeca/Messages/Send/Src/messageLayer.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 	@echo ... testBenchUtils/Src/testBenchVars.obj
 	@echo ... testBenchUtils/Src/testBenchVars.i
 	@echo ... testBenchUtils/Src/testBenchVars.s
-	@echo ... utils/Src/ethernet.obj
-	@echo ... utils/Src/ethernet.i
-	@echo ... utils/Src/ethernet.s
-	@echo ... utils/Src/jsonGetter.obj
-	@echo ... utils/Src/jsonGetter.i
-	@echo ... utils/Src/jsonGetter.s
-	@echo ... utils/Src/messageLayer.obj
-	@echo ... utils/Src/messageLayer.i
-	@echo ... utils/Src/messageLayer.s
 .PHONY : help
 
 

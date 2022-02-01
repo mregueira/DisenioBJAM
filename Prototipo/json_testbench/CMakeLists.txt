@@ -3,4 +3,19 @@ project(json_testbench C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(json_testbench Src/main.c utils/Src/messageLayer.c utils/Inc/messageLayer.h utils/Src/jsonGetter.c utils/Inc/jsonGetter.h utils/Src/ethernet.c testBenchUtils/Inc/caliper_number.h managers/Src/caliperManager.c managers/Inc/caliperManager.h managers/Src/pieceCountManager.c managers/Inc/pieceCountManager.h managers/Src/digitalOutManager.c managers/Inc/digitalOutManager.h managers/Src/analogInManager.c managers/Inc/analogInManager.h testBenchUtils/Inc/testBenchVars.h testBenchUtils/Src/testBenchVars.c managers/Src/analogInDigitalOutManager.c managers/Inc/analogInDigitalOutManager.h Inc/CODE_TESTING.h testBenchUtils/Inc/digimatic_measure_t.h)
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    add_definitions(-DTESTING)
+endif()
+
+add_executable(json_testbench main.c
+        Comeca/Messages/Send/Src/messageLayer.c Comeca/Messages/Send/Inc/messageLayer.h
+        Comeca/Messages/Receive/Src/jsonGetter.c Comeca/Messages/Receive/Inc/jsonGetter.h
+        Comeca/EthernetEvent/Src/ethernet.c Comeca/EthernetEvent/Inc/ethernet.h
+        Comeca/Managers/Src/caliperManager.c  Comeca/Managers/Inc/caliperManager.h
+        Comeca/Managers/Src/pieceCountManager.c  Comeca/Managers/Inc/pieceCountManager.h
+        Comeca/Managers/Src/digitalOutManager.c  Comeca/Managers/Inc/digitalOutManager.h
+        Comeca/Managers/Src/analogInManager.c  Comeca/Managers/Inc/analogInManager.h
+        Comeca/Common/Inc/BUFFER_SIZE.h
+        testBenchUtils/Inc/testBenchVars.h testBenchUtils/Src/testBenchVars.c
+        testBenchUtils/Inc/digimatic_measure_t.h
+        testBenchUtils/Inc/caliper_number.h)
