@@ -60,26 +60,19 @@ branch  1 taken 3
         2:   31-block  0
         -:   32:    }
         -:   33:
-        -:   34:
-        -:   35:    char str2send[GLOBAL_MAX_STRING_SIZE];
-        -:   36:    message_t msg;
-        3:   37:    if(isValid){
-        3:   37-block  0
+        3:   34:    if(isValid){
+        3:   34-block  0
 branch  0 taken 2 (fallthrough)
 branch  1 taken 1
-        2:   38:    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
-        2:   38-block  0
+        2:   35:    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+        2:   35-block  0
 call    0 returned 2
-        2:   39:        msg = sendCaliperMeasure(str2send, measure, caliperNumber);
+        2:   36:    	sendCaliperMeasure(measure, caliperNumber);
 call    0 returned 2
-        2:   40:        ETHsendMessage(msg);
-call    0 returned 2
-        -:   41:    } else {
-        1:   42:        msg = sendCaliperWarning(str2send, caliperNumber);
-        1:   42-block  0
+        -:   37:    } else {
+        1:   38:    	sendCaliperWarning(caliperNumber);
+        1:   38-block  0
 call    0 returned 1
-        1:   43:        ETHsendMessage(msg);
-call    0 returned 1
-        -:   44:    }
-        -:   45:
-        3:   46:}
+        -:   39:    }
+        -:   40:
+        3:   41:}

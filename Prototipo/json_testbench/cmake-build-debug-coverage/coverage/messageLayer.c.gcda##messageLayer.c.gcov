@@ -8,75 +8,96 @@
         -:    3://
         -:    4:#include "../Inc/messageLayer.h"
         -:    5:
+        -:    6:
 function sendCaliperMeasure called 2 returned 100% blocks executed 100%
-        2:    6:message_t sendCaliperMeasure(char * str2send, digimatic_measure_t measure, caliper_number caliperNumber){
-        2:    6-block  0
-        2:    7:    int len = -1;
-        2:    8:    if(measure.unit){
-        2:    8-block  0
+        2:    7:void sendCaliperMeasure(digimatic_measure_t measure, caliper_number caliperNumber){
+        2:    7-block  0
+        -:    8:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        2:    9:    int len = -1;
+        2:   10:    if(measure.unit){
+        2:   10-block  0
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:    9:        len = sprintf(str2send,
-        1:    9-block  0
-        1:   10:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"inches\"}}",caliperNumber, measure.number);
-        -:   11:    } else {
-        1:   12:        len = sprintf(str2send,
-        1:   12-block  0
-        1:   13:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"mm\"}}",caliperNumber, measure.number);
-        -:   14:    }
-        -:   15:    message_t msg2send;
-        2:   16:    msg2send.msg = str2send;
-        2:   17:    msg2send.len = len;
-        2:   18:    return msg2send;
-        2:   18-block  0
-        -:   19:}
+        1:   11:        len = sprintf(str2send,
+        1:   11-block  0
+        1:   12:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"inches\"}}",caliperNumber, measure.number);
+        -:   13:    } else {
+        1:   14:        len = sprintf(str2send,
+        1:   14-block  0
+        1:   15:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"measure\": %.5f, \"unit\": \"mm\"}}",caliperNumber, measure.number);
+        -:   16:    }
+        -:   17:    message_t msg2send;
+        2:   18:    msg2send.msg = str2send;
+        2:   19:    msg2send.len = len;
         -:   20:
+        2:   21:    ETHsendMessage(msg2send);
+        2:   21-block  0
+call    0 returned 2
+        2:   22:}
+        -:   23:
 function sendCaliperWarning called 1 returned 100% blocks executed 100%
-        1:   21:message_t sendCaliperWarning(char * str2send, caliper_number caliperNumber){
-        1:   21-block  0
-        1:   22:    int len = sprintf(str2send,
-        -:   23:    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"warning\": \"retryCaliperMeasure\"}}",caliperNumber);
-        -:   24:
-        -:   25:    message_t msg2send;
-        1:   26:    msg2send.msg = str2send;
-        1:   27:    msg2send.len = len;
-        1:   28:    return msg2send;
-        1:   28-block  0
-        -:   29:}
-        -:   30:
+        1:   24:void sendCaliperWarning(caliper_number caliperNumber){
+        1:   24-block  0
+        -:   25:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        1:   26:    int len = sprintf(str2send,
+        -:   27:    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoCalibre\", \"data\": {\"caliperNumber\": %d, \"warning\": \"retryCaliperMeasure\"}}",caliperNumber);
+        -:   28:
+        -:   29:    message_t msg2send;
+        1:   30:    msg2send.msg = str2send;
+        1:   31:    msg2send.len = len;
+        -:   32:
+        1:   33:    ETHsendMessage(msg2send);
+        1:   33-block  0
+call    0 returned 1
+        1:   34:}
+        -:   35:
 function sendIncrementPieceCount called 1 returned 100% blocks executed 100%
-        1:   31:message_t sendIncrementPieceCount(char * str2send){
-        1:   31-block  0
-        1:   32:    int len = sprintf(str2send,
-        -:   33:    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"contarPieza\"}");
-        -:   34:
-        -:   35:    message_t msg2send;
-        1:   36:    msg2send.msg = str2send;
-        1:   37:    msg2send.len = len;
-        1:   38:    return msg2send;
-        1:   38-block  0
-        -:   39:}
-        -:   40:
-function sendAnalogInMessage called 2 returned 100% blocks executed 100%
-        2:   41:message_t sendAnalogInMessage(char * str2send, int inputNum, float receivedData, bool isValid){
-        2:   41-block  0
-        2:   42:    int len = -1;
-        2:   43:    if(isValid){ // si es valido
-        2:   43-block  0
-branch  0 taken 1 (fallthrough)
-branch  1 taken 1
-        1:   44:        len = sprintf(str2send,
-        1:   44-block  0
-        -:   45:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"measure\": %.5f}}",inputNum, receivedData);
-        -:   46:
-        -:   47:    }else{
-        1:   48:        len = sprintf(str2send,
-        1:   48-block  0
-        -:   49:        		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"warning\": \"retryAnalogIn\"}}", inputNum);
-        -:   50:    }
-        -:   51:    message_t msg2send;
-        2:   52:    msg2send.msg = str2send;
-        2:   53:    msg2send.len = len;
-        2:   54:    return msg2send;
-        2:   54-block  0
-        -:   55:}
+        1:   36:void sendIncrementPieceCount(void){
+        1:   36-block  0
+        -:   37:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        -:   38:
+        1:   39:    int len = sprintf(str2send,
+        -:   40:    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"contarPieza\"}");
+        -:   41:
+        -:   42:    message_t msg2send;
+        1:   43:    msg2send.msg = str2send;
+        1:   44:    msg2send.len = len;
+        -:   45:
+        1:   46:    ETHsendMessage(msg2send);
+        1:   46-block  0
+call    0 returned 1
+        1:   47:}
+        -:   48:
+function sendAnalogInMessage called 1 returned 100% blocks executed 100%
+        1:   49:void sendAnalogInMessage(int inputNum, float receivedData){
+        1:   49-block  0
+        -:   50:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        -:   51:
+        1:   52:    int len = sprintf(str2send,
+        -:   53:    		"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"measure\": %.5f}}",inputNum, receivedData);
+        -:   54:
+        -:   55:    message_t msg2send;
+        1:   56:    msg2send.msg = str2send;
+        1:   57:    msg2send.len = len;
+        -:   58:
+        1:   59:    ETHsendMessage(msg2send);
+        1:   59-block  0
+call    0 returned 1
+        1:   60:}
+        -:   61:
+function sendAnalogInWarning called 2 returned 100% blocks executed 100%
+        2:   62:void sendAnalogInWarning(int inputNum){
+        2:   62-block  0
+        -:   63:    char str2send[GLOBAL_MAX_STRING_SIZE];
+        -:   64:
+        2:   65:	int len = sprintf(str2send,
+        -:   66:    	"{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": %d, \"warning\": \"retryAnalogIn\"}}", inputNum);
+        -:   67:
+        -:   68:    message_t msg2send;
+        2:   69:    msg2send.msg = str2send;
+        2:   70:    msg2send.len = len;
+        -:   71:
+        2:   72:    ETHsendMessage(msg2send);
+        2:   72-block  0
+call    0 returned 2
+        2:   73:}

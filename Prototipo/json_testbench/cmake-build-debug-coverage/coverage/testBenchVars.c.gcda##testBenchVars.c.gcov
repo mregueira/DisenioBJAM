@@ -13,17 +13,17 @@
         -:    8:bool isValidCaliperMeasure = true;
         -:    9:digimatic_measure_t measure;
         -:   10:
-function getAdcMeasure called 2 returned 100% blocks executed 100%
-        4:   11:int getAdcMeasure(void){ return adc_measure;}
-        2:   11-block  0
-        2:   11-block  1
-function setAdcMeasure called 2 returned 100% blocks executed 100%
-        2:   12:void setAdcMeasure(int measure){adc_measure = measure;}
-        2:   12-block  0
-function getTestBench called 24 returned 100% blocks executed 100%
-       48:   13:char* getTestBench(void){return testBench;}
-       24:   13-block  0
-       24:   13-block  1
+function getAdcMeasure called 3 returned 100% blocks executed 100%
+        6:   11:int getAdcMeasure(void){ return adc_measure;}
+        3:   11-block  0
+        3:   11-block  1
+function setAdcMeasure called 3 returned 100% blocks executed 100%
+        3:   12:void setAdcMeasure(int measure){adc_measure = measure;}
+        3:   12-block  0
+function getTestBench called 27 returned 100% blocks executed 100%
+       54:   13:char* getTestBench(void){return testBench;}
+       27:   13-block  0
+       27:   13-block  1
 function setValidCaliperMeasure called 2 returned 100% blocks executed 100%
         2:   14:void setValidCaliperMeasure(bool value){
         2:   14-block  0

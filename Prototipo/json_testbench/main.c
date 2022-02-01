@@ -28,8 +28,6 @@ int main() {
 
     // Managers Testing
     //  -  Caliper Manager
-    // TODO: caliperManager calls should return the caliper wanted
-
     setValidCaliperMeasure(true);
 
     setDigimaticMeasure(1.23452, false);
@@ -60,6 +58,11 @@ int main() {
     ETHonMessageReceived(msg); // calls analogInManager(msg);
     assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": 2, \"warning\": \"retryAnalogIn\"}}") == 0);
 
+    setAdcMeasure(10000);
+    ETHonMessageReceived(msg); // calls analogInManager(msg);
+    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": 2, \"warning\": \"retryAnalogIn\"}}") == 0);
+
+
     //  - Digital Out Manager
 
     filename = "C:\\Github_Repos\\DisenioBJAM\\Prototipo\\json_testbench\\jsons\\received\\digitalOut1.json";
@@ -72,4 +75,5 @@ int main() {
     msg = json_to_msg(filename);
     ETHonMessageReceived(msg); // calls digitalOutManager(msg);
     assert(strcmp(getTestBench(), "OFF->1") == 0);
+
 }

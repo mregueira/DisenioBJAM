@@ -11,50 +11,50 @@
         -:    6:
         -:    7:#ifdef TESTING
         -:    8:    // this should come from udpClientRAW.h
-function udpClient_custom_string called 6 returned 100% blocks executed 100%
-        6:    9:    void udpClient_custom_string(message_t msg){
-        6:    9-block  0
-        6:   10:        strcpy(getTestBench(), msg.msg);
-        6:   10-block  0
-call    0 returned 6
-        6:   11:        printf(getTestBench());
-call    0 returned 6
-call    1 returned 6
-        6:   12:        printf("\n");
-call    0 returned 6
-        6:   13:    }
+function udpClient_custom_string called 7 returned 100% blocks executed 100%
+        7:    9:    void udpClient_custom_string(message_t msg){
+        7:    9-block  0
+        7:   10:        strcpy(getTestBench(), msg.msg);
+        7:   10-block  0
+call    0 returned 7
+        7:   11:        printf(getTestBench());
+call    0 returned 7
+call    1 returned 7
+        7:   12:        printf("\n");
+call    0 returned 7
+        7:   13:    }
         -:   14:#endif
         -:   15:
-function ETHsendMessage called 6 returned 100% blocks executed 100%
-        6:   16:void ETHsendMessage(message_t message){
-        6:   16-block  0
-        6:   17:    udpClient_custom_string(message);
-        6:   17-block  0
-call    0 returned 6
-        6:   18:}
+function ETHsendMessage called 7 returned 100% blocks executed 100%
+        7:   16:void ETHsendMessage(message_t message){
+        7:   16-block  0
+        7:   17:    udpClient_custom_string(message);
+        7:   17-block  0
+call    0 returned 7
+        7:   18:}
         -:   19:
-function ETHonMessageReceived called 4 returned 100% blocks executed 100%
-        4:   20:void ETHonMessageReceived(message_t json){
-        4:   20-block  0
+function ETHonMessageReceived called 5 returned 100% blocks executed 100%
+        5:   20:void ETHonMessageReceived(message_t json){
+        5:   20-block  0
         -:   21:    char frameType[GLOBAL_MAX_STRING_SIZE];
-        4:   22:    getFrameType(json, frameType);
-        4:   22-block  0
-call    0 returned 4
+        5:   22:    getFrameType(json, frameType);
+        5:   22-block  0
+call    0 returned 5
         -:   23:
-        4:   24:    if(strcmp(frameType, "READ_ANALOG_IN") == 0){
-branch  0 taken 2 (fallthrough)
+        5:   24:    if(strcmp(frameType, "READ_ANALOG_IN") == 0){
+branch  0 taken 3 (fallthrough)
 branch  1 taken 2
-        2:   25:        analogInManager(json);
-        2:   25-block  0
-call    0 returned 2
+        3:   25:        analogInManager(json);
+        3:   25-block  0
+call    0 returned 3
         -:   26:    }
         -:   27:
-        4:   28:    if(strcmp(frameType, "setSalidaDigital") == 0){
-        4:   28-block  0
+        5:   28:    if(strcmp(frameType, "setSalidaDigital") == 0){
+        5:   28-block  0
 branch  0 taken 2 (fallthrough)
-branch  1 taken 2
+branch  1 taken 3
         2:   29:        digitalOutManager(json);
         2:   29-block  0
 call    0 returned 2
         -:   30:    }
-        4:   31:}
+        5:   31:}
