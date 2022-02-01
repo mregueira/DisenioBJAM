@@ -112,6 +112,10 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliper
 ../../../Comeca/Managers/Inc/caliperManager.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/caliperManager.h
 
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/digitalOutManager.c
+../../../Comeca/Managers/Inc/digitalOutManager.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h
+
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c
 ../../../Comeca/Managers/Inc/pieceCountManager.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/pieceCountManager.h
@@ -123,6 +127,10 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/message.
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Comeca/Common/Inc/message.h
 ../../../../ExternalLibs/JSONParser/Inc/json.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c
+../Inc/jsonGetter.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
 
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
 stdbool.h
@@ -189,4 +197,8 @@ stdbool.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/stdbool.h
 ../../testBenchUtils/Inc/digimatic_measure_t.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
+
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c
+../Inc/testBenchVars.h
+C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h
 
