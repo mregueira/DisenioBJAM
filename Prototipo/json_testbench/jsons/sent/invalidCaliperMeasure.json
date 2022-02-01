@@ -1,0 +1,10 @@
+{
+  "version": "0.0",
+  "sequence": 0,
+  "command": "request",
+  "action": "guardarDatoCalibre",
+  "data": {
+    "caliperNumber": 3,
+    "warning": "retryCaliperMeasure"
+  }
+}

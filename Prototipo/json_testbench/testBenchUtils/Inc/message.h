@@ -8,7 +8,6 @@
 #ifndef INC_MESSAGE_H_
 #define INC_MESSAGE_H_
 
-#include "../../Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 

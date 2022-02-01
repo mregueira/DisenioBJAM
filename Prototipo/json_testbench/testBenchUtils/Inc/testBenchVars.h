@@ -5,7 +5,6 @@
 #ifndef JSON_TESTBENCH_TESTBENCHVARS_H
 #define JSON_TESTBENCH_TESTBENCHVARS_H
 
-#include "../../Inc/CODE_TESTING.h"
 
 #ifdef TESTING
 
