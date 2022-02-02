@@ -13,6 +13,9 @@
 #include "stdbool.h"
 #include <math.h>
 
+
+typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
+
 #ifndef TESTING
 
 #include "main.h"
@@ -48,13 +51,6 @@ typedef enum{ // (!) don't change the order
 	FINISHED // READY TO BE READ
 } caliper_state_t;
 
-typedef struct{
-	caliper_state_t caliper_state;
-	digimatic_frame_t frames[NUMBER_OF_FRAMES];
-	bit_context_t bit;
-	frame_context_t frame;
-} digimatic_processing_t;
-
 typedef struct {
 	uint8_t index;
 	uint8_t data;
@@ -65,11 +61,21 @@ typedef struct {
 	uint8_t data;
 }frame_context_t;
 
+
 #define NUMBER_OF_FRAMES 13
+
+typedef struct{
+	caliper_state_t caliper_state;
+	digimatic_frame_t frames[NUMBER_OF_FRAMES];
+	bit_context_t bit;
+	frame_context_t frame;
+} digimatic_processing_t;
+
+
 
 #endif
 
-typedef uint8_t digimatic_frame_t; // every frame needs 4 bits.
+
 
 typedef struct {
     float number;
