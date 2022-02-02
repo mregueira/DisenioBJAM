@@ -1,0 +1,47 @@
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\testBenchUtils\Src\testBenchVars.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\testBenchUtils\Src\testBenchVars.c.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by joa-m on 11/1/2021.
+        -:    3://
+        -:    4:
+        -:    5:#include "../Inc/testBenchVars.h"
+        -:    6:
+        -:    7:int adc_measure;
+        -:    8:char testBench[1000];
+        -:    9:bool isValidCaliperMeasure = true;
+        -:   10:digimatic_measure_t measure;
+        -:   11:
+function getAdcMeasure called 3 returned 100% blocks executed 100%
+        6:   12:int getAdcMeasure(void){ return adc_measure;}
+        3:   12-block  0
+        3:   12-block  1
+function setAdcMeasure called 3 returned 100% blocks executed 100%
+        3:   13:void setAdcMeasure(int measure){adc_measure = measure;}
+        3:   13-block  0
+function getTestBench called 27 returned 100% blocks executed 100%
+       54:   14:char* getTestBench(void){return testBench;}
+       27:   14-block  0
+       27:   14-block  1
+function setValidCaliperMeasure called 2 returned 100% blocks executed 100%
+        2:   15:void setValidCaliperMeasure(bool value){
+        2:   15-block  0
+        2:   16:    isValidCaliperMeasure = value;
+        2:   17:}
+function getIsValidCaliperMeasure called 5 returned 100% blocks executed 100%
+       10:   18:bool getIsValidCaliperMeasure(void){ return isValidCaliperMeasure; };
+        5:   18-block  0
+        5:   18-block  1
+function setDigimaticMeasure called 2 returned 100% blocks executed 100%
+        2:   19:void setDigimaticMeasure(float number, bool mmOrInches){
+        2:   19-block  0
+        2:   20:    measure.number = number;
+        2:   21:    measure.unit = mmOrInches;
+        2:   22:}
+        -:   23:
+function getDigimaticMeasure called 2 returned 100% blocks executed 100%
+        4:   24:digimatic_measure_t getDigimaticMeasure(void){ return measure; };
+        2:   24-block  0
+        2:   24-block  1

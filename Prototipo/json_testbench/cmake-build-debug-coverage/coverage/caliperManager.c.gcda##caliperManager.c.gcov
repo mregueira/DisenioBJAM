@@ -1,0 +1,82 @@
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\caliperManager.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\Managers\Src\caliperManager.c.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1://
+        -:    2:// Created by joa-m on 11/1/2021.
+        -:    3://
+        -:    4:#include "../../../Comeca/Managers/Inc/caliperManager.h"
+        -:    5:
+        -:    6:#ifdef TESTING
+function digimaticGetMeasureFramesTest called 5 returned 100% blocks executed 100%
+        5:    7:digimatic_frame_t* digimaticGetMeasureFramesTest(caliper_number curr_caliper){
+        5:    7-block  0
+        5:    8:    return NULL;
+        5:    8-block  0
+        -:    9:}
+function digimaticMeasureTest called 2 returned 100% blocks executed 100%
+        2:   10:digimatic_measure_t digimaticMeasureTest(digimatic_frame_t* digimaticFrame){
+        2:   10-block  0
+        2:   11:    return getDigimaticMeasure();
+        2:   11-block  0
+call    0 returned 2
+        -:   12:}
+function validCaliperMeasureTest called 5 returned 100% blocks executed 100%
+        5:   13:bool validCaliperMeasureTest(digimatic_frame_t* digimaticFrame){
+        5:   13-block  0
+        5:   14:    return getIsValidCaliperMeasure();
+        5:   14-block  0
+call    0 returned 5
+        -:   15:}
+        -:   16:
+        -:   17:#endif
+        -:   18:
+function caliperManager called 3 returned 100% blocks executed 100%
+        3:   19:void caliperManager(caliper_number caliperNumber){
+        3:   19-block  0
+        -:   20:    int retry;
+        3:   21:    bool isValid = false;
+        -:   22:    digimatic_frame_t* digimaticFrames;
+        6:   23:    for(retry = 0; retry< RETRY_TIMES; retry++){
+        3:   23-block  0
+        3:   23-block  1
+        6:   23-block  2
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+        -:   24:#ifdef TESTING
+        5:   25:        digimaticFrames = digimaticGetMeasureFramesTest(caliperNumber);
+        5:   25-block  0
+call    0 returned 5
+        5:   26:        isValid = validCaliperMeasureTest(digimaticFrames);
+call    0 returned 5
+        -:   27:#else
+        -:   28:        digimaticFrames = digimaticGetMeasureFrames(caliperNumber);
+        -:   29:        isValid = validCaliperMeasure(digimaticFrames);
+        -:   30:#endif
+        5:   31:        if(isValid) break;
+branch  0 taken 2 (fallthrough)
+branch  1 taken 3
+        2:   31-block  0
+        -:   32:    }
+        -:   33:
+        3:   34:    if(isValid){
+        3:   34-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:   35:#ifdef TESTING
+        2:   36:        digimatic_measure_t measure = digimaticMeasureTest(digimaticFrames);
+        2:   36-block  0
+call    0 returned 2
+        -:   37:#else
+        -:   38:        digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+        -:   39:#endif
+        2:   40:    	sendCaliperMeasure(measure, caliperNumber);
+call    0 returned 2
+        -:   41:    } else {
+        1:   42:    	sendCaliperWarning(caliperNumber);
+        1:   42-block  0
+call    0 returned 1
+        -:   43:    }
+        -:   44:
+        3:   45:}

@@ -1,0 +1,195 @@
+        -:    0:Source:C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/DigimaticProtocol/Src/digimatic.c
+        -:    0:Graph:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\DigimaticProtocol\Src\digimatic.c.gcno
+        -:    0:Data:C:\Github_Repos\DisenioBJAM\Prototipo\json_testbench\cmake-build-debug-coverage\CMakeFiles\json_testbench.dir\Comeca\DigimaticProtocol\Src\digimatic.c.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * digimatic.c
+        -:    3: *
+        -:    4: *  Created on: Sep 20, 2021
+        -:    5: *      Author: joa-m
+        -:    6: */
+        -:    7:
+        -:    8:#include "../Inc/digimatic.h"
+        -:    9:
+        -:   10:#ifndef TESTING
+        -:   11:static digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
+        -:   12:
+        -:   13:static GPIO_TypeDef * CAL_DATA_PORT_MAPPING[NUMBER_OF_CALIPERS] = {GPIOE, GPIOB, GPIOA, GPIOE};
+        -:   14:static uint16_t CAL_DATA_PIN_MAPPING[NUMBER_OF_CALIPERS] = {GPIO_PIN_11, GPIO_PIN_1, GPIO_PIN_0, GPIO_PIN_4};
+        -:   15:
+        -:   16:static uint16_t CAL_CLK_MAPPING[NUMBER_OF_CALIPERS] = {CAL1_CLK_Pin, CAL2_CLK_Pin, CAL3_CLK_Pin, CAL4_CLK_Pin};
+        -:   17:
+        -:   18:int getCaliperNumberGivenClockPin(uint16_t CLK_Pin){
+        -:   19:	int i;
+        -:   20:	for(i=0; i<NUMBER_OF_CALIPERS; i++) { if(CAL_CLK_MAPPING[i] == CLK_Pin){ break; } }
+        -:   21:	return i;
+        -:   22:}
+        -:   23:
+        -:   24:bool getCaliperData(caliper_number curr_caliper){
+        -:   25:	return HAL_GPIO_ReadPin(CAL_DATA_PORT_MAPPING[curr_caliper],CAL_DATA_PIN_MAPPING[curr_caliper]);
+        -:   26:}
+        -:   27:
+        -:   28:void processBit(caliper_number curr_caliper){
+        -:   29:	if(digimatic[curr_caliper].bit.index == 0){digimatic[curr_caliper].frame.data = 0;}
+        -:   30:
+        -:   31:	uint8_t read_bit = getCaliperData(curr_caliper);
+        -:   32:
+        -:   33:	digimatic[curr_caliper].frame.data |= read_bit << digimatic[curr_caliper].bit.index;
+        -:   34:
+        -:   35:	digimatic[curr_caliper].bit.index++;
+        -:   36:}
+        -:   37:
+        -:   38:
+        -:   39:void onRisingEdgeOfReqSignal(caliper_number curr_caliper){
+        -:   40:	digimatic[curr_caliper].caliper_state = START;
+        -:   41:}
+        -:   42:
+        -:   43:
+        -:   44:void onRisingEdgeOfClockSignal(caliper_number curr_caliper, void (*onFinishedGettingFramesFor)(caliper_number)){
+        -:   45:	if(digimatic[curr_caliper].caliper_state != IDLE && digimatic[curr_caliper].caliper_state != FINISHED){
+        -:   46:		digimatic[curr_caliper].caliper_state = GETTING_FRAMES; // this doesn't change unless its last frame (implemented below)
+        -:   47:		if(digimatic[curr_caliper].frame.index == 0){
+        -:   48:			memset(&digimatic[curr_caliper].frames, 0, NUMBER_OF_FRAMES*sizeof(digimatic[curr_caliper].frames[0]));
+        -:   49:		}
+        -:   50:
+        -:   51:		processBit(curr_caliper);
+        -:   52:
+        -:   53:		if(digimatic[curr_caliper].bit.index == BITS_PER_FRAME){ // tengo un frame guardado en digimatic.frame.data
+        -:   54:			digimatic[curr_caliper].frames[digimatic[curr_caliper].frame.index] = digimatic[curr_caliper].frame.data; // lo guardo en el array
+        -:   55:			digimatic[curr_caliper].frame.index++; // avanzo en array
+        -:   56:			digimatic[curr_caliper].bit.index = 0; // reinicio el index de bit
+        -:   57:		}
+        -:   58:
+        -:   59:		if(digimatic[curr_caliper].frame.index == NUMBER_OF_FRAMES){
+        -:   60:			digimatic[curr_caliper].frame.index = 0;
+        -:   61:			digimatic[curr_caliper].caliper_state = FINISHED;
+        -:   62:			onFinishedGettingFramesFor(curr_caliper);
+        -:   63:		}
+        -:   64:	}
+        -:   65:}
+        -:   66:
+        -:   67:digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
+        -:   68:	if(digimatic[curr_caliper].caliper_state == FINISHED){
+        -:   69:		digimatic[curr_caliper].caliper_state = IDLE;
+        -:   70:		return &(digimatic[curr_caliper].frames[0]);
+        -:   71:	}else{
+        -:   72:		return NULL;
+        -:   73:	}
+        -:   74:}
+        -:   75:#endif
+        -:   76:
+function digimaticMeasure called 2 returned 100% blocks executed 100%
+        2:   77:digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
+        2:   77-block  0
+        -:   78://  ignore all 'F'
+        2:   79:    digimaticFrame+= 4;
+        -:   80://  get sign
+        2:   81:    float sign = (*digimaticFrame) == 8? -1: 1;
+        2:   81-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   81-block  1
+        1:   81-block  2
+        -:   82://  advance pointer and get digits;
+        2:   83:    digimaticFrame++;
+        2:   84:    int digits_left = 6;
+        2:   85:    float number = 0;
+       14:   86:    while(digits_left){
+        2:   86-block  0
+       14:   86-block  1
+branch  0 taken 12
+branch  1 taken 2 (fallthrough)
+       12:   87:        number += pow(10,digits_left)*(*digimaticFrame);
+       12:   88:        digits_left--;
+       12:   89:        digimaticFrame++;
+       12:   89-block  0
+        -:   90:    }
+        -:   91:    // digimaticFrame is now on d12
+        2:   92:    float decimal_point = pow(10,(*digimaticFrame)+1);
+        2:   93:    digimaticFrame++;
+        2:   94:    int unit = (*digimaticFrame);
+        -:   95:    digimatic_measure_t measure;
+        2:   96:    measure.number = sign*number/decimal_point;
+        2:   97:    measure.unit = unit;
+        -:   98:
+        2:   99:    return measure;
+        2:   99-block  0
+        -:  100:}
+        -:  101:
+function validCaliperMeasure called 7 returned 100% blocks executed 100%
+        7:  102:bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
+        7:  102-block  0
+        7:  103:	digimatic_frame_t* auxDigimaticFrame = digimaticFrame;
+        -:  104:
+        -:  105://  check all 'F' = 15
+       31:  106:	for(int i = 0; i<4; i++){
+        7:  106-block  0
+       24:  106-block  1
+       31:  106-block  2
+branch  0 taken 25
+branch  1 taken 6 (fallthrough)
+       25:  107:		if((*auxDigimaticFrame != 15)){
+       25:  107-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 24
+        1:  108:			return false;
+        1:  108-block  0
+        -:  109:		}
+       24:  110:		auxDigimaticFrame++;
+        -:  111:	}
+        -:  112:// check sign
+        6:  113:	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 8){
+        6:  113-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4
+        2:  113-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  114:		return false;
+        1:  114-block  0
+        -:  115:	}
+        -:  116:
+        5:  117:	auxDigimaticFrame++;
+        -:  118:// check digits between 0 and 9
+       29:  119:	for(int i = 0; i<6; i++){
+        5:  119-block  0
+       24:  119-block  1
+       29:  119-block  2
+branch  0 taken 25
+branch  1 taken 4 (fallthrough)
+       25:  120:		if((*auxDigimaticFrame) > 9){
+       25:  120-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 24
+        1:  121:			return false;
+        1:  121-block  0
+        -:  122:		}
+       24:  123:		auxDigimaticFrame++;
+        -:  124:	}
+        -:  125:// check decimal point between 0 and 5
+        4:  126:	if((*auxDigimaticFrame) > 5){
+        4:  126-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:  127:		return false;
+        1:  127-block  0
+        -:  128:	}
+        -:  129:
+        3:  130:	auxDigimaticFrame++;
+        -:  131:// check unit
+        3:  132:	if((*auxDigimaticFrame) != 0 && (*auxDigimaticFrame) != 1){
+        3:  132-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:  132-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:  133:		return false;
+        1:  133-block  0
+        -:  134:	}
+        -:  135:
+        2:  136:	return true;
+        2:  136-block  0
+        -:  137:}
+        -:  138:
