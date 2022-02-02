@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/json_testbench.dir/Comeca/DigimaticProtocol/Src/digimatic.c.obj"
   "CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj"
   "CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj"
   "CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj"

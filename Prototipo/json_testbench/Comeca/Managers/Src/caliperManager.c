@@ -4,18 +4,13 @@
 #include "../../../Comeca/Managers/Inc/caliperManager.h"
 
 #ifdef TESTING
-
-
-// this should come from "digimatic.h"
-digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
+digimatic_frame_t* digimaticGetMeasureFramesTest(caliper_number curr_caliper){
     return NULL;
 }
-// this should come from "digimatic.h"
-digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
+digimatic_measure_t digimaticMeasureTest(digimatic_frame_t* digimaticFrame){
     return getDigimaticMeasure();
 }
-// this should come from "digimatic.h"
-bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
+bool validCaliperMeasureTest(digimatic_frame_t* digimaticFrame){
     return getIsValidCaliperMeasure();
 }
 
@@ -26,13 +21,22 @@ void caliperManager(caliper_number caliperNumber){
     bool isValid = false;
     digimatic_frame_t* digimaticFrames;
     for(retry = 0; retry< RETRY_TIMES; retry++){
+#ifdef TESTING
+        digimaticFrames = digimaticGetMeasureFramesTest(caliperNumber);
+        isValid = validCaliperMeasureTest(digimaticFrames);
+#else
         digimaticFrames = digimaticGetMeasureFrames(caliperNumber);
         isValid = validCaliperMeasure(digimaticFrames);
+#endif
         if(isValid) break;
     }
 
     if(isValid){
-    	digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+#ifdef TESTING
+        digimatic_measure_t measure = digimaticMeasureTest(digimaticFrames);
+#else
+        digimatic_measure_t measure = digimaticMeasure(digimaticFrames);
+#endif
     	sendCaliperMeasure(measure, caliperNumber);
     } else {
     	sendCaliperWarning(caliperNumber);

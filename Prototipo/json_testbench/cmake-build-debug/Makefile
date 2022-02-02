@@ -128,6 +128,30 @@ json_testbench/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/build
 .PHONY : json_testbench/fast
 
+Comeca/DigimaticProtocol/Src/digimatic.obj: Comeca/DigimaticProtocol/Src/digimatic.c.obj
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.obj
+
+# target to build an object file
+Comeca/DigimaticProtocol/Src/digimatic.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/DigimaticProtocol/Src/digimatic.c.obj
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.c.obj
+
+Comeca/DigimaticProtocol/Src/digimatic.i: Comeca/DigimaticProtocol/Src/digimatic.c.i
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.i
+
+# target to preprocess a source file
+Comeca/DigimaticProtocol/Src/digimatic.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/DigimaticProtocol/Src/digimatic.c.i
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.c.i
+
+Comeca/DigimaticProtocol/Src/digimatic.s: Comeca/DigimaticProtocol/Src/digimatic.c.s
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.s
+
+# target to generate assembly for a file
+Comeca/DigimaticProtocol/Src/digimatic.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/DigimaticProtocol/Src/digimatic.c.s
+.PHONY : Comeca/DigimaticProtocol/Src/digimatic.c.s
+
 Comeca/EthernetEvent/Src/ethernet.obj: Comeca/EthernetEvent/Src/ethernet.c.obj
 .PHONY : Comeca/EthernetEvent/Src/ethernet.obj
 
@@ -353,6 +377,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... json_testbench
+	@echo ... Comeca/DigimaticProtocol/Src/digimatic.obj
+	@echo ... Comeca/DigimaticProtocol/Src/digimatic.i
+	@echo ... Comeca/DigimaticProtocol/Src/digimatic.s
 	@echo ... Comeca/EthernetEvent/Src/ethernet.obj
 	@echo ... Comeca/EthernetEvent/Src/ethernet.i
 	@echo ... Comeca/EthernetEvent/Src/ethernet.s

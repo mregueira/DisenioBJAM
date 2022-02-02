@@ -7,6 +7,7 @@
 
 #include "../Inc/digimatic.h"
 
+#ifndef TESTING
 static digimatic_processing_t digimatic[NUMBER_OF_CALIPERS];
 
 static GPIO_TypeDef * CAL_DATA_PORT_MAPPING[NUMBER_OF_CALIPERS] = {GPIOE, GPIOB, GPIOA, GPIOE};
@@ -71,7 +72,7 @@ digimatic_frame_t* digimaticGetMeasureFrames(caliper_number curr_caliper){
 		return NULL;
 	}
 }
-
+#endif
 
 digimatic_measure_t digimaticMeasure(digimatic_frame_t* digimaticFrame){
 //  ignore all 'F'
@@ -116,13 +117,13 @@ bool validCaliperMeasure(digimatic_frame_t* digimaticFrame){
 	auxDigimaticFrame++;
 // check digits between 0 and 9
 	for(int i = 0; i<6; i++){
-		if((*auxDigimaticFrame) > 9 || (*auxDigimaticFrame < 0)){
+		if((*auxDigimaticFrame) > 9){
 			return false;
 		}
 		auxDigimaticFrame++;
 	}
 // check decimal point between 0 and 5
-	if((*auxDigimaticFrame) < 0 || (*auxDigimaticFrame) > 5){
+	if((*auxDigimaticFrame) > 5){
 		return false;
 	}
 

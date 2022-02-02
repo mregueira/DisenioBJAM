@@ -15,6 +15,7 @@ add_executable(json_testbench main.c
         Comeca/Managers/Src/pieceCountManager.c  Comeca/Managers/Inc/pieceCountManager.h
         Comeca/Managers/Src/digitalOutManager.c  Comeca/Managers/Inc/digitalOutManager.h
         Comeca/Managers/Src/analogInManager.c  Comeca/Managers/Inc/analogInManager.h
+        Comeca/DigimaticProtocol/Src/digimatic.c Comeca/DigimaticProtocol/Inc/digimatic.h
         Comeca/Common/Inc/BUFFER_SIZE.h
         testBenchUtils/Inc/testBenchVars.h testBenchUtils/Src/testBenchVars.c
         testBenchUtils/Inc/digimatic_measure_t.h

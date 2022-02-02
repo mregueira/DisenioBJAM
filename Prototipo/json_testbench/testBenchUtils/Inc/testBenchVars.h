@@ -7,9 +7,9 @@
 
 
 #ifdef TESTING
-
+#include <stdint.h>
 #include "stdbool.h"
-#include "../../testBenchUtils/Inc/digimatic_measure_t.h"
+#include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
 
 int getAdcMeasure(void);
 void setAdcMeasure(int measure);

@@ -81,6 +81,12 @@
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/BUFFER_SIZE.h">
 			<Option target="json_testbench"/>
 		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/DigimaticProtocol/Inc/digimatic.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/DigimaticProtocol/Src/digimatic.c">
+			<Option target="json_testbench"/>
+		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Inc/ethernet.h">
 			<Option target="json_testbench"/>
 		</Unit>
