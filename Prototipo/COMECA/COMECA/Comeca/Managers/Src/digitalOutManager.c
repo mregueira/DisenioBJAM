@@ -38,8 +38,7 @@ void digitalOutManager(message_t json){
 
     if(strcmp(outputState, "ON") == 0){
         turnOn(outputNum);
-    }
-    if(strcmp(outputState, "OFF") == 0){
+    } else {
         turnOff(outputNum);
     }
 }

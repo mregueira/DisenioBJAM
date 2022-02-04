@@ -29,6 +29,8 @@
 
 
 struct udp_pcb *local_upcb;
+char buffer[GLOBAL_MAX_STRING_SIZE];
+message_t message;
 
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port);
 
@@ -74,34 +76,17 @@ void udpServer_init(void)
 
 void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
 {
-	local_upcb = upcb;
-	struct pbuf *txBuf;
+	/* Copy the data from the pbuf */
+	strncpy (buffer, (char *)p->payload, p->len);
 
-	/* allocate pbuf from RAM*/
-	txBuf = pbuf_alloc(PBUF_TRANSPORT,p->len, PBUF_RAM);
+	// store the Ethernet Message
+	message.msg = buffer;
+	message.len = p-> len;
 
-	/* copy the data into the buffer  */
-	pbuf_take(txBuf,p->payload, p->len);
+	// process the received message
+	ETHonMessageReceived(message);
 
-	u32_t server_addr = 724740288;
-	ip_addr_t server_address;
-	server_address.addr = server_addr;
-	u16_t server_port = 4445;
-	const ip_addr_t * aux = &server_address;
-
-	/* Connect to the remote client */
-	udp_connect(upcb, aux, server_port);
-
-	/* Send a Reply to the Client */
-	udp_send(upcb, txBuf);
-
-	/* free the UDP connection, so we can accept new clients */
-	udp_disconnect(upcb);
-
-	/* Free the p_tx buffer */
-	pbuf_free(txBuf);
-
-	/* Free the p buffer */
+	/* Free receive pbuf */
 	pbuf_free(p);
 }
 
@@ -120,6 +105,7 @@ void udp_send_message(message_t message){
     pbuf_take(txBuf, data, len);
 
 	u32_t server_addr = 724740288;
+	//                  724740288
 	ip_addr_t server_address;
 	server_address.addr = server_addr;
 	u16_t server_port = 4445;
@@ -136,33 +122,4 @@ void udp_send_message(message_t message){
 
 	/* Free the p_tx buffer */
 	pbuf_free(txBuf);
-
-//	/* Free the p buffer */
-//	pbuf_free(p);
 }
-
-//void udpClient_custom_string(message_t message)
-//{
-//  struct pbuf *txBuf;
-//  char data[GLOBAL_MAX_STRING_SIZE];
-//
-//	/* Copy the message data to the txBuf */
-//  strncpy (data, message.msg, message.len);
-//  int len = message.len;
-//
-//  /* allocate pbuf from pool*/
-//  txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);
-//
-//  if (txBuf != NULL)
-//  {
-//    /* copy data to pbuf */
-//    pbuf_take(txBuf, data, len);
-//
-//    /* send udp data */
-//    udp_send(upcb, txBuf);
-//
-//    /* free pbuf */
-//    pbuf_free(txBuf);
-//  }
-//}
-
