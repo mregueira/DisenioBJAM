@@ -14,7 +14,7 @@
 #endif
 
 void ETHsendMessage(message_t message){
-    udpClient_custom_string(message);
+	udp_send_message(message);
 }
 
 void ETHonMessageReceived(message_t json){

@@ -39,7 +39,7 @@ void caliperManager(caliper_number caliperNumber){
 #endif
     	sendCaliperMeasure(measure, caliperNumber);
     } else {
-    	sendCaliperWarning(caliperNumber);
+//    	sendCaliperWarning(caliperNumber);
     }
 
 }

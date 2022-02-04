@@ -3,7 +3,7 @@
   ***************************************************************************************************************
   ***************************************************************************************************************
 
-  File:		  udpClientRAW.h
+  File:		  udpServerRAW.h
   Author:     ControllersTech.com
   Updated:    Jul 23, 2021
 
@@ -19,14 +19,14 @@
 */
 
 
-#ifndef INC_UDPCLIENTRAW_H_
-#define INC_UDPCLIENTRAW_H_
+#ifndef INC_UDPSERVERRAW_H_
+#define INC_UDPSERVERRAW_H_
 
 #include "../../Comeca/Common/Inc/BUFFER_SIZE.h"
 #include "../../Comeca/Common/Inc/message.h"
 
-void udpClient_connect(void);
-void udpClient_custom_string(message_t message);
+void udpServer_init(void);
+void udp_send_message(message_t message);
 
 
-#endif /* INC_UDPCLIENTRAW_H_ */
+#endif /* INC_UDPSERVERRAW_H_ */

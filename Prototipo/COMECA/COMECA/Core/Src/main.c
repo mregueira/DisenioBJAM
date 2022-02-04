@@ -23,7 +23,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
+//#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
+#include "../../ExternalLibs/UDPServer/Inc/udpServerRAW.h"
+
 #include "../../Comeca/DigimaticProtocol/Inc/digimatic.h"
 
 #include "../../Comeca/Managers/Inc/caliperManager.h"
@@ -119,8 +121,8 @@ int main(void)
   MX_LWIP_Init();
   MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
-  udpClient_connect();
-  //HAL_SPI_Receive_IT(&hspi3, rxBuffer, sizeof(rxBuffer));
+//  udpClient_connect();
+  udpServer_init();
 
   /* USER CODE END 2 */
 

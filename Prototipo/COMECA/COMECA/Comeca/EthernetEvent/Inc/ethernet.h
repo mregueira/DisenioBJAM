@@ -14,7 +14,8 @@
 #include "../../../testBenchUtils/Inc/testBenchVars.h"
 #else
 #include "../../Common/Inc/message.h"
-#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
+//#include "../../ExternalLibs/UDPClient/Inc/udpClientRAW.h"
+#include "../../ExternalLibs/UDPServer/Inc/udpServerRAW.h"
 #endif
 
 #include "../../Messages/Send/Inc/messageLayer.h"
