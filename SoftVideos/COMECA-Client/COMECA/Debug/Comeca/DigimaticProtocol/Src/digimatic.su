@@ -1,0 +1,8 @@
+digimatic.c:18:5:getCaliperNumberGivenClockPin	24	static
+digimatic.c:24:6:getCaliperData	16	static
+digimatic.c:28:6:processBit	32	static
+digimatic.c:39:6:onRisingEdgeOfReqSignal	16	static
+digimatic.c:44:6:onRisingEdgeOfClockSignal	24	static
+digimatic.c:67:20:digimaticGetMeasureFrames	16	static
+digimatic.c:77:21:digimaticMeasure	56	static
+digimatic.c:102:6:validCaliperMeasure	32	static

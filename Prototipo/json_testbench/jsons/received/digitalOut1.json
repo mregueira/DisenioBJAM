@@ -1,5 +1,11 @@
 {
-  "frameType": "setSalidaDigital",
-  "outputNumber": 2,
-  "state": "ON"
+  "version": "0.0",
+  "sequence": 0,
+  "action": {
+    "setSalidaDigital": {
+      "outputState": "ON",
+      "outputNumber": 1
+    }
+  },
+  "checksum": 50
 }

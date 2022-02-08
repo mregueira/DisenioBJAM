@@ -1,4 +1,10 @@
 {
-  "frameType": "READ_ANALOG_IN",
-  "inputNumber": 2
+  "version": "0.0",
+  "sequence": 0,
+  "action": {
+    "getAnalogIn": {
+      "inputNumber": 2
+    }
+  },
+  "checksum": 50
 }

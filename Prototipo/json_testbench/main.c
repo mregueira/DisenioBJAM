@@ -23,7 +23,6 @@ message_t json_to_msg(char * filename){
     return msg;
 }
 
-
 int main() {
 
     // Managers Testing
@@ -70,12 +69,12 @@ int main() {
 
     msg = json_to_msg(filename);
     ETHonMessageReceived(msg); // calls digitalOutManager(msg);
-    assert(strcmp(getTestBench(), "ON->2") == 0);
+    assert(strcmp(getTestBench(), "ON->1") == 0);
 
     filename = "C:\\Github_Repos\\DisenioBJAM\\Prototipo\\json_testbench\\jsons\\received\\digitalOut2.json";
     msg = json_to_msg(filename);
     ETHonMessageReceived(msg); // calls digitalOutManager(msg);
-    assert(strcmp(getTestBench(), "OFF->1") == 0);
+    assert(strcmp(getTestBench(), "OFF->3") == 0);
 
     // -  Digimatic testing
 
