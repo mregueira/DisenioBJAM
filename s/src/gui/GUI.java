@@ -5,6 +5,10 @@
 
 package gui;
 
+import enumeraciones.EnumJson;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Frame;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
