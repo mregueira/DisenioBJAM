@@ -54,11 +54,9 @@ public class GUI extends javax.swing.JFrame {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
         jLabelDatosInicio.setText("Inicio de actividad: " + dateFormat.format(Calendar.getInstance().getTime()));
 
-
-//        //Iniciamos el EM para que ya quede activo
-//        ServicioEM.versionFinal = versionFinal;
-//        ServicioEM.getInstancia();
-
+       //Iniciamos el EM para que ya quede activo
+       ServicioEM.versionFinal = versionFinal;
+       ServicioEM.getInstancia();
 
         //Comienza el responder        
         inciarServicio();
@@ -251,7 +249,7 @@ public class GUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         InetAddress address;
         try{
-            address = InetAddress.getByName("192.168.142.1");
+            address = InetAddress.getByName("192.168.110.1");
             //Creamos el datagrama
             
             String accion = EnumJson.A_SET_SALIDA.getNombre();
@@ -426,13 +424,7 @@ public class GUI extends javax.swing.JFrame {
     public static void main(String args[]) {
 
 	/* Create and display the form */
-	java.awt.EventQueue.invokeLater(() -> {
-        try {
-            new GUI().setVisible(true);
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
-    });
+	java.awt.EventQueue.invokeLater(() -> { new GUI().setVisible(true);});
     }
     
     
