@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="IntampentuPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>entidades.Usuario</class>
+    <class>entidades.Monitor</class>
+    <class>entidades.MonitorProceso</class>
+    <class>entidades.Articulo</class>
+    <class>entidades.ArticuloTipo</class>
+    <class>entidades.Equipo</class>
+    <class>entidades.EquipoMantenimiento</class>
+    <class>entidades.Frecuencia</class>
+    <class>entidades.Instrumento</class>
+    <class>entidades.InstrumentoTipo</class>
+    <class>entidades.Lote</class>
+    <class>entidades.LoteComponente</class>
+    <class>entidades.LoteComponenteAsignado</class>
+    <class>entidades.LoteCota</class>
+    <class>entidades.LoteMedida</class>
+    <class>entidades.LoteProceso</class>
+    <class>entidades.PlanCotaTipo</class>
+    <class>entidades.StockAlmacen</class>
+    <class>entidades.StockUbicacion</class>
+    <class>entidades.TipoProceso</class>
+    <class>entidades.AccesoDia</class>
+    <class>entidades.Documento</class>
+    <class>entidades.DocumentoEdicion</class>
+    <class>entidades.DocumentoImagen</class>
+    <class>entidades.Plan</class>
+    <class>entidades.LoteProcesoParametro</class>
+    <class>entidades.LoteProcesoParametroMedida</class>
+    <class>entidades.Falla</class>
+    <class>entidades.FallaTipo</class>
+    <class>entidades.Calibracion</class>
+    <class>entidades.Empresa</class>
+    <class>entidades.PlanProceso</class>
+    <class>entidades.PlanComponente</class>
+    <class>entidades.PlanProcesoParametro</class>
+    <class>entidades.PlanCota</class>
+    <class>entidades.UsuarioPermiso</class>
+    <class>entidades.DocumentoCarpeta</class>
+    <class>entidades.EquipoReparacion</class>
+    <class>entidades.Politica</class>
+    <class>entidades.PoliticaEdicion</class>
+    <class>entidades.Accion</class>
+    <class>entidades.Sugerencia</class>
+    <class>entidades.AccionEquipo</class>
+    <class>entidades.Externo</class>
+    <class>entidades.DepartamentoResp</class>
+    <class>entidades.DepartamentoRol</class>
+    <class>entidades.DepartamentoRolUsuario</class>
+    <class>entidades.InstrumentoEstabilidad</class>
+    <class>entidades.InstrumentoRango</class>
+    <class>entidades.LoteProcesoProducción</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.1.21:3306/campiutti?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="nanoiaio"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="intampentu"/>
+    </properties>
+  </persistence-unit>
+</persistence>
