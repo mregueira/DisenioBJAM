@@ -5,7 +5,6 @@ package runnables;
  * @author leandro
  */
 import gui.GUI;
-
 import java.awt.Color;
 import java.io.*;
 import java.net.*;

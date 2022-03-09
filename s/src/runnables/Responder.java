@@ -55,7 +55,7 @@ public class Responder implements Runnable {
         EntityManager em;    
         //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
         em = ServicioEM.getInstancia().getEMF().createEntityManager();
-
+        
 
         //Obtenemos los datos del encabezado del protocolo
         Long secuencia = ServicioProtocolo.getSecuencia(cadenaRecibida);
