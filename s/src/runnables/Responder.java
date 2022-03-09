@@ -41,7 +41,7 @@ public class Responder implements Runnable {
 
         // Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
         em = ServicioEM.getInstancia().getEMF().createEntityManager();
-
+        
         this.monitor = Listas.monitor(em, address);
         
         //Cerramos el em.
@@ -65,13 +65,14 @@ public class Responder implements Runnable {
         
                 
         //Mostramos el requets en la pantalla, evitando mostrar constraseñas.
+        String dato;
         if(comando.equals(EnumJson.C_REQUEST.getNombre()) && accion.equals(EnumJson.A_LOGIN.getNombre())){
             JSONObject js = (JSONObject)ServicioProtocolo.getDato(cadenaRecibida);
             dato = "Login de " + (String) js.get(EnumJson.D_USER.getNombre());
         }
         else{
             dato = "" + ServicioProtocolo.getDato(cadenaRecibida);
-
+            
         }
 
         if(comando.equals(EnumJson.C_REQUEST.getNombre())){
@@ -357,14 +358,14 @@ public class Responder implements Runnable {
             
             //Mandamos la medida a la tablet
             try{
-                InetAddress addressTablet = InetAddress.getByName("192.168.142.1");
+                InetAddress addressTablet = InetAddress.getByName("192.168.90.19");
                 //Creamos el datagrama
                 byte[] buffer = ServicioProtocolo.crearDatagrama(1, EnumJson.C_REQUEST.getNombre(), EnumJson.A_GUARDAR_DATOS_CALIBRES.getNombre(), 
                     ServicioEncode.medidaCalibre(null, medida, 0, "mm"));
 
                 //y lo enviamos
                 try {
-                    socket.send(new DatagramPacket(buffer, buffer.length, addressTablet, 4444));
+                    socket.send(new DatagramPacket(buffer, buffer.length, addressTablet, 4445));
                     GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
                 }
                 catch (SocketException ex) {
@@ -420,7 +421,7 @@ public class Responder implements Runnable {
         
         
         //Es importante cerrar el em para que todo vaya bien.
-//        em.close();
+        em.close();
     }
     
     
