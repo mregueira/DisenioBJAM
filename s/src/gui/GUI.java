@@ -58,9 +58,9 @@ public class GUI extends javax.swing.JFrame {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
         jLabelDatosInicio.setText("Inicio de actividad: " + dateFormat.format(Calendar.getInstance().getTime()));
 
-       //Iniciamos el EM para que ya quede activo
-       ServicioEM.versionFinal = versionFinal;
-       ServicioEM.getInstancia();
+        //Iniciamos el EM para que ya quede activo
+        ServicioEM.versionFinal = versionFinal;
+        ServicioEM.getInstancia();
 
         //Comienza el responder        
         inciarServicio();
