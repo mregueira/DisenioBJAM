@@ -5,17 +5,16 @@
 
 package gui;
 
-import enumeraciones.EnumJson;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Frame;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.Inet4Address;
 import java.net.InetAddress;
+import java.net.SocketAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +24,7 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import org.json.simple.JSONObject;
 import runnables.Receiver;
+import servicios.ServicioEM;
 import servicios.ServicioEncode;
 import servicios.ServicioProtocolo;
 
