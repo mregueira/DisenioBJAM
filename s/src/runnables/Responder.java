@@ -39,14 +39,13 @@ public class Responder implements Runnable {
         this.socket = socket;
         EntityManager em;    
 
-        //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
-//        em = ServicioEM.getInstancia().getEMF().createEntityManager();
-        em = null;
+        // Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
+        em = ServicioEM.getInstancia().getEMF().createEntityManager();
 
-//        this.monitor = Listas.monitor(em, address);
+        this.monitor = Listas.monitor(em, address);
         
         //Cerramos el em.
-//        em.close();
+        em.close();
     }
 
     
@@ -55,8 +54,7 @@ public class Responder implements Runnable {
         
         EntityManager em;    
         //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
-//        em = ServicioEM.getInstancia().getEMF().createEntityManager();
-        em = null;
+        em = ServicioEM.getInstancia().getEMF().createEntityManager();
 
         //Obtenemos los datos del encabezado del protocolo
         Long secuencia = ServicioProtocolo.getSecuencia(cadenaRecibida);
@@ -67,15 +65,14 @@ public class Responder implements Runnable {
         
                 
         //Mostramos el requets en la pantalla, evitando mostrar constraseñas.
-        String dato = null;
-//        if(comando.equals(EnumJson.C_REQUEST.getNombre()) && accion.equals(EnumJson.A_LOGIN.getNombre())){
-//            JSONObject js = (JSONObject)ServicioProtocolo.getDato(cadenaRecibida);
-//            dato = "Login de " + (String) js.get(EnumJson.D_USER.getNombre());
-//        }
-//        else{
-//            dato = "" + ServicioProtocolo.getDato(cadenaRecibida);
-//
-//        }
+        if(comando.equals(EnumJson.C_REQUEST.getNombre()) && accion.equals(EnumJson.A_LOGIN.getNombre())){
+            JSONObject js = (JSONObject)ServicioProtocolo.getDato(cadenaRecibida);
+            dato = "Login de " + (String) js.get(EnumJson.D_USER.getNombre());
+        }
+        else{
+            dato = "" + ServicioProtocolo.getDato(cadenaRecibida);
+
+        }
 
         if(comando.equals(EnumJson.C_REQUEST.getNombre())){
             try{
