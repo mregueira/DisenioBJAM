@@ -24,6 +24,7 @@ public class Responder implements Runnable {
     InetAddress address;
     String cadenaRecibida;
     Monitor monitor;
+    DatagramSocket socket;
     
 
 
@@ -32,18 +33,20 @@ public class Responder implements Runnable {
      * @param cadenaRecibida
      * @param address 
      */
-    public Responder(String cadenaRecibida, InetAddress address) {
+    public Responder(String cadenaRecibida, InetAddress address, DatagramSocket socket) {
         this.cadenaRecibida = cadenaRecibida;
         this.address = address;
+        this.socket = socket;
         EntityManager em;    
 
         //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
-        em = ServicioEM.getInstancia().getEMF().createEntityManager();
-        
-        this.monitor = Listas.monitor(em, address);
+//        em = ServicioEM.getInstancia().getEMF().createEntityManager();
+        em = null;
+
+//        this.monitor = Listas.monitor(em, address);
         
         //Cerramos el em.
-        em.close();
+//        em.close();
     }
 
     
@@ -52,8 +55,8 @@ public class Responder implements Runnable {
         
         EntityManager em;    
         //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
-        em = ServicioEM.getInstancia().getEMF().createEntityManager();
-        
+//        em = ServicioEM.getInstancia().getEMF().createEntityManager();
+        em = null;
 
         //Obtenemos los datos del encabezado del protocolo
         Long secuencia = ServicioProtocolo.getSecuencia(cadenaRecibida);
@@ -64,15 +67,15 @@ public class Responder implements Runnable {
         
                 
         //Mostramos el requets en la pantalla, evitando mostrar constraseñas.
-        String dato;
-        if(comando.equals(EnumJson.C_REQUEST.getNombre()) && accion.equals(EnumJson.A_LOGIN.getNombre())){
-            JSONObject js = (JSONObject)ServicioProtocolo.getDato(cadenaRecibida);
-            dato = "Login de " + (String) js.get(EnumJson.D_USER.getNombre());
-        }
-        else{
-            dato = "" + ServicioProtocolo.getDato(cadenaRecibida);
-            
-        }
+        String dato = null;
+//        if(comando.equals(EnumJson.C_REQUEST.getNombre()) && accion.equals(EnumJson.A_LOGIN.getNombre())){
+//            JSONObject js = (JSONObject)ServicioProtocolo.getDato(cadenaRecibida);
+//            dato = "Login de " + (String) js.get(EnumJson.D_USER.getNombre());
+//        }
+//        else{
+//            dato = "" + ServicioProtocolo.getDato(cadenaRecibida);
+//
+//        }
 
         if(comando.equals(EnumJson.C_REQUEST.getNombre())){
             try{
@@ -357,15 +360,14 @@ public class Responder implements Runnable {
             
             //Mandamos la medida a la tablet
             try{
-                InetAddress addressTablet = InetAddress.getByName("192.168.90.19");
+                InetAddress addressTablet = InetAddress.getByName("192.168.142.1");
                 //Creamos el datagrama
                 byte[] buffer = ServicioProtocolo.crearDatagrama(1, EnumJson.C_REQUEST.getNombre(), EnumJson.A_GUARDAR_DATOS_CALIBRES.getNombre(), 
                     ServicioEncode.medidaCalibre(null, medida, 0, "mm"));
 
                 //y lo enviamos
                 try {
-                    DatagramSocket socket = new DatagramSocket();
-                    socket.send(new DatagramPacket(buffer, buffer.length, addressTablet, 4445));
+                    socket.send(new DatagramPacket(buffer, buffer.length, addressTablet, 4444));
                     GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
                 }
                 catch (SocketException ex) {
@@ -398,7 +400,6 @@ public class Responder implements Runnable {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4444));
                 GUI.agregarTexto("    Se respondió el request", Color.blue, true);
                 //GUI.agregarTexto("    Dato" + data.toJSONString(), Color.blue, true); Esto suele causar errores de pantalla. Quizás con textos muy largos.
@@ -422,7 +423,7 @@ public class Responder implements Runnable {
         
         
         //Es importante cerrar el em para que todo vaya bien.
-        em.close();
+//        em.close();
     }
     
     

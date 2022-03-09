@@ -12,13 +12,10 @@ import java.awt.Frame;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.Inet4Address;
 import java.net.InetAddress;
-import java.net.SocketAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,7 +25,6 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import org.json.simple.JSONObject;
 import runnables.Receiver;
-import servicios.ServicioEM;
 import servicios.ServicioEncode;
 import servicios.ServicioProtocolo;
 
@@ -38,12 +34,17 @@ import servicios.ServicioProtocolo;
 public class GUI extends javax.swing.JFrame {
     
     private final boolean versionFinal = true;
+    private final DatagramSocket socket;
+
     /**
      * Creates new form UDPServerGui
      */
-    public GUI() {
-	initComponents();
-	
+    public GUI() throws SocketException {
+
+        socket = new DatagramSocket(4445);
+
+        initComponents();
+
         setExtendedState(Frame.NORMAL);
         setPreferredSize(new Dimension(800, 500));
         pack();
@@ -52,12 +53,12 @@ public class GUI extends javax.swing.JFrame {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
         jLabelDatosInicio.setText("Inicio de actividad: " + dateFormat.format(Calendar.getInstance().getTime()));
-        
 
-        //Iniciamos el EM para que ya quede activo
-        ServicioEM.versionFinal = versionFinal;
-        ServicioEM.getInstancia();
-        
+
+//        //Iniciamos el EM para que ya quede activo
+//        ServicioEM.versionFinal = versionFinal;
+//        ServicioEM.getInstancia();
+
 
         //Comienza el responder        
         inciarServicio();
@@ -71,7 +72,7 @@ public class GUI extends javax.swing.JFrame {
     
     
     private void inciarServicio(){
-        new Thread(new Receiver()).start();
+        new Thread(new Receiver(socket)).start();
     }
 
     public static void agregarTexto(String texto, Color color){
@@ -250,7 +251,7 @@ public class GUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         InetAddress address;
         try{
-            address = InetAddress.getByName("192.168.110.1");
+            address = InetAddress.getByName("192.168.142.1");
             //Creamos el datagrama
             
             String accion = EnumJson.A_SET_SALIDA.getNombre();
@@ -264,7 +265,7 @@ public class GUI extends javax.swing.JFrame {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
+
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4444));
                 GUI.agregarTexto("    Se envio el pedido de prender pata 0", Color.blue, true);
                 
@@ -308,7 +309,7 @@ public class GUI extends javax.swing.JFrame {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
+
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4445));
                 GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
             }
@@ -339,7 +340,7 @@ public class GUI extends javax.swing.JFrame {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
+
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4445));
                 GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
             }
@@ -369,7 +370,7 @@ public class GUI extends javax.swing.JFrame {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
+
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4445));
                 GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
             }
@@ -399,7 +400,7 @@ public class GUI extends javax.swing.JFrame {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
+
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4445));
                 GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
             }
@@ -425,7 +426,13 @@ public class GUI extends javax.swing.JFrame {
     public static void main(String args[]) {
 
 	/* Create and display the form */
-	java.awt.EventQueue.invokeLater(() -> { new GUI().setVisible(true);});
+	java.awt.EventQueue.invokeLater(() -> {
+        try {
+            new GUI().setVisible(true);
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+    });
     }
     
     
