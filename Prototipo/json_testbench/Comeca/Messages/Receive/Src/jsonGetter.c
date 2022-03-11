@@ -21,8 +21,8 @@ void getActionType(message_t json, char* actionTypePtr){
     field = seekField(object->start, "action");
     assert(strcmp(field->name->string, "action") == 0);
 
-    struct json_object_s* action_payload = field->value->payload;
-    const char * actionType = action_payload->start->name->string;
+    struct json_string_s* action_payload = (struct json_string_s*) field->value->payload;
+    const char * actionType = action_payload->string;
 
     strcpy(actionTypePtr, actionType);
     free(root);
@@ -34,12 +34,12 @@ int getInputNumber(message_t json){
     struct json_object_s* object = (struct json_object_s*)root->payload;
     struct json_object_element_s* field;
 
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
+    field = seekField(object->start, "data");
+    assert(strcmp(field->name->string, "data") == 0);
 
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "getAnalogIn");
-    assert(strcmp(field->name->string, "getAnalogIn") == 0);
+//    struct json_object_s* action_payload = field->value->payload;
+//    field = seekField(action_payload->start, "getAnalogIn");
+//    assert(strcmp(field->name->string, "getAnalogIn") == 0);
 
     struct json_object_s* analogInPayload = field->value->payload;
     field = seekField(analogInPayload->start, "inputNumber");
@@ -55,12 +55,12 @@ int getOutputNum(message_t json){
     struct json_object_s* object = (struct json_object_s*)root->payload;
     struct json_object_element_s* field;
 
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
+    field = seekField(object->start, "data");
+    assert(strcmp(field->name->string, "data") == 0);
 
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "setSalidaDigital");
-    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
+//    struct json_object_s* action_payload = field->value->payload;
+//    field = seekField(action_payload->start, "setSalidaDigital");
+//    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
 
     struct json_object_s* analogInPayload = field->value->payload;
     field = seekField(analogInPayload->start, "outputNumber");
@@ -75,12 +75,12 @@ void getOutputState(message_t json, char* outputStatePtr){
     struct json_object_s* object = (struct json_object_s*)root->payload;
     struct json_object_element_s* field;
 
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
+    field = seekField(object->start, "data");
+    assert(strcmp(field->name->string, "data") == 0);
 
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "setSalidaDigital");
-    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
+//    struct json_object_s* action_payload = field->value->payload;
+//    field = seekField(action_payload->start, "setSalidaDigital");
+//    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
 
     struct json_object_s* analogInPayload = field->value->payload;
     field = seekField(analogInPayload->start, "outputState");
