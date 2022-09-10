@@ -1,6 +1,6 @@
 ﻿[Design]
 Version=1.0
-HierarchyMode=0
+HierarchyMode=4
 ChannelRoomNamingStyle=0
 ReleasesFolder=
 ChannelDesignatorFormatString=$Component_$RoomName
@@ -13,7 +13,7 @@ TemplateLocationPath=
 PinSwapBy_Netlabel=1
 PinSwapBy_Pin=1
 AllowPortNetNames=0
-AllowSheetEntryNetNames=1
+AllowSheetEntryNetNames=0
 AppendSheetNumberToLocalNets=0
 NetlistSinglePinNets=0
 DefaultConfiguration=Sources
@@ -200,6 +200,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document10]
+DocumentPath=MCU_Board.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NPSOEQIN
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for COMECA - MCU Board\COMECA - MCU Board.DRR
@@ -1195,23 +1212,23 @@ Type126=1
 Type127=1
 
 [ERC Connection Matrix]
-L1=NNNNNNNNNNNWNNNWW
-L2=NNWNNNNWWWNWNWNWN
-L3=NWEENEEEENEWNEEWN
-L4=NNENNNWEENNWNENWN
-L5=NNNNNNNNNNNNNNNNN
-L6=NNENNNNEENNWNENWN
-L7=NNEWNNWEENNWNENWN
-L8=NWEENEENEEENNEENN
-L9=NWEENEEEENEWNEEWW
-L10=NWNNNNNENNEWNNEWN
-L11=NNENNNNEEENWNENWN
-L12=WWWWNWWNWWWNWWWNN
-L13=NNNNNNNNNNNWNNNWW
-L14=NWEENEEEENEWNEEWW
-L15=NNENNNNEEENWNENWW
-L16=WWWWNWWNWWWNWWWNW
-L17=WNNNNNNNWNNNWWWWN
+L1=NNNNNNNNNNNWNNNWF
+L2=NNWNNNNWWWNWNWNWF
+L3=NWEENEEEENEWNEEWF
+L4=NNENNNWEENNWNENWF
+L5=NNNNNNNNNNNNNNNNF
+L6=NNENNNNEENNWNENWF
+L7=NNEWNNWEENNWNENWF
+L8=NWEENEENEEENNEENF
+L9=NWEENEEEENEWNEEWF
+L10=NWNNNNNENNEWNNEWF
+L11=NNENNNNEEENWNENWF
+L12=WWWWNWWNWWWNWWWNF
+L13=NNNNNNNNNNNWNNNWF
+L14=NWEENEEEENEWNEEWF
+L15=NNENNNNEEENWNENWF
+L16=WWWWNWWNWWWNWWWNF
+L17=FFFFFFFFFFFFFFFFF
 
 [Annotate]
 SortOrder=3
