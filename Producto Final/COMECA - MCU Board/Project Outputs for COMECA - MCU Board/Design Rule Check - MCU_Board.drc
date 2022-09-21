@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\Marcelo\Documents\DisenioBJAM\Producto Final\COMECA - MCU Board\MCU_Board.PcbDoc
-Date     : 17/09/2022
-Time     : 18:47:15
+PCB File : C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Producto Final\COMECA - MCU Board\MCU_Board.PcbDoc
+Date     : 20/9/2022
+Time     : 21:55:40
 
 Processing Rule : Clearance Constraint (Gap=8mil) (OnLayer('Top Layer')),(All)
 Rule Violations :0
@@ -15,7 +15,7 @@ Rule Violations :0
 Processing Rule : Clearance Constraint (Gap=20mil) (InPolygon),(InPolygon)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) (InPolygon),(All)
+Processing Rule : Clearance Constraint (Gap=10mil) (InPolygon),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -28,6 +28,15 @@ Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=5mil) (Max=100mil) (Preferred=15mil) (All)
+Rule Violations :0
+
+Processing Rule : Routing Layers(All)
+Rule Violations :0
+
+Processing Rule : Routing Via (MinHoleWidth=7.874mil) (MaxHoleWidth=39.37mil) (PreferredHoleWidth=19.685mil) (MinWidth=17.716mil) (MaxWidth=78.74mil) (PreferedWidth=39.37mil) (All)
+Rule Violations :0
+
+Processing Rule : Differential Pairs Uncoupled Length using the Gap Constraints (Min=5mil) (Max=10mil) (Prefered=10mil)  and Width Constraints (Min=5mil) (Max=15mil) (Prefered=15mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
@@ -69,4 +78,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:02

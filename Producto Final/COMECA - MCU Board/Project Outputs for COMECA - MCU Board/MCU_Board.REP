@@ -1,75 +1,73 @@
 *************************************************************
-FileName = COMECA - MCU Board.GBR
+FileName = MCU_Board.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 8
-      File : COMECA - MCU Board.GM8
+Generating : Bottom Assembly
+      File : MCU_Board.GM9
 
-    Adding Layer      : Mechanical 8
+    Adding Layer      : Bottom Assembly
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : MCU_Board.GM8
+
+    Adding Layer      : Top Assembly
 
 
 Used DCodes :
     D10
-    D40
+    D58
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 5
-      File : COMECA - MCU Board.GM5
+Generating : Top 3D Body
+      File : MCU_Board.GM5
 
-    Adding Layer      : Mechanical 5
+    Adding Layer      : Top 3D Body
 
 
 Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 4
-      File : COMECA - MCU Board.GM4
+Generating : Top Courtyard
+      File : MCU_Board.GM4
 
-    Adding Layer      : Mechanical 4
-
-
-Used DCodes :
-    D40
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : COMECA - MCU Board.GM1
-
-    Adding Layer      : Mechanical 1
+    Adding Layer      : Top Courtyard
 
 
 Used DCodes :
+    D58
 *************************************************************
 
 *************************************************************
 Generating : Keep-Out Layer
-      File : COMECA - MCU Board.GKO
+      File : MCU_Board.GKO
 
     Adding Layer      : Keep-Out Layer
 
 
 Used DCodes :
-    D10
+    D59
 *************************************************************
 
 *************************************************************
 Generating : Bottom Overlay
-      File : COMECA - MCU Board.GBO
+      File : MCU_Board.GBO
 
     Adding Layer      : Bottom Overlay
 
 
 Used DCodes :
-    D10
-    D39
 *************************************************************
 
 *************************************************************
 Generating : Bottom Solder
-      File : COMECA - MCU Board.GBS
+      File : MCU_Board.GBS
 
     Adding Layer      : Bottom Solder
 
@@ -79,14 +77,14 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D23
-    D24
-    D25
+    D31
+    D32
+    D33
 *************************************************************
 
 *************************************************************
 Generating : Top Solder
-      File : COMECA - MCU Board.GTS
+      File : MCU_Board.GTS
 
     Adding Layer      : Top Solder
 
@@ -109,11 +107,19 @@ Used DCodes :
     D23
     D24
     D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
 *************************************************************
 
 *************************************************************
 Generating : Top Overlay
-      File : COMECA - MCU Board.GTO
+      File : MCU_Board.GTO
 
     Adding Layer      : Top Overlay
 
@@ -126,7 +132,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Layer
-      File : COMECA - MCU Board.GBL
+      File : MCU_Board.GBL
 
     Adding Layer      : Bottom Layer
 
@@ -134,14 +140,18 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D36
-    D37
-    D38
+    D10
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
 *************************************************************
 
 *************************************************************
 Generating : Top Layer
-      File : COMECA - MCU Board.GTL
+      File : MCU_Board.GTL
 
     Adding Layer      : Top Layer
 
@@ -149,18 +159,31 @@ Generating : Top Layer
 
 
 Used DCodes :
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
+    D10
+    D11
     D34
     D35
     D36
     D37
     D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
 *************************************************************
 
