@@ -4,14 +4,15 @@ C:\Users\Marcelo\Documents\GitHub\DisenioBJAM\Producto Final\COMECA - MCU Board\
 ========================================================================================================================
 File Design Information:
 
-Date:       20/09/22
-Time:       19:56
-Revision:   c021d9fd4c026f5e9add450f8641a4ca551d1b9c
+Date:       24/09/22
+Time:       14:55
+Revision:   93b571e90eea30f59fb3d69b423a9cf88bf87c8d
 Variant:    No variations
 Units used: mm
 
 "Designator","Layer","Footprint","Center-X(mm)","Center-Y(mm)","Rotation","Description","Ref-X(mm)","Ref-Y(mm)","Pad-X(mm)","Pad-Y(mm)"
-"F1","TopLayer","0603-IND-MURATA","11.3030mm","46.1010mm","180","","11.3030mm","46.1010mm","12.0280mm","46.1010mm"
+"U2","TopLayer","MC_24-QFN-PUNCH","15.4940mm","37.0840mm","90","","15.4940mm","37.0840mm","14.2440mm","35.1840mm"
+"F1","TopLayer","0603-IND-MURATA","10.9220mm","45.7200mm","180","","10.9220mm","45.7200mm","11.6470mm","45.7200mm"
 "CE4","TopLayer","0805-CAP-TDK","7.8740mm","6.6040mm","270","","7.8740mm","6.6040mm","7.8740mm","7.8740mm"
 "CE3","TopLayer","0805-CAP-TDK","48.5140mm","6.6040mm","270","","48.5140mm","6.6040mm","48.5140mm","7.8740mm"
 "CE2","TopLayer","0805-CAP-TDK","48.5140mm","49.7840mm","90","","48.5140mm","49.7840mm","48.5140mm","48.5140mm"
@@ -22,7 +23,6 @@ Units used: mm
 "J3","TopLayer","SIP13X2","49.7840mm","28.1940mm","270","","49.7840mm","28.1940mm","48.5140mm","43.4340mm"
 "J2","TopLayer","SIP13X2","28.1940mm","6.6040mm","0","","28.1940mm","6.6040mm","12.9540mm","5.3340mm"
 "J1","TopLayer","SIP13X2","6.6040mm","28.1940mm","270","","6.6040mm","28.1940mm","5.3340mm","43.4340mm"
-"U2","TopLayer","MC_24-QFN-PUNCH","15.4940mm","37.0840mm","90","","15.4940mm","37.0840mm","14.2440mm","35.1840mm"
 "U1","TopLayer","LQFP-100","28.1940mm","28.1940mm","135","","28.1940mm","28.1940mm","37.9167mm","29.4314mm"
 "R11","TopLayer","0402-RES-PANASONIC","43.1800mm","28.1940mm","90","","43.1800mm","28.1940mm","43.1800mm","27.6860mm"
 "R10","TopLayer","0402-RES-PANASONIC","16.0020mm","26.6700mm","315","","16.0020mm","26.6700mm","15.6428mm","27.0292mm"
