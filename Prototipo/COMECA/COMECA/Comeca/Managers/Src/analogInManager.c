@@ -43,11 +43,9 @@ void analogInManager(message_t json){
 #ifdef TESTING
     uint16_t analog_data = readAdc(inputNum);
 #else
-//    uint16_t analog_data = sendADCReadRequest(inputNum);
-//    analog_data = 17.0;
+    uint16_t analog_data = sendADCReadRequest(inputNum);
 #endif
-//    float receivedData = (analog_data/4096.0)*(3300.0/150.0);
-    float receivedData = 17.0;
+    float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
     bool isValid = analogValidate(receivedData);
 
