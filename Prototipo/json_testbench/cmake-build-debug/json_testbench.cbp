@@ -129,6 +129,12 @@
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c">
 			<Option target="json_testbench"/>
 		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h">
+			<Option target="json_testbench"/>
+		</Unit>
+		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Src/cJSON.c">
+			<Option target="json_testbench"/>
+		</Unit>
 		<Unit filename="C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c">
 			<Option target="json_testbench"/>
 		</Unit>

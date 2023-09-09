@@ -19,4 +19,5 @@ add_executable(json_testbench main.c
         Comeca/Common/Inc/BUFFER_SIZE.h
         testBenchUtils/Inc/testBenchVars.h testBenchUtils/Src/testBenchVars.c
         testBenchUtils/Inc/digimatic_measure_t.h
-        testBenchUtils/Inc/caliper_number.h)
+        testBenchUtils/Inc/caliper_number.h
+        ExternalLibs/JSONParser/Inc/cJSON.h ExternalLibs/JSONParser/Src/cJSON.c)

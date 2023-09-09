@@ -76,6 +76,14 @@ int main() {
     ETHonMessageReceived(msg); // calls digitalOutManager(msg);
     assert(strcmp(getTestBench(), "OFF->3") == 0);
 
+    // Changing order so that hardcoded order does not work
+
+    filename = "C:\\Github_Repos\\DisenioBJAM\\Prototipo\\json_testbench\\jsons\\received\\digitalOut3.json";
+    msg = json_to_msg(filename);
+    ETHonMessageReceived(msg); // calls digitalOutManager(msg);
+    assert(strcmp(getTestBench(), "OFF->3") == 0);
+
+
     // -  Digimatic testing
 
     uint8_t digFrames[13] = {

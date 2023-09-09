@@ -26,6 +26,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "../Inc/udpServerRAW.h"
+#include "../../Comeca/EthernetEvent/Inc/ethernet.h"
 
 
 struct udp_pcb *local_upcb;
@@ -104,15 +105,19 @@ void udp_send_message(message_t message){
 	/* copy the data into the buffer  */
     pbuf_take(txBuf, data, len);
 
-	u32_t server_addr = 724740288;
+	ip_addr_t DestIPaddr;
+//	IP_ADDR4(&DestIPaddr, 190,168,110,43);
+	IP_ADDR4(&DestIPaddr, 190,168,50,203);
+
+//	u32_t server_addr = 724740288;
 	//                  724740288
-	ip_addr_t server_address;
-	server_address.addr = server_addr;
+//	ip_addr_t server_address;
+//	server_address.addr = server_addr;
 	u16_t server_port = 4445;
-	const ip_addr_t * aux = &server_address;
+//	const ip_addr_t * aux = &server_address;
 
 //	/* Connect to the remote client */
-	udp_connect(local_upcb, aux, server_port);
+	udp_connect(local_upcb, &DestIPaddr, server_port);
 
 //	/* Send a Reply to the Client */
 	udp_send(local_upcb, txBuf);

@@ -14,6 +14,7 @@ CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
@@ -29,6 +30,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
@@ -45,6 +47,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
@@ -56,6 +59,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/digitalOutManager.c
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/message.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h
@@ -69,6 +73,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
@@ -77,6 +82,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj
 CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/message.h
 CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj
@@ -88,11 +94,15 @@ CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/digimatic_measure_t.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/message.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/testBenchVars.h
+CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.obj
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Src/cJSON.c
 CMakeFiles/json_testbench.dir/main.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/BUFFER_SIZE.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/message.h
@@ -104,6 +114,7 @@ CMakeFiles/json_testbench.dir/main.c.obj
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/pieceCountManager.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
+ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c
  C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/caliper_number.h

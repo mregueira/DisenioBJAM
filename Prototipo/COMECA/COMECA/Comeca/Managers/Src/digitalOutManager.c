@@ -2,7 +2,7 @@
 // Created by joa-m on 11/1/2021.
 //
 #include "../../../Comeca/Managers/Inc/digitalOutManager.h"
-
+#include <string.h>
 
 #ifdef TESTING
 void turnOn(int outputNum){
