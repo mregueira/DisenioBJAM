@@ -83,6 +83,18 @@ int main() {
     ETHonMessageReceived(msg); // calls digitalOutManager(msg);
     assert(strcmp(getTestBench(), "OFF->3") == 0);
 
+    // testing that string output number works as well
+    filename = "C:\\Github_Repos\\DisenioBJAM\\Prototipo\\json_testbench\\jsons\\received\\digitalOut4.json";
+    msg = json_to_msg(filename);
+    ETHonMessageReceived(msg); // calls digitalOutManager(msg);
+    assert(strcmp(getTestBench(), "OFF->3") == 0);
+
+    filename = "C:\\Github_Repos\\DisenioBJAM\\Prototipo\\json_testbench\\jsons\\received\\analogIn2.json";
+    msg = json_to_msg(filename);
+    setAdcMeasure(1000);
+    ETHonMessageReceived(msg); // calls analogInManager(msg);
+    assert(strcmp(getTestBench(), "{\"version\": \"0.0\", \"sequence\": 0, \"command\": \"request\",  \"action\": \"guardarDatoEntradaAnalogica\", \"data\": {\"inputNumber\": 2, \"measure\": 5.37109}}") == 0);
+
 
     // -  Digimatic testing
 

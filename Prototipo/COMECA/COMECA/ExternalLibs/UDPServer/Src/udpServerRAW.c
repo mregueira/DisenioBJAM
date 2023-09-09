@@ -56,7 +56,7 @@ void udpServer_init(void)
 
    /* 2. Bind the upcb to the local port */
    ip_addr_t myIPADDR;
-   IP_ADDR4(&myIPADDR, 192, 168, 110, 1);
+   IP_ADDR4(&myIPADDR, 192, 168, 1, 42);
 
    err = udp_bind(upcb, &myIPADDR, 4444);  // 7 is the server UDP port
 
@@ -107,7 +107,7 @@ void udp_send_message(message_t message){
 
 	ip_addr_t DestIPaddr;
 //	IP_ADDR4(&DestIPaddr, 190,168,110,43);
-	IP_ADDR4(&DestIPaddr, 190,168,50,203);
+	IP_ADDR4(&DestIPaddr, 190,168,1,10);
 
 //	u32_t server_addr = 724740288;
 	//                  724740288

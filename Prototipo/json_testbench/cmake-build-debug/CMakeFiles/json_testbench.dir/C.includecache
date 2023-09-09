@@ -40,10 +40,6 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogI
 ../../../Comeca/Managers/Inc/digitalOutManager.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h
 
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Src/ethernet.c
-../Inc/ethernet.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Inc/ethernet.h
-
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInManager.h
 ../../Common/Inc/BUFFER_SIZE.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/BUFFER_SIZE.h
@@ -104,22 +100,6 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Common/Inc/message.h
 ../../Messages/Send/Inc/messageLayer.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
 
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/analogInManager.c
-../../../Comeca/Managers/Inc/analogInManager.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/analogInManager.h
-
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/caliperManager.c
-../../../Comeca/Managers/Inc/caliperManager.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/caliperManager.h
-
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/digitalOutManager.c
-../../../Comeca/Managers/Inc/digitalOutManager.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/digitalOutManager.h
-
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c
-../../../Comeca/Managers/Inc/pieceCountManager.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Inc/pieceCountManager.h
-
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
 ../../../../testBenchUtils/Inc/message.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Inc/message.h
@@ -129,10 +109,6 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Comeca/Comm
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/json.h
 ../../../../ExternalLibs/JSONParser/Inc/cJSON.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
-
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c
-../Inc/jsonGetter.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Inc/jsonGetter.h
 
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
 stdbool.h
@@ -155,10 +131,6 @@ C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Comeca/Digi
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Comeca/Common/Inc/message.h
 ../../../EthernetEvent/Inc/ethernet.h
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/EthernetEvent/Inc/ethernet.h
-
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c
-../Inc/messageLayer.h
-C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Inc/messageLayer.h
 
 C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Inc/cJSON.h
 stddef.h
