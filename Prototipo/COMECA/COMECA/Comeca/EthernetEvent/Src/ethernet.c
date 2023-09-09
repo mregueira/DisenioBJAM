@@ -21,7 +21,7 @@ void ETHonMessageReceived(message_t json){
     char frameType[GLOBAL_MAX_STRING_SIZE];
     getActionType(json, frameType);
 
-    if(strcmp(frameType, "READ_ANALOG_IN") == 0){
+    if(strcmp(frameType, "getAnalogIn") == 0){
         analogInManager(json);
     }
 
