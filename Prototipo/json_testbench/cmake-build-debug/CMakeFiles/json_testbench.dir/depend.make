@@ -14,6 +14,7 @@ CMakeFiles/json_testbench.dir/Comeca/EthernetEvent/Src/ethernet.c.obj: \
  ../Comeca/Managers/Inc/digitalOutManager.h \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/caliper_number.h \
  ../testBenchUtils/Inc/digimatic_measure_t.h \
@@ -29,6 +30,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/analogInManager.c.obj: \
  ../Comeca/Managers/Src/analogInManager.c \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/caliper_number.h \
  ../testBenchUtils/Inc/digimatic_measure_t.h \
@@ -45,6 +47,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/caliperManager.c.obj: \
  ../Comeca/Managers/Src/caliperManager.c \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/caliper_number.h \
  ../testBenchUtils/Inc/digimatic_measure_t.h \
@@ -56,6 +59,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/digitalOutManager.c.obj: \
  ../Comeca/Managers/Inc/digitalOutManager.h \
  ../Comeca/Managers/Src/digitalOutManager.c \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/message.h \
  ../testBenchUtils/Inc/testBenchVars.h
@@ -69,6 +73,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj: \
  ../Comeca/Managers/Src/pieceCountManager.c \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/caliper_number.h \
  ../testBenchUtils/Inc/digimatic_measure_t.h \
@@ -77,6 +82,7 @@ CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj: \
 CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj: \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Receive/Src/jsonGetter.c \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/message.h
 CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj: \
@@ -88,11 +94,15 @@ CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj: \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
  ../Comeca/Messages/Send/Src/messageLayer.c \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../testBenchUtils/Inc/caliper_number.h \
  ../testBenchUtils/Inc/digimatic_measure_t.h \
  ../testBenchUtils/Inc/message.h \
  ../testBenchUtils/Inc/testBenchVars.h
+CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.obj: \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
+ ../ExternalLibs/JSONParser/Src/cJSON.c
 CMakeFiles/json_testbench.dir/main.c.obj: \
  ../Comeca/Common/Inc/BUFFER_SIZE.h \
  ../Comeca/Common/Inc/message.h \
@@ -104,6 +114,7 @@ CMakeFiles/json_testbench.dir/main.c.obj: \
  ../Comeca/Managers/Inc/pieceCountManager.h \
  ../Comeca/Messages/Receive/Inc/jsonGetter.h \
  ../Comeca/Messages/Send/Inc/messageLayer.h \
+ ../ExternalLibs/JSONParser/Inc/cJSON.h \
  ../ExternalLibs/JSONParser/Inc/json.h \
  ../main.c \
  ../testBenchUtils/Inc/caliper_number.h \

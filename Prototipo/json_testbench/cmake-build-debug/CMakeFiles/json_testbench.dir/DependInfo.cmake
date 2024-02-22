@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Managers/Src/pieceCountManager.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/Comeca/Managers/Src/pieceCountManager.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Receive/Src/jsonGetter.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/Comeca/Messages/Receive/Src/jsonGetter.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/Comeca/Messages/Send/Src/messageLayer.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.obj"
+  "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/ExternalLibs/JSONParser/Src/cJSON.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/main.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/main.c.obj"
   "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/testBenchUtils/Src/testBenchVars.c" "C:/Github_Repos/DisenioBJAM/Prototipo/json_testbench/cmake-build-debug/CMakeFiles/json_testbench.dir/testBenchUtils/Src/testBenchVars.c.obj"
   )

@@ -12,13 +12,16 @@ import java.net.*;
 
 public class Receiver implements  Runnable{
 
+    private final DatagramSocket socket;
+
+    public Receiver(DatagramSocket socket){
+        this.socket = socket;
+    }
+
     @Override
     public void run() {
 
-        try {        
-            //Creamos un socket
-            DatagramSocket socket = new DatagramSocket(4445);
-
+        try {
             //Creamos un buffer para guardar los datos
             byte[] bufRecibido = new byte[10000];
        
@@ -36,7 +39,7 @@ public class Receiver implements  Runnable{
                 
 
                 //Respondemos, en otro hilo, a quien nos consultó
-                new Thread(new Responder(new String(datoRecibido.getData(), 0, datoRecibido.getLength()), datoRecibido.getAddress())).
+                new Thread(new Responder(new String(datoRecibido.getData(), 0, datoRecibido.getLength()), datoRecibido.getAddress(), socket)).
                     start();
                 
             }

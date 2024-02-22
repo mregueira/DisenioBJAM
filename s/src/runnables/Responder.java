@@ -24,6 +24,7 @@ public class Responder implements Runnable {
     InetAddress address;
     String cadenaRecibida;
     Monitor monitor;
+    DatagramSocket socket;
     
 
 
@@ -32,9 +33,10 @@ public class Responder implements Runnable {
      * @param cadenaRecibida
      * @param address 
      */
-    public Responder(String cadenaRecibida, InetAddress address) {
+    public Responder(String cadenaRecibida, InetAddress address, DatagramSocket socket) {
         this.cadenaRecibida = cadenaRecibida;
         this.address = address;
+        this.socket = socket;
         EntityManager em;    
 
         //Esta clase se llama en multiThread. Es necesario que siempre cree su propio em
@@ -364,7 +366,6 @@ public class Responder implements Runnable {
 
                 //y lo enviamos
                 try {
-                    DatagramSocket socket = new DatagramSocket();
                     socket.send(new DatagramPacket(buffer, buffer.length, addressTablet, 4445));
                     GUI.agregarTexto("    Se envio datos de una medida a la tablet", Color.blue, true);
                 }
@@ -398,7 +399,6 @@ public class Responder implements Runnable {
 
             //y lo enviamos
             try {
-                DatagramSocket socket = new DatagramSocket();
                 socket.send(new DatagramPacket(buffer, buffer.length, address, 4444));
                 GUI.agregarTexto("    Se respondió el request", Color.blue, true);
                 //GUI.agregarTexto("    Dato" + data.toJSONString(), Color.blue, true); Esto suele causar errores de pantalla. Quizás con textos muy largos.

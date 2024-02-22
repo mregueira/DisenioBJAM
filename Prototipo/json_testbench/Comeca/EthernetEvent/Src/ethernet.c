@@ -19,6 +19,7 @@ void ETHsendMessage(message_t message){
 
 void ETHonMessageReceived(message_t json){
     char actionType[GLOBAL_MAX_STRING_SIZE];
+    memset(actionType, 0, sizeof(actionType));
     getActionType(json, actionType);
 
     if(strcmp(actionType, "getAnalogIn") == 0){

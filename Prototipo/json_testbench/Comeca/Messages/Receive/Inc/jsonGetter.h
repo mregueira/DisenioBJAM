@@ -12,6 +12,7 @@
 #endif
 
 #include "../../../../ExternalLibs/JSONParser/Inc/json.h"
+#include "../../../../ExternalLibs/JSONParser/Inc/cJSON.h"
 
 void getActionType(message_t json, char* actionTypePtr);
 int getInputNumber(message_t json);

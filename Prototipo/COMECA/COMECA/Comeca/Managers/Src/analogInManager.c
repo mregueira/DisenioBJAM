@@ -47,7 +47,6 @@ void analogInManager(message_t json){
 #endif
     float receivedData = (analog_data/4096.0)*(3300.0/150.0);
 
-
     bool isValid = analogValidate(receivedData);
 
     if(isValid){

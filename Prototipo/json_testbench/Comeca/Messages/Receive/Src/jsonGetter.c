@@ -2,90 +2,48 @@
 // Created by joa-m on 11/1/2021.
 //
 
-#include <assert.h>
 #include "../Inc/jsonGetter.h"
 
-// free all! :)
-struct json_object_element_s* seekField(struct json_object_element_s* field, const char* fieldName){
-    while(field->next != NULL && strcmp(field->name->string, fieldName) != 0){
-        field = field->next;
+void getActionType(message_t json_to_parse, char* actionTypePtr){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *action = cJSON_GetObjectItemCaseSensitive(json, "action");
+    strcpy(actionTypePtr, action->valuestring);
+    cJSON_Delete(json);
+}
+
+
+int getInputNumber(message_t json_to_parse){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *inputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "inputNumber");
+    int inputNum;
+    if(inputNumberObj->valuestring == NULL){
+        inputNum = inputNumberObj->valueint;
+    }else{
+        inputNum = (int)(inputNumberObj->valuestring[0]-'0');
     }
-    return field;
-}
-
-void getActionType(message_t json, char* actionTypePtr){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    struct json_object_element_s* field;
-
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
-
-    struct json_object_s* action_payload = field->value->payload;
-    const char * actionType = action_payload->start->name->string;
-
-    strcpy(actionTypePtr, actionType);
-    free(root);
-}
-
-
-int getInputNumber(message_t json){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    struct json_object_element_s* field;
-
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
-
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "getAnalogIn");
-    assert(strcmp(field->name->string, "getAnalogIn") == 0);
-
-    struct json_object_s* analogInPayload = field->value->payload;
-    field = seekField(analogInPayload->start, "inputNumber");
-    assert(strcmp(field->name->string, "inputNumber") == 0);
-
-    int inputNum = atoi(json_value_as_number(field->value)->number);
-    free(root);
+    cJSON_Delete(json);
     return inputNum;
 }
 
-int getOutputNum(message_t json){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    struct json_object_element_s* field;
-
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
-
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "setSalidaDigital");
-    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
-
-    struct json_object_s* analogInPayload = field->value->payload;
-    field = seekField(analogInPayload->start, "outputNumber");
-    assert(strcmp(field->name->string, "outputNumber") == 0);
-
-    int outputNum = atoi(json_value_as_number(field->value)->number);
-    free(root);
+int getOutputNum(message_t json_to_parse){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *outputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "outputNumber");
+    int outputNum;
+    if(outputNumberObj->valuestring == NULL){
+        outputNum = outputNumberObj->valueint;
+    }else{
+        outputNum = (int)(outputNumberObj->valuestring[0]-'0');
+    }
+    cJSON_Delete(json);
     return outputNum;
 }
-void getOutputState(message_t json, char* outputStatePtr){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    struct json_object_element_s* field;
+void getOutputState(message_t json_to_parse, char* outputStatePtr){
 
-    field = seekField(object->start, "action");
-    assert(strcmp(field->name->string, "action") == 0);
-
-    struct json_object_s* action_payload = field->value->payload;
-    field = seekField(action_payload->start, "setSalidaDigital");
-    assert(strcmp(field->name->string, "setSalidaDigital") == 0);
-
-    struct json_object_s* analogInPayload = field->value->payload;
-    field = seekField(analogInPayload->start, "outputState");
-    assert(strcmp(field->name->string, "outputState") == 0);
-
-    strcpy(outputStatePtr, json_value_as_string(field->value)->string);
-    free(root);
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *outputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "outputState");
+    strcpy(outputStatePtr, outputNumberObj->valuestring);
+    cJSON_Delete(json);
 }

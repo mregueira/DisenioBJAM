@@ -320,6 +320,30 @@ Comeca/Messages/Send/Src/messageLayer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/Comeca/Messages/Send/Src/messageLayer.c.s
 .PHONY : Comeca/Messages/Send/Src/messageLayer.c.s
 
+ExternalLibs/JSONParser/Src/cJSON.obj: ExternalLibs/JSONParser/Src/cJSON.c.obj
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.obj
+
+# target to build an object file
+ExternalLibs/JSONParser/Src/cJSON.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.obj
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.c.obj
+
+ExternalLibs/JSONParser/Src/cJSON.i: ExternalLibs/JSONParser/Src/cJSON.c.i
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.i
+
+# target to preprocess a source file
+ExternalLibs/JSONParser/Src/cJSON.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.i
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.c.i
+
+ExternalLibs/JSONParser/Src/cJSON.s: ExternalLibs/JSONParser/Src/cJSON.c.s
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.s
+
+# target to generate assembly for a file
+ExternalLibs/JSONParser/Src/cJSON.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\json_testbench.dir\build.make CMakeFiles/json_testbench.dir/ExternalLibs/JSONParser/Src/cJSON.c.s
+.PHONY : ExternalLibs/JSONParser/Src/cJSON.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -401,6 +425,9 @@ help:
 	@echo ... Comeca/Messages/Send/Src/messageLayer.obj
 	@echo ... Comeca/Messages/Send/Src/messageLayer.i
 	@echo ... Comeca/Messages/Send/Src/messageLayer.s
+	@echo ... ExternalLibs/JSONParser/Src/cJSON.obj
+	@echo ... ExternalLibs/JSONParser/Src/cJSON.i
+	@echo ... ExternalLibs/JSONParser/Src/cJSON.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -1,11 +1,10 @@
 {
   "version": "0.0",
   "sequence": 0,
-  "action": {
-    "setSalidaDigital": {
-      "outputState": "OFF",
-      "outputNumber": 3
-    }
+  "action" : "setSalidaDigital",
+  "data": {
+    "outputState": "OFF",
+    "outputNumber": 3
   },
   "checksum": 50
 }

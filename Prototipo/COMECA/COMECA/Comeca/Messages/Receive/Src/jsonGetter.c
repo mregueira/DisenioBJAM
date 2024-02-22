@@ -3,33 +3,48 @@
 //
 
 #include "../Inc/jsonGetter.h"
+#include <string.h>
 
-// free all! :)
-
-void getFrameType(message_t json, char* frameTypePtr){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    const char * frameType = ((struct json_string_s*)object->start->next->next->next->value->payload)->string;
-    strcpy(frameTypePtr, frameType);
-    free(root);
+void getActionType(message_t json_to_parse, char* actionTypePtr){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *action = cJSON_GetObjectItemCaseSensitive(json, "action");
+    strcpy(actionTypePtr, action->valuestring);
+    cJSON_Delete(json);
 }
 
-int getInputNumber(message_t json){
-    struct json_value_s* root = json_parse(json.msg, json.len);
-    struct json_object_s* object = (struct json_object_s*)root->payload;
-    int inputNum = atoi(json_value_as_number(object->start->next->value)->number);
-    free(root);
+
+int getInputNumber(message_t json_to_parse){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *inputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "inputNumber");
+    int inputNum;
+    if(inputNumberObj->valuestring == NULL){
+        inputNum = inputNumberObj->valueint;
+    }else{
+        inputNum = (int)(inputNumberObj->valuestring[0]-'0');
+    }
+    cJSON_Delete(json);
     return inputNum;
 }
 
-int getOutputNum(message_t json){
-    int outputNum = (int)((char)(json.msg[57]) -'0');
-    if(outputNum > 3){
-       outputNum = (int)((char)(json.msg[58]) -'0');
+int getOutputNum(message_t json_to_parse){
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *outputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "outputNumber");
+    int outputNum;
+    if(outputNumberObj->valuestring == NULL){
+        outputNum = outputNumberObj->valueint;
+    }else{
+        outputNum = (int)(outputNumberObj->valuestring[0]-'0');
     }
+    cJSON_Delete(json);
     return outputNum;
 }
-void getOutputState(message_t json, char* outputStatePtr){
-	outputStatePtr[0] = json.msg[38];
-	outputStatePtr[1] = json.msg[39];
+void getOutputState(message_t json_to_parse, char* outputStatePtr){
+
+    cJSON *json = cJSON_Parse((const char *)json_to_parse.msg);
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(json, "data");
+    cJSON *outputNumberObj = cJSON_GetObjectItemCaseSensitive(data, "outputState");
+    strcpy(outputStatePtr, outputNumberObj->valuestring);
+    cJSON_Delete(json);
 }

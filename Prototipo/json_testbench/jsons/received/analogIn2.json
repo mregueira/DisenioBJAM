@@ -1,0 +1,9 @@
+{
+  "version": "0.0",
+  "sequence": 0,
+  "action": "getAnalogIn",
+  "data": {
+    "inputNumber": "2"
+  },
+  "checksum": 50
+}

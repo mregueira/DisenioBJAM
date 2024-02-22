@@ -11,9 +11,10 @@
 #include "../../Comeca/Common/Inc/message.h"
 #endif
 
-#include "../../../../ExternalLibs/JSONParser/Inc/json.h"
+//#include "../../../../ExternalLibs/JSONParser/Inc/json.h"
+#include "../../../../ExternalLibs/JSONParser/Inc/cJSON.h"
 
-void getFrameType(message_t json, char* frameTypePtr);
+void getActionType(message_t json, char* frameTypePtr);
 int getInputNumber(message_t json);
 int getOutputNum(message_t json);
 void getOutputState(message_t json, char* outputStatePtr);

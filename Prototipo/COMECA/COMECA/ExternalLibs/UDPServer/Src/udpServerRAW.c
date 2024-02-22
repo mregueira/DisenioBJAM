@@ -26,6 +26,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "../Inc/udpServerRAW.h"
+#include "../../Comeca/EthernetEvent/Inc/ethernet.h"
 
 
 struct udp_pcb *local_upcb;
@@ -47,26 +48,33 @@ void udp_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const
 void udpServer_init(void)
 {
 	// UDP Control Block structure
-   struct udp_pcb *upcb;
    err_t err;
 
    /* 1. Create a new UDP control block  */
-   upcb = udp_new();
+   local_upcb = udp_new();
 
-   /* 2. Bind the upcb to the local port */
-   ip_addr_t myIPADDR;
-   IP_ADDR4(&myIPADDR, 192, 168, 110, 1);
+	/* Bind the block to module's IP and port */
+	ip_addr_t myIPaddr;
+	IP_ADDR4(&myIPaddr, 192, 168, 1, 42);
+	udp_bind(local_upcb, &myIPaddr, 4444);
 
-   err = udp_bind(upcb, &myIPADDR, 4444);  // 7 is the server UDP port
+
+	/* configure destination IP address and port */
+	ip_addr_t DestIPaddr;
+	IP_ADDR4(&DestIPaddr, 192, 168, 1, 10);
+	err= udp_connect(local_upcb, &DestIPaddr, 4445);
+
+
+//   err = udp_bind(local_upcb, &myIPADDR, 4444);  // 7 is the server UDP port
 
    /* 3. Set a receive callback for the upcb */
    if(err == ERR_OK)
    {
-	   udp_recv(upcb, udp_receive_callback, NULL);
+	   udp_recv(local_upcb, udp_receive_callback, NULL);
    }
    else
    {
-	   udp_remove(upcb);
+	   udp_remove(local_upcb);
 	   assert(0);
    }
 }
@@ -101,24 +109,10 @@ void udp_send_message(message_t message){
 	/* allocate pbuf from RAM*/
 	txBuf = pbuf_alloc(PBUF_TRANSPORT,len, PBUF_RAM);
 
-	/* copy the data into the buffer  */
-    pbuf_take(txBuf, data, len);
-
-	u32_t server_addr = 724740288;
-	//                  724740288
-	ip_addr_t server_address;
-	server_address.addr = server_addr;
-	u16_t server_port = 4445;
-	const ip_addr_t * aux = &server_address;
-
-//	/* Connect to the remote client */
-	udp_connect(local_upcb, aux, server_port);
+	pbuf_take(txBuf, data, len);
 
 //	/* Send a Reply to the Client */
-	udp_send(local_upcb, txBuf);
-
-//	/* free the UDP connection, so we can accept new clients */
-	udp_disconnect(local_upcb);
+	err_t err2 = udp_send(local_upcb, txBuf);
 
 	/* Free the p_tx buffer */
 	pbuf_free(txBuf);
