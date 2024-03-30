@@ -44,6 +44,7 @@ CrossRefPorts=3
 CrossRefCrossSheets=1
 CrossRefSheetEntries=0
 CrossRefFollowFromMainSettings=1
+CurrentVariant=For Assembly
 
 [Preferences]
 PrefsVaultGUID=
@@ -337,6 +338,16 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[ProjectVariant1]
+UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
+Description=For Assembly
+AllowFabrication=0
+ParameterCount=0
+VariationCount=2
+Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
+Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=0|AlternatePart= 
+ParamVariationCount=0
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for COMECA\Design Rule Check - COMECA-PCBv1.html
