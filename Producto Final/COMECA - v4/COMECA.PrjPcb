@@ -344,12 +344,20 @@ UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
 Description=For Assembly
 AllowFabrication=0
 ParameterCount=0
-VariationCount=5
+VariationCount=13
 Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
 Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=1|AlternatePart= 
 Variation3=Designator=DP2|UniqueId=\KJSJOYYT\NIELPZKR|Kind=1|AlternatePart= 
 Variation4=Designator=DP1|UniqueId=\KJSJOYYT\MMOXKIZZ|Kind=1|AlternatePart= 
 Variation5=Designator=J6A|UniqueId=\KJSJOYYT\UKEFEMXY|Kind=1|AlternatePart= 
+Variation6=Designator=C9|UniqueId=\AYGZRDAA\LEKBXFDL|Kind=1|AlternatePart= 
+Variation7=Designator=C10|UniqueId=\AYGZRDAA\WJMAGUQG|Kind=1|AlternatePart= 
+Variation8=Designator=C11|UniqueId=\AYGZRDAA\EHOJZGDM|Kind=1|AlternatePart= 
+Variation9=Designator=C17|UniqueId=\AYGZRDAA\LVIJVFQY|Kind=1|AlternatePart= 
+Variation10=Designator=J3|UniqueId=\AYGZRDAA\OWUHSTOW|Kind=1|AlternatePart= 
+Variation11=Designator=C8|UniqueId=\AYGZRDAA\EFXNIIWN|Kind=1|AlternatePart= 
+Variation12=Designator=C6|UniqueId=\AYGZRDAA\HRBGWXIU|Kind=1|AlternatePart= 
+Variation13=Designator=C7|UniqueId=\AYGZRDAA\XSWOKWYH|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
