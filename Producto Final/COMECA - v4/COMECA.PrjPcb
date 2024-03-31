@@ -344,7 +344,7 @@ UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
 Description=For Assembly
 AllowFabrication=0
 ParameterCount=0
-VariationCount=27
+VariationCount=32
 Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
 Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=1|AlternatePart= 
 Variation3=Designator=DP2|UniqueId=\KJSJOYYT\NIELPZKR|Kind=1|AlternatePart= 
@@ -372,6 +372,11 @@ Variation24=Designator=JC4|UniqueId=\HWPQZQCB\QIPRNIFP|Kind=1|AlternatePart=
 Variation25=Designator=JC3|UniqueId=\HWPQZQCB\QDGBMYPY|Kind=1|AlternatePart= 
 Variation26=Designator=JC2|UniqueId=\HWPQZQCB\MFOWFTAO|Kind=1|AlternatePart= 
 Variation27=Designator=JC1|UniqueId=\HWPQZQCB\ATNAKJZO|Kind=1|AlternatePart= 
+Variation28=Designator=U2|UniqueId=\XMIDXXMI\CLRIAZFT|Kind=1|AlternatePart= 
+Variation29=Designator=C3|UniqueId=\XMIDXXMI\AOJDFNKF|Kind=1|AlternatePart= 
+Variation30=Designator=C4|UniqueId=\XMIDXXMI\SHXENZHI|Kind=1|AlternatePart= 
+Variation31=Designator=C5|UniqueId=\XMIDXXMI\QDIBXFMC|Kind=1|AlternatePart= 
+Variation32=Designator=DL1|UniqueId=\XMIDXXMI\WGBXIPIL|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
@@ -1482,11 +1487,47 @@ UpdateVariants=1
 UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
-ComponentLibraryIdentifier0=LIB2022 - Connectors.IntLib
-ComponentDesignItemID0=ARJP11C-MBSC-L2
-ComponentSymbolReference0=ARJP11C-MBSC-L2
+ComponentLibraryIdentifier0=LIB2022 - ICs.IntLib
+ComponentDesignItemID0=LM317KCS
+ComponentSymbolReference0=LM317KCS
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
+ComponentLibIdentifierKind1=Library Name And Type
+ComponentLibraryIdentifier1=LIB2022 - Mechanicals.IntLib
+ComponentDesignItemID1=TP
+ComponentSymbolReference1=TP
+ComponentUpdate1=1
+ComponentIsDeviceSheet1=0
+ComponentLibIdentifierKind2=Library Name And Type
+ComponentLibraryIdentifier2=LIB2022 - Optoelectronics.IntLib
+ComponentDesignItemID2=LED
+ComponentSymbolReference2=LED
+ComponentUpdate2=1
+ComponentIsDeviceSheet2=0
+ComponentLibIdentifierKind3=Library Name And Type
+ComponentLibraryIdentifier3=LIB2022 - Passives.IntLib
+ComponentDesignItemID3=CAPPOL-THT
+ComponentSymbolReference3=CAPPOL-THT
+ComponentUpdate3=1
+ComponentIsDeviceSheet3=0
+ComponentLibIdentifierKind4=Library Name And Type
+ComponentLibraryIdentifier4=LIB2022 - Passives.IntLib
+ComponentDesignItemID4=CAP-THT
+ComponentSymbolReference4=CAP-THT
+ComponentUpdate4=1
+ComponentIsDeviceSheet4=0
+ComponentLibIdentifierKind5=Library Name And Type
+ComponentLibraryIdentifier5=LIB2022 - Passives.IntLib
+ComponentDesignItemID5=RES-THT
+ComponentSymbolReference5=RES-THT
+ComponentUpdate5=1
+ComponentIsDeviceSheet5=0
+ComponentLibIdentifierKind6=Library Name And Type
+ComponentLibraryIdentifier6=LIB2022 - Semiconductors.IntLib
+ComponentDesignItemID6=DIODE RECTIFIER
+ComponentSymbolReference6=DIODE RECTIFIER
+ComponentUpdate6=1
+ComponentIsDeviceSheet6=0
 FullReplace=1
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
@@ -1506,15 +1547,75 @@ ParameterName1=Component Kind
 ParameterUpdate1=1
 ParameterName2=Description
 ParameterUpdate2=1
-ParameterName3=Digikey_PN
+ParameterName3=JLCPart
 ParameterUpdate3=1
 ParameterName4=Library Reference
 ParameterUpdate4=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=ARJP11C-MB
+ModelName0=CAP100
 ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=CAP100RP
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=CAP200
+ModelUpdate2=1
+ModelType3=PCBLIB
+ModelName3=CAP200RP
+ModelUpdate3=1
+ModelType4=PCBLIB
+ModelName4=CAP300
+ModelUpdate4=1
+ModelType5=PCBLIB
+ModelName5=CAP300RP
+ModelUpdate5=1
+ModelType6=PCBLIB
+ModelName6=DO-214AC-SMA
+ModelUpdate6=1
+ModelType7=PCBLIB
+ModelName7=DO41
+ModelUpdate7=1
+ModelType8=PCBLIB
+ModelName8=LED-3MM
+ModelUpdate8=1
+ModelType9=PCBLIB
+ModelName9=LED-5MM
+ModelUpdate9=1
+ModelType10=PCBLIB
+ModelName10=RES1000
+ModelUpdate10=1
+ModelType11=PCBLIB
+ModelName11=RES1000 - NOSILK
+ModelUpdate11=1
+ModelType12=PCBLIB
+ModelName12=RES300
+ModelUpdate12=1
+ModelType13=PCBLIB
+ModelName13=RES400
+ModelUpdate13=1
+ModelType14=PCBLIB
+ModelName14=RES500
+ModelUpdate14=1
+ModelType15=PCBLIB
+ModelName15=RES600
+ModelUpdate15=1
+ModelType16=PCBLIB
+ModelName16=SOD-123
+ModelUpdate16=1
+ModelType17=PCBLIB
+ModelName17=TO-220 - KCS0003B
+ModelUpdate17=1
+ModelType18=PCBLIB
+ModelName18=TO-220 - KCS0003B - RA
+ModelUpdate18=1
+ModelType19=PCBLIB
+ModelName19=TPTH
+ModelUpdate19=1
+ModelType20=PCBLIB
+ModelName20=TPTH - PAD ONLY
+ModelUpdate20=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
