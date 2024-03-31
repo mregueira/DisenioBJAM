@@ -344,7 +344,7 @@ UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
 Description=For Assembly
 AllowFabrication=0
 ParameterCount=0
-VariationCount=35
+VariationCount=42
 Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
 Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=1|AlternatePart= 
 Variation3=Designator=DP2|UniqueId=\KJSJOYYT\NIELPZKR|Kind=1|AlternatePart= 
@@ -380,6 +380,13 @@ Variation32=Designator=DL1|UniqueId=\XMIDXXMI\WGBXIPIL|Kind=1|AlternatePart=
 Variation33=Designator=J2|UniqueId=\RKDTWWVT\SKYUFATP|Kind=1|AlternatePart= 
 Variation34=Designator=J1|UniqueId=\RKDTWWVT\RTBNCMGB|Kind=1|AlternatePart= 
 Variation35=Designator=C16|UniqueId=\RKDTWWVT\VIKMBLHT|Kind=1|AlternatePart= 
+Variation36=Designator=U6|UniqueId=\IDORRKVX\OUSAXMRS|Kind=1|AlternatePart= 
+Variation37=Designator=C12|UniqueId=\IDORRKVX\ZDTPBOLC|Kind=1|AlternatePart= 
+Variation38=Designator=C13|UniqueId=\IDORRKVX\DOVNMBGV|Kind=1|AlternatePart= 
+Variation39=Designator=L2|UniqueId=\IDORRKVX\FXJJEYAM|Kind=1|AlternatePart= 
+Variation40=Designator=D4|UniqueId=\IDORRKVX\XUMDACVG|Kind=1|AlternatePart= 
+Variation41=Designator=DL2|UniqueId=\IDORRKVX\VEEJDZGT|Kind=1|AlternatePart= 
+Variation42=Designator=J7|UniqueId=\IDORRKVX\BSEFCPWZ|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
@@ -1491,8 +1498,8 @@ UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
 ComponentLibraryIdentifier0=LIB2022 - Optoelectronics.IntLib
-ComponentDesignItemID0=LTV-847
-ComponentSymbolReference0=LTV-847
+ComponentDesignItemID0=LED
+ComponentSymbolReference0=LED
 ComponentUpdate0=1
 ComponentIsDeviceSheet0=0
 FullReplace=1
@@ -1514,17 +1521,19 @@ ParameterName1=Component Kind
 ParameterUpdate1=1
 ParameterName2=Description
 ParameterUpdate2=1
-ParameterName3=Digikey_PN
+ParameterName3=Library Reference
 ParameterUpdate3=1
-ParameterName4=JLCPart
-ParameterUpdate4=1
-ParameterName5=Library Reference
-ParameterUpdate5=1
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
-ModelName0=DIP16
+ModelName0=0805
 ModelUpdate0=1
+ModelType1=PCBLIB
+ModelName1=LED3
+ModelUpdate1=1
+ModelType2=PCBLIB
+ModelName2=LED5
+ModelUpdate2=1
 
 [DatabaseUpdateOptions]
 SelectedOnly=0
