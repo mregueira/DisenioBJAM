@@ -344,7 +344,7 @@ UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
 Description=For Assembly
 AllowFabrication=0
 ParameterCount=0
-VariationCount=42
+VariationCount=48
 Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
 Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=1|AlternatePart= 
 Variation3=Designator=DP2|UniqueId=\KJSJOYYT\NIELPZKR|Kind=1|AlternatePart= 
@@ -387,6 +387,12 @@ Variation39=Designator=L2|UniqueId=\IDORRKVX\FXJJEYAM|Kind=1|AlternatePart=
 Variation40=Designator=D4|UniqueId=\IDORRKVX\XUMDACVG|Kind=1|AlternatePart= 
 Variation41=Designator=DL2|UniqueId=\IDORRKVX\VEEJDZGT|Kind=1|AlternatePart= 
 Variation42=Designator=J7|UniqueId=\IDORRKVX\BSEFCPWZ|Kind=1|AlternatePart= 
+Variation43=Designator=U1|UniqueId=\MMFDXJTW\MNOSOBHX|Kind=1|AlternatePart= 
+Variation44=Designator=C1|UniqueId=\MMFDXJTW\KYPTWLCX|Kind=1|AlternatePart= 
+Variation45=Designator=L1|UniqueId=\MMFDXJTW\UVDUNLAD|Kind=1|AlternatePart= 
+Variation46=Designator=C2|UniqueId=\MMFDXJTW\CHLELATD|Kind=1|AlternatePart= 
+Variation47=Designator=D1|UniqueId=\MMFDXJTW\CJNEBLFH|Kind=1|AlternatePart= 
+Variation48=Designator=DL3|UniqueId=\MMFDXJTW\XXHYJWJR|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
