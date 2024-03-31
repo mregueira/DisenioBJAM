@@ -344,7 +344,7 @@ UniqueID=ECFB56DB-9A6E-450A-8BBB-E777CE26C160
 Description=For Assembly
 AllowFabrication=0
 ParameterCount=0
-VariationCount=23
+VariationCount=27
 Variation1=Designator=C14|UniqueId=\KJSJOYYT\OFBTDMFE|Kind=1|AlternatePart= 
 Variation2=Designator=C15|UniqueId=\KJSJOYYT\CHZPYLYT|Kind=1|AlternatePart= 
 Variation3=Designator=DP2|UniqueId=\KJSJOYYT\NIELPZKR|Kind=1|AlternatePart= 
@@ -368,6 +368,10 @@ Variation20=Designator=JE3|UniqueId=\IFZUPZTF\TBUTKPLN|Kind=1|AlternatePart=
 Variation21=Designator=JE2|UniqueId=\IFZUPZTF\OFVELUYM|Kind=1|AlternatePart= 
 Variation22=Designator=JE1|UniqueId=\IFZUPZTF\ZBSCFDSM|Kind=1|AlternatePart= 
 Variation23=Designator=J5|UniqueId=\IFZUPZTF\EVRACYPO|Kind=1|AlternatePart= 
+Variation24=Designator=JC4|UniqueId=\HWPQZQCB\QIPRNIFP|Kind=1|AlternatePart= 
+Variation25=Designator=JC3|UniqueId=\HWPQZQCB\QDGBMYPY|Kind=1|AlternatePart= 
+Variation26=Designator=JC2|UniqueId=\HWPQZQCB\MFOWFTAO|Kind=1|AlternatePart= 
+Variation27=Designator=JC1|UniqueId=\HWPQZQCB\ATNAKJZO|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
